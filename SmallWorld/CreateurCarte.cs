@@ -30,7 +30,7 @@ namespace SmallWorld
     {
         public Carte construire()
         {
-            Carte carte = new Carte(5);
+            Carte carte = new Carte(5); // TODO
             return carte;
         }
     }
@@ -39,7 +39,7 @@ namespace SmallWorld
     {
         public Carte construire()
         {
-            Carte carte = new Carte(10);
+            Carte carte = new Carte(10); // TODO
             return carte;
         }
     }
@@ -48,7 +48,7 @@ namespace SmallWorld
     {
         public Carte construire()
         {
-            Carte carte = new Carte(15);
+            Carte carte = new Carte(15); // TODO
             return carte;
         }
     }

@@ -25,68 +25,38 @@ namespace SmallWorld
     {
         public int _attaque
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public int _defense
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public int _pdv
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public int _pm
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public int _x
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public int _y
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Unite()
@@ -118,7 +88,7 @@ namespace SmallWorld
 
         public void attaquer(Unite adversaire)
         {
-
+            // TODO
         }
     }
 
@@ -128,7 +98,7 @@ namespace SmallWorld
 
         public bool peutDeplacer(int x, int y)
         {
-            return false;
+            return false; // TODO
         }
 
         public static bool estUtilise()
@@ -148,7 +118,7 @@ namespace SmallWorld
 
         public bool peutDeplacer(int x, int y)
         {
-            return false;
+            return false; // TODO
         }
 
         public static bool estUtilise()
@@ -168,7 +138,7 @@ namespace SmallWorld
 
         public bool peutDeplacer(int x, int y)
         {
-            return false;
+            return false; // TODO
         }
 
         public static bool estUtilise()

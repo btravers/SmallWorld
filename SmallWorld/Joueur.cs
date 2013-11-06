@@ -22,7 +22,7 @@ namespace SmallWorld
             Peuple peuple = null;
             switch (typePeuple)
             {
-                case "vkings":
+                case "vikings":
                     peuple = new Vikings();
                     break;
                 case "gaulois":

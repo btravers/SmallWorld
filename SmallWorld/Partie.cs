@@ -37,13 +37,13 @@ namespace SmallWorld
 
         private int _premierJoueur;
 
-        private Unite _uniteSelectionne;
+        private Unite _uniteSelectionnee;
 
         public Partie()
         {
             Random rnd = new Random();
             _premierJoueur = rnd.Next(2);
-            this._uniteSelectionne = null;
+            this._uniteSelectionnee = null;
         }
 
         public bool tourJoueurA()
@@ -109,16 +109,16 @@ namespace SmallWorld
             {
                 if (unite.estSurCase(x, y))
                 {
-                    this._uniteSelectionne = unite;
+                    this._uniteSelectionnee = unite;
                 }
             }
 
-            this._uniteSelectionne = null;
+            this._uniteSelectionnee = null;
         }
 
         public void selectCaseDest(int x, int y)
         {
-            if (_uniteSelectionne.peutDeplacer(x, y))
+            if (_uniteSelectionnee.peutDeplacer(x, y))
             {
                 Joueur joueur;
                 if (this.tourJoueurA())
@@ -150,11 +150,11 @@ namespace SmallWorld
                             meilleur = u;
                         }
                     }
-                    this._uniteSelectionne.attaquer(meilleur);
+                    this._uniteSelectionnee.attaquer(meilleur);
                 }
                 else
                 {
-                    this._uniteSelectionne.deplacer(x, y);
+                    this._uniteSelectionnee.deplacer(x, y);
                 }
             }
         }

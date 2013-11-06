@@ -44,7 +44,6 @@
     <Compile Include="CreateurCarte.cs" />
     <Compile Include="CreateurPartie.cs" />
     <Compile Include="FabriqueCase.cs" />
-    <Compile Include="FabriquePeuple.cs" />
     <Compile Include="Joueur.cs" />
     <Compile Include="MonteurPartie.cs" />
     <Compile Include="Partie.cs" />

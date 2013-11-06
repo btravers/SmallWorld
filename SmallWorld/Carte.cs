@@ -13,24 +13,14 @@ namespace SmallWorld
     {
         public FabriqueCase _fabrique
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Case[,] _cases
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Carte(int taille)

@@ -268,7 +268,7 @@
   <Class Name="SmallWorld.UniteGaulois">
     <Position X="5.75" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -276,7 +276,7 @@
   <Class Name="SmallWorld.UniteNains">
     <Position X="7.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
