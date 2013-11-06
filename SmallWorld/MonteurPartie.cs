@@ -23,19 +23,22 @@ namespace SmallWorld
 
     public abstract class MonteurPartie : IMonteurPartie
     {
-        public Partie _partie
+        protected Partie _partie
         {
             get;
-            set;
+            private set;
         }
 
         public Partie monterPartie(String peupleA, String peupleB)
         {
             this._partie = new Partie();
+            this.addNbTours();
             this.addCarte();
             this.addJoueurs(peupleA, peupleB);
             return this._partie;
         }
+
+        private void addNbTours();
 
         private void addCarte();
 
@@ -44,6 +47,11 @@ namespace SmallWorld
 
     public class MonteurPartieDemo : MonteurPartie, IMonteurPartieDemo
     {
+        private void addNbTours()
+        {
+            this._partie._toursRestant = 5;
+        }
+
         private void addCarte()
         {
             CreateurCarte createurCarte = new CreateurCarteDemo();
@@ -52,15 +60,18 @@ namespace SmallWorld
 
         private void addJoueurs(String peupleA, String peupleB)
         {
-            Peuple pA = FabriquePeuple.INSTANCE.fabriquer(peupleA,4);
-            Peuple pB = FabriquePeuple.INSTANCE.fabriquer(peupleB, 4);
-            this._partie._jA = new Joueur(pA);
-            this._partie._jB = new Joueur(pB);
+            this._partie._jA = new Joueur(peupleA, 4);
+            this._partie._jB = new Joueur(peupleB, 4);
         }
     }
 
     public class MonteurPartiePetite : MonteurPartie, IMonteurPartiePetite
     {
+        private void addNbTours()
+        {
+            this._partie._toursRestant = 20;
+        }
+
         private void addCarte()
         {
             CreateurCarte createurCarte = new CreateurCartePetite();
@@ -69,15 +80,19 @@ namespace SmallWorld
 
         private void addJoueurs(String peupleA, String peupleB)
         {
-            Peuple pA = FabriquePeuple.INSTANCE.fabriquer(peupleA, 6);
-            Peuple pB = FabriquePeuple.INSTANCE.fabriquer(peupleB, 6);
-            this._partie._jA = new Joueur(pA);
-            this._partie._jB = new Joueur(pB);
+            this._partie._jA = new Joueur(peupleA, 6);
+            this._partie._jB = new Joueur(peupleB, 9);
         }
     }
 
     public class MonteurPartieNormale : MonteurPartie, IMonteurPartieNormale
     {
+        private void addNbTours()
+        {
+            this._partie._toursRestant = 30;
+        }
+
+
         private void addCarte()
         {
             CreateurCarte createurCarte = new CreateurCarteNormale();
@@ -86,10 +101,8 @@ namespace SmallWorld
 
         private void addJoueurs(String peupleA, String peupleB)
         {
-            Peuple pA = FabriquePeuple.INSTANCE.fabriquer(peupleA, 8);
-            Peuple pB = FabriquePeuple.INSTANCE.fabriquer(peupleB, 8);
-            this._partie._jA = new Joueur(pA);
-            this._partie._jB = new Joueur(pB);
+            this._partie._jA = new Joueur(peupleA, 8);
+            this._partie._jB = new Joueur(peupleB, 8);
         }
     }
 }

@@ -127,14 +127,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmallWorld.IJoueur">
-    <Position X="10" Y="9.75" Width="1.5" />
+    <Position X="11.25" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmallWorld.IUnite">
-    <Position X="7.75" Y="9.75" Width="1.5" />
+    <Position X="8.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Unite.cs</FileName>
@@ -173,6 +173,27 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Peuple.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmallWorld.IUniteVikings">
+    <Position X="7.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Unite.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmallWorld.IUniteGaulois">
+    <Position X="8.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Unite.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmallWorld.IUniteNains">
+    <Position X="10.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Unite.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

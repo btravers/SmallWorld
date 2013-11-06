@@ -28,13 +28,28 @@ namespace SmallWorld
 
     public class CreateurCarteDemo : CreateurCarte, ICreateurCarteDemo
     {
+        public Carte construire()
+        {
+            Carte carte = new Carte(5);
+            return carte;
+        }
     }
 
     public class CreateurCartePetite : CreateurCarte, ICreateurCartePetite
     {
+        public Carte construire()
+        {
+            Carte carte = new Carte(10);
+            return carte;
+        }
     }
 
     public class CreateurCarteNormale : CreateurCarte, ICreateurCarteNormale
     {
+        public Carte construire()
+        {
+            Carte carte = new Carte(15);
+            return carte;
+        }
     }
 }

@@ -13,35 +13,41 @@ namespace SmallWorld
     {
         public Joueur _jA
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public Carte _carte
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
 
         public Joueur _jB
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
+            get;
+            set;
         }
+
+        public Carte _carte
+        {
+            get;
+            set;
+        }
+
+        public int _toursRestant
+        {
+            get;
+            set;
+        }
+
+        private int _premierJouer;
+
+        public Partie()
+        {
+            Random rnd = new Random();
+            _premierJouer = rnd.Next(2);
+        }
+
+        public bool tourJoueurA()
+        {
+            return (_toursRestant % 2) == 0;
+        }
+
+        
     }
 }

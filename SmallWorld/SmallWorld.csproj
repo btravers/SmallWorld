@@ -39,8 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Carte.cs" />
+    <Compile Include="Case.cs" />
+    <Compile Include="CreateurCarte.cs" />
+    <Compile Include="CreateurPartie.cs" />
+    <Compile Include="FabriqueCase.cs" />
+    <Compile Include="FabriquePeuple.cs" />
+    <Compile Include="Joueur.cs" />
+    <Compile Include="MonteurPartie.cs" />
+    <Compile Include="Partie.cs" />
+    <Compile Include="Peuple.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unite.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Implementation.cd" />
+    <None Include="Interface.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

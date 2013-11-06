@@ -11,20 +11,39 @@ namespace SmallWorld
 
     public class Joueur : IJoueur
     {
-        public Peuple _peuple
+        public List<Unite> _unites
         {
-            get
+            get;
+            set;
+        }
+
+        public Joueur(String typePeuple, int nbUnites)
+        {
+            Peuple peuple = null;
+            switch (typePeuple)
             {
-                throw new System.NotImplementedException();
+                case "vkings":
+                    peuple = new Vikings();
+                    break;
+                case "gaulois":
+                    peuple = new Gaulois();
+                    break;
+                case "nains":
+                    peuple = new Nains();
+                    break;
             }
-            set
+            for (int i = 0; i < nbUnites; i++)
             {
+                this._unites.Add(peuple.fabriquerUnite());
             }
         }
 
-        public Joueur(Peuple peuple)
+        public void positionnerUnites(int x, int y)
         {
-            this._peuple = peuple;
+            foreach (Unite unite in this._unites)
+            {
+                unite.positionner(x, y);
+            }
         }
     }
 }

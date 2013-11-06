@@ -23,35 +23,30 @@ namespace SmallWorld
 
     public abstract class Peuple : IPeuple
     {
-        public List<Unite> _unites
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-        
-        public Peuple(int nbUnites){
-            for (int i = 0; i < nbUnites; i++)
-            {
-                _unites.Add(new Unite());
-            }
-        }
+        public Unite fabriquerUnite();
     }
 
     public class Vikings : Peuple, IVikings
     {
-
+        public Unite fabriquerUnite()
+        {
+            return new UniteVikings();
+        }
     }
 
     public class Gaulois : Peuple, IGaulois
     {
+        public Unite fabriquerUnite()
+        {
+            return new UniteGaulois();
+        }
     }
 
     public class Nains : Peuple, INains
     {
+        public Unite fabriquerUnite()
+        {
+            return new UniteNains();
+        }
     }
 }

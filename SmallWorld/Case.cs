@@ -28,6 +28,7 @@ namespace SmallWorld
     public interface IForet : ICase
     {
     }
+
     public abstract class Case : ICase
     {
     }
@@ -50,5 +51,5 @@ namespace SmallWorld
 
     public class Foret : Case, IForet
     {
-    } 
+    }
 }

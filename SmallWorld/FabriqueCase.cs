@@ -65,5 +65,32 @@ namespace SmallWorld
             {
             }
         }
+
+        public FabriqueCase()
+        {
+            this._m = new Montagne();
+            this._p = new Plaine();
+            this._d = new Desert();
+            this._e = new Eau();
+            this._f = new Foret();
+        }
+
+        public Case getCase(String c)
+        {
+            switch (c)
+            {
+                case "montagne":
+                    return this._m;
+                case "plaine":
+                    return this._p;
+                case "desert":
+                    return this._d;
+                case "eau":
+                    return this._e;
+                case "foret":
+                    return this._f;
+            }
+            return null;
+        }
     }
 }

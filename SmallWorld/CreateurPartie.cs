@@ -23,20 +23,54 @@ namespace SmallWorld
             set;
         }
 
-        public String _peupleA
+        private String _peupleA
         {
-            get;
-            set;
+            public get;
+            private set;
         }
 
-        public String _peupleB
+        private String _peupleB
         {
-            get;
-            set;
+            public get;
+            private set;
         }
 
         public CreateurPartie()
         {
+        }
+
+        public void addPeupleA(String pA)
+        {
+            this._peupleA = pA;
+            switch (pA)
+            {
+                case "vikings":
+                    Vikings.utilise();
+                    break;
+                case "gaulois":
+                    Gaulois.utilise();
+                    break;
+                case "nains":
+                    Gaulois.utilise();
+                    break;
+            }
+        }
+
+        public void addPeupleB(String pB)
+        {
+            this._peupleA = pB;
+            switch (pB)
+            {
+                case "vikings":
+                    Vikings.utilise();
+                    break;
+                case "gaulois":
+                    Gaulois.utilise();
+                    break;
+                case "nains":
+                    Gaulois.utilise();
+                    break;
+            }
         }
 
         public void construire()
