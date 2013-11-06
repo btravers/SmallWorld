@@ -37,10 +37,5 @@ namespace SmallWorld
         {
             this._cases = new Case[taille,taille];
         }
-
-        public Case getCase(int i, int j)
-        {
-            return this._cases[i,j];
-        }
     }
 }

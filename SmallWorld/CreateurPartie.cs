@@ -45,13 +45,13 @@ namespace SmallWorld
             switch (pA)
             {
                 case "vikings":
-                    Vikings.utilise();
+                    UniteVikings.utilise();
                     break;
                 case "gaulois":
-                    Gaulois.utilise();
+                    UniteGaulois.utilise();
                     break;
                 case "nains":
-                    Gaulois.utilise();
+                    UniteGaulois.utilise();
                     break;
             }
         }
@@ -62,13 +62,13 @@ namespace SmallWorld
             switch (pB)
             {
                 case "vikings":
-                    Vikings.utilise();
+                    UniteVikings.utilise();
                     break;
                 case "gaulois":
-                    Gaulois.utilise();
+                    UniteGaulois.utilise();
                     break;
                 case "nains":
-                    Gaulois.utilise();
+                    UniteGaulois.utilise();
                     break;
             }
         }

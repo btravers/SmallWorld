@@ -37,13 +37,5 @@ namespace SmallWorld
                 this._unites.Add(peuple.fabriquerUnite());
             }
         }
-
-        public void positionnerUnites(int x, int y)
-        {
-            foreach (Unite unite in this._unites)
-            {
-                unite.positionner(x, y);
-            }
-        }
     }
 }

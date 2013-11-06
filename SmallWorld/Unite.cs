@@ -103,6 +103,11 @@ namespace SmallWorld
             this._y = y;
         }
 
+        public bool estSurCase(int x, int y)
+        {
+            return (this._x == x && this._y == y);
+        }
+
         public bool peutDeplacer(int x, int y);
 
         public void deplacer(int x, int y)
@@ -141,6 +146,11 @@ namespace SmallWorld
     {
         private static bool _utilise = false;
 
+        public bool peutDeplacer(int x, int y)
+        {
+            return false;
+        }
+
         public static bool estUtilise()
         {
             return _utilise;
@@ -155,6 +165,11 @@ namespace SmallWorld
     public class UniteNains : Unite, IUniteNains
     {
         private static bool _utilise = false;
+
+        public bool peutDeplacer(int x, int y)
+        {
+            return false;
+        }
 
         public static bool estUtilise()
         {

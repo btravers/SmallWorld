@@ -35,12 +35,15 @@ namespace SmallWorld
             set;
         }
 
-        private int _premierJouer;
+        private int _premierJoueur;
+
+        private Unite _uniteSelectionne;
 
         public Partie()
         {
             Random rnd = new Random();
-            _premierJouer = rnd.Next(2);
+            _premierJoueur = rnd.Next(2);
+            this._uniteSelectionne = null;
         }
 
         public bool tourJoueurA()
@@ -48,6 +51,112 @@ namespace SmallWorld
             return (_toursRestant % 2) == 0;
         }
 
-        
+        public bool peutPositionnerUnitesJoueurA(int x, int y)
+        {
+            if (!(this._carte._cases[x, y] is Eau))
+            {
+                return true;
+            }
+            if (_jA._unites.First() is UniteVikings)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void positionnerUnitesJoueurA(int x, int y)
+        {
+            foreach (Unite unite in this._jA._unites)
+            {
+                unite.positionner(x, y);
+            }
+        }
+
+        public bool peutPositionnerUnitesJoueurB(int x, int y)
+        {
+            if (!(this._carte._cases[x, y] is Eau))
+            {
+                return true;
+            }
+            if (_jB._unites.First() is UniteVikings)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void positionnerUnitesJoueurB(int x, int y)
+        {
+            foreach (Unite unite in this._jB._unites)
+            {
+                unite.positionner(x, y);
+            }
+        }
+
+        public void selectCaseInit(int x, int y)
+        {
+            Joueur joueur;
+            if (this.tourJoueurA())
+            {
+                joueur = this._jA;
+            }
+            else
+            {
+                joueur = this._jB;
+            }
+            
+            foreach (Unite unite in joueur._unites)
+            {
+                if (unite.estSurCase(x, y))
+                {
+                    this._uniteSelectionne = unite;
+                }
+            }
+
+            this._uniteSelectionne = null;
+        }
+
+        public void selectCaseDest(int x, int y)
+        {
+            if (_uniteSelectionne.peutDeplacer(x, y))
+            {
+                Joueur joueur;
+                if (this.tourJoueurA())
+                {
+                    joueur = this._jB;
+                }
+                else
+                {
+                    joueur = this._jA;
+                }
+
+                List<Unite> adversaires = new List<Unite>();
+
+                foreach (Unite uniteAdvers in joueur._unites)
+                {
+                    if (uniteAdvers.estSurCase(x, y))
+                    {
+                        adversaires.Add(uniteAdvers);
+                    }
+                }
+
+                if (adversaires.Any())
+                {
+                    Unite meilleur = adversaires.First();
+                    foreach (Unite u in adversaires)
+                    {
+                        if (u._defense > meilleur._defense)
+                        {
+                            meilleur = u;
+                        }
+                    }
+                    this._uniteSelectionne.attaquer(meilleur);
+                }
+                else
+                {
+                    this._uniteSelectionne.deplacer(x, y);
+                }
+            }
+        }
     }
 }

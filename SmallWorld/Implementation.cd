@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="SmallWorld.Case">
     <Position X="5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
@@ -83,7 +83,7 @@
   <Class Name="SmallWorld.Carte">
     <Position X="1" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Carte.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -155,15 +155,15 @@
   <Class Name="SmallWorld.Unite">
     <Position X="5.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CBAAAgAICAQAACAAIQAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>CBAAAgAICAQAACAAIQAAAAAAAAAAAAAAAgAAAEAAAAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.Joueur">
-    <Position X="11.5" Y="4.75" Width="1.5" />
+    <Position X="11.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -182,7 +182,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEEAAAAAAQAAAAAAAAAgAAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AAAAAAAAAMEBAIAABQAAAAAAAAAgAAAAAAAAMAAEAAA=</HashCode>
       <FileName>Partie.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -209,8 +209,8 @@
       <Path>
         <Point X="12.5" Y="10.097" />
         <Point X="13.375" Y="10.097" />
-        <Point X="13.375" Y="2.85" />
-        <Point X="13" Y="2.85" />
+        <Point X="13.375" Y="3.523" />
+        <Point X="13" Y="3.523" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.277" Y="0.133" />
