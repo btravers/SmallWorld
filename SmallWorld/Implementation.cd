@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="Poids mouche">
+    <Position X="7.049" Y="0.958" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Stratégie">
+    <Position X="3.867" Y="5.313" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Fabrique">
+    <Position X="3.537" Y="9.416" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Monteur">
+    <Position X="12.877" Y="10.671" Height="0.75" Width="1.7" />
+  </Comment>
   <Class Name="SmallWorld.Case">
     <Position X="5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
@@ -145,7 +157,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.Peuple">
-    <Position X="2" Y="8.75" Width="1.5" />
+    <Position X="1.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Peuple.cs</FileName>
@@ -153,7 +165,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.Unite">
-    <Position X="5.75" Y="8.75" Width="1.5" />
+    <Position X="5.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CBAAAgAICAQAACAAIQAAAAAAAAAAAAAAAgAAAEAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
@@ -162,6 +174,16 @@
   </Class>
   <Class Name="SmallWorld.Joueur">
     <Position X="11.5" Y="6.75" Width="1.5" />
+    <AssociationLine Name="_unites" Type="SmallWorld.Unite" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="7.5" />
+        <Point X="6.812" Y="7.5" />
+        <Point X="6.812" Y="8.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.64" Y="0.129" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAABQAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Joueur.cs</FileName>
@@ -285,8 +307,8 @@
     <Position X="0.5" Y="10.75" Width="1.5" />
     <InheritanceLine Type="SmallWorld.Peuple" FixedFromPoint="true">
       <Path>
-        <Point X="2.75" Y="9.854" />
-        <Point X="2.75" Y="10.375" />
+        <Point X="2" Y="9.854" />
+        <Point X="2" Y="10.375" />
         <Point X="1.25" Y="10.375" />
         <Point X="1.25" Y="10.75" />
       </Path>

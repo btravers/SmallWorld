@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" dslVersion="1.0.0.0" Id="4f0d2f81-3a7c-4faf-8d9b-e8098ab6df49" name="Partie_joueurSuivant" mode="DotNet" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="f8346781-f02d-4590-aeea-48ed68acc4cd" name="Partie_joueurSuivant" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification Id="9502d87d-933b-43c9-b0c5-db462fa94c24" name="BehaviorExecutionSpecification">
+            <coveredLifelines>
+              <lifelineMoniker Id="074c1c2c-66bb-4645-bb93-0f3a4f6e17ba" LastKnownName="this : Partie" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="c9a7fd8b-334a-4926-8a0a-bd9491612cde" LastKnownName="ExecutionOccurrenceSpecification" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="e2bee9da-08a4-46e1-80e4-036125f51b85" LastKnownName="ExecutionOccurrenceSpecification" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="81b0fa3f-451d-48f9-8d4b-330158907639" LastKnownName="MessageOccurrenceSpecification" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="e2bee9da-08a4-46e1-80e4-036125f51b85" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="4ff07504-a207-46ee-9a3e-6a17fc90ef88" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="074c1c2c-66bb-4645-bb93-0f3a4f6e17ba" LastKnownName="this : Partie" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget Id="fe217fc3-4305-4302-aee9-c7a7a67394ac" name="LostFoundTarget" />
+          <messageOccurrenceSpecification Id="81b0fa3f-451d-48f9-8d4b-330158907639" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="074c1c2c-66bb-4645-bb93-0f3a4f6e17ba" LastKnownName="this : Partie" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="c9a7fd8b-334a-4926-8a0a-bd9491612cde" name="ExecutionOccurrenceSpecification">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="f35803be-d204-4e45-a490-8211ec7154b3" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="074c1c2c-66bb-4645-bb93-0f3a4f6e17ba" LastKnownName="this : Partie" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="074c1c2c-66bb-4645-bb93-0f3a4f6e17ba" name="this : Partie" isActor="false" lifelineDisplayName="this : Partie" referencedInstance="(Assembly=&quot;$(a256e0f3-4234-4606-afe5-8fd584efcfcb.OutputPathUri)&quot; Namespace=SmallWorld Type=Partie ObjectInstance=&quot;Object instance 1&quot;)" referencedType="SmallWorld‎.Partie">
+            <referencesInternal>
+              <reference Id="ed96a6f8-e29e-4893-857c-8e38ceb065b6" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SmallWorld)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a256e0f3-4234-4606-afe5-8fd584efcfcb.OutputPathUri)&amp;quot; Namespace=SmallWorld Type=Partie)&quot;)" tag="DGQL" />
+              <reference Id="5140147b-66e6-440b-bdde-f4188ae99ab4" handle="(Assembly=&quot;$(a256e0f3-4234-4606-afe5-8fd584efcfcb.OutputPathUri)&quot; Namespace=SmallWorld Type=Partie)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="e2bee9da-08a4-46e1-80e4-036125f51b85" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="c9a7fd8b-334a-4926-8a0a-bd9491612cde" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="ce7e96d3-4abc-4d22-8839-ceeed774093e" name="joueurSuivant" messageKind="Found" messageSort="AsynchCall" createSelfMessage="false">
+            <referencesInternal>
+              <reference Id="09c19698-c00a-4299-b222-72d6fa3a43a9" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SmallWorld)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a256e0f3-4234-4606-afe5-8fd584efcfcb.OutputPathUri)&amp;quot; Namespace=SmallWorld Type=Partie)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(a256e0f3-4234-4606-afe5-8fd584efcfcb.OutputPathUri)&amp;quot; Namespace=SmallWorld Type=Partie Member=joueurSuivant)&quot;)" tag="DGQL" />
+              <reference Id="7a52df37-55ab-49f1-99dd-2c366d7ca196" handle="(Assembly=&quot;$(a256e0f3-4234-4606-afe5-8fd584efcfcb.OutputPathUri)&quot; Namespace=SmallWorld Type=Partie Member=joueurSuivant)" tag="DGML" />
+            </referencesInternal>
+            <sendEvent>
+              <lostFoundTargetMoniker Id="fe217fc3-4305-4302-aee9-c7a7a67394ac" LastKnownName="LostFoundTarget" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="81b0fa3f-451d-48f9-8d4b-330158907639" LastKnownName="MessageOccurrenceSpecification" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="4ff07504-a207-46ee-9a3e-6a17fc90ef88" name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="f35803be-d204-4e45-a490-8211ec7154b3" name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+</SequenceDesignerModel>
