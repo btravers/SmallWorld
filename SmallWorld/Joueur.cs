@@ -17,6 +17,12 @@ namespace SmallWorld
             set;
         }
 
+        public int _points
+        {
+            get;
+            set;
+        }
+
         public Joueur(String typePeuple, int nbUnites)
         {
             Peuple peuple = null;
@@ -35,6 +41,43 @@ namespace SmallWorld
             for (int i = 0; i < nbUnites; i++)
             {
                 this._unites.Add(peuple.fabriquerUnite());
+            }
+        }
+
+        public void ajouterPoints(int pts)
+        {
+            this._points += pts;
+        }
+
+        public Unite getMeilleurUnite(int x, int y)
+        {
+            List<Unite> unites = new List<Unite>();
+
+            foreach (Unite unite in this._unites)
+            {
+                if (unite.estSurCase(x, y))
+                {
+                    unites.Add(unite);
+                }
+            }
+
+            if (unites.Any())
+            {
+                Unite meilleur = unites.First();
+
+                foreach (Unite unite in unites)
+                {
+                    if (unite._defense > meilleur._defense)
+                    {
+                        meilleur = unite;
+                    }
+                }
+
+                return meilleur;
+            }
+            else
+            {
+                return null;
             }
         }
     }

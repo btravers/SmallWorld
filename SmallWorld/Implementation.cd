@@ -155,15 +155,15 @@
   <Class Name="SmallWorld.Unite">
     <Position X="5.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CBAAAgAICAQAACAAIQAAAAAAAAAAAAAAAgAAAEAAAAA=</HashCode>
+      <HashCode>CBAAAgAICAQAACAAIQAAAAAAAAAAAAAAAgAAAEAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.Joueur">
-    <Position X="11.5" Y="6" Width="1.5" />
+    <Position X="11.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAABQAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -182,7 +182,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAMEBAIAABQAAAAAAAAAgAAAAAAAAMAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAMACIAAABQAAAAAAAAAgAAAAAAAAMAAEBhA=</HashCode>
       <FileName>Partie.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -209,8 +209,8 @@
       <Path>
         <Point X="12.5" Y="10.097" />
         <Point X="13.375" Y="10.097" />
-        <Point X="13.375" Y="3.523" />
-        <Point X="13" Y="3.523" />
+        <Point X="13.375" Y="3.715" />
+        <Point X="13" Y="3.715" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.277" Y="0.133" />
@@ -260,7 +260,7 @@
   <Class Name="SmallWorld.UniteVikings">
     <Position X="4.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -268,7 +268,7 @@
   <Class Name="SmallWorld.UniteGaulois">
     <Position X="5.75" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -276,7 +276,7 @@
   <Class Name="SmallWorld.UniteNains">
     <Position X="7.25" Y="12.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

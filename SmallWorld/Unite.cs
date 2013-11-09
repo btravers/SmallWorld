@@ -67,6 +67,8 @@ namespace SmallWorld
             this._pm = 1;
         }
 
+        public bool peutPositionner(int x, int y, Case c);
+
         public void positionner(int x, int y)
         {
             this._x = x;
@@ -78,7 +80,7 @@ namespace SmallWorld
             return (this._x == x && this._y == y);
         }
 
-        public bool peutDeplacer(int x, int y);
+        public bool peutDeplacer(int x, int y, Case c);
 
         public void deplacer(int x, int y)
         {
@@ -95,6 +97,11 @@ namespace SmallWorld
     public class UniteVikings : Unite, IUniteVikings
     {
         private static bool _utilise = false;
+
+        public bool peutPositionner(int x, int y, Case c)
+        {
+            return true;
+        }
 
         public bool peutDeplacer(int x, int y)
         {
@@ -116,6 +123,15 @@ namespace SmallWorld
     {
         private static bool _utilise = false;
 
+        public bool peutPositionner(int x, int y, Case c)
+        {
+            if (c is Eau)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public bool peutDeplacer(int x, int y)
         {
             return false; // TODO
@@ -135,6 +151,15 @@ namespace SmallWorld
     public class UniteNains : Unite, IUniteNains
     {
         private static bool _utilise = false;
+
+        public bool peutPositionner(int x, int y, Case c)
+        {
+            if(c is Eau)
+            {
+                return false;
+            }
+            return true;
+        }
 
         public bool peutDeplacer(int x, int y)
         {

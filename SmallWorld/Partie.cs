@@ -37,31 +37,27 @@ namespace SmallWorld
 
         private int _premierJoueur;
 
+        private int _joueur;
+
         private Unite _uniteSelectionnee;
+
 
         public Partie()
         {
             Random rnd = new Random();
-            _premierJoueur = rnd.Next(2);
+            this._premierJoueur = rnd.Next(2);
+            this._joueur = this._premierJoueur;
             this._uniteSelectionnee = null;
         }
 
-        public bool tourJoueurA()
+        public bool joueJoueurA()
         {
-            return (_toursRestant % 2) == 0;
+            return _joueur == 0;
         }
 
         public bool peutPositionnerUnitesJoueurA(int x, int y)
         {
-            if (!(this._carte._cases[x, y] is Eau))
-            {
-                return true;
-            }
-            if (_jA._unites.First() is UniteVikings)
-            {
-                return true;
-            }
-            return false;
+            return this._jA._unites.First().peutPositionner(x, y, this._carte._cases[x,y]);
         }
 
         public void positionnerUnitesJoueurA(int x, int y)
@@ -74,15 +70,7 @@ namespace SmallWorld
 
         public bool peutPositionnerUnitesJoueurB(int x, int y)
         {
-            if (!(this._carte._cases[x, y] is Eau))
-            {
-                return true;
-            }
-            if (_jB._unites.First() is UniteVikings)
-            {
-                return true;
-            }
-            return false;
+            return this._jB._unites.First().peutPositionner(x, y, this._carte._cases[x, y]);
         }
 
         public void positionnerUnitesJoueurB(int x, int y)
@@ -93,10 +81,21 @@ namespace SmallWorld
             }
         }
 
-        public void selectCaseInit(int x, int y)
+        public void joueurSuivant()
         {
+            this._joueur = (this._joueur + 1) % 2;
+            if (this._joueur == this._premierJoueur)
+            {
+                this._toursRestant--;
+            }
+        }
+
+        public void selectCaseInitiale(int x, int y)
+        {
+            this._uniteSelectionnee = null;
+
             Joueur joueur;
-            if (this.tourJoueurA())
+            if (this.joueJoueurA())
             {
                 joueur = this._jA;
             }
@@ -110,18 +109,17 @@ namespace SmallWorld
                 if (unite.estSurCase(x, y))
                 {
                     this._uniteSelectionnee = unite;
+                    break;
                 }
             }
-
-            this._uniteSelectionnee = null;
         }
 
-        public void selectCaseDest(int x, int y)
+        public void selectCaseDestination(int x, int y)
         {
-            if (_uniteSelectionnee.peutDeplacer(x, y))
+            if (_uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x,y]))
             {
                 Joueur joueur;
-                if (this.tourJoueurA())
+                if (this.joueJoueurA())
                 {
                     joueur = this._jB;
                 }
@@ -130,33 +128,19 @@ namespace SmallWorld
                     joueur = this._jA;
                 }
 
-                List<Unite> adversaires = new List<Unite>();
+                Unite uniteAdverse = joueur.getMeilleurUnite(x, y);
 
-                foreach (Unite uniteAdvers in joueur._unites)
+                if (uniteAdverse != null)
                 {
-                    if (uniteAdvers.estSurCase(x, y))
-                    {
-                        adversaires.Add(uniteAdvers);
-                    }
-                }
-
-                if (adversaires.Any())
-                {
-                    Unite meilleur = adversaires.First();
-                    foreach (Unite u in adversaires)
-                    {
-                        if (u._defense > meilleur._defense)
-                        {
-                            meilleur = u;
-                        }
-                    }
-                    this._uniteSelectionnee.attaquer(meilleur);
+                    this._uniteSelectionnee.attaquer(uniteAdverse);
                 }
                 else
                 {
                     this._uniteSelectionnee.deplacer(x, y);
                 }
             }
+
+            this._uniteSelectionnee = null;
         }
     }
 }
