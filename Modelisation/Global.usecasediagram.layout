@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Global">
+  <useCaseModelRootMoniker Id="806e8909-0909-4fad-b3fb-9462f8279961" />
+  <nestedChildShapes>
+    <actorShape Id="7861d425-f4fd-45b9-8d1c-4485c26c60cc" absoluteBounds="2.375, 2.25, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="3b848f1b-8079-4ced-88ad-4d0f62204005" LastKnownName="Joueur" />
+      <relativeChildShapes />
+    </actorShape>
+    <actorShape Id="65600875-0110-441c-b278-569cc549fbe0" absoluteBounds="2, 3.875, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="8408ec37-aaa6-40bc-b08c-6d5ee9b3c077" LastKnownName="JoueurA" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseGeneralizationConnector edgePoints="[(2.30769230769231 : 3.875); (2.56730769230769 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+      <generalizationMoniker Id="e146b852-fe28-461a-923d-357023f85913" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="65600875-0110-441c-b278-569cc549fbe0" />
+        <actorShapeMoniker Id="7861d425-f4fd-45b9-8d1c-4485c26c60cc" />
+      </nodes>
+    </useCaseGeneralizationConnector>
+    <actorShape Id="c2addd02-f810-4908-82f9-901b3eae7844" absoluteBounds="2.875, 3.875, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="8478fbc9-a346-4a6f-a8cb-b79f514dd2cf" LastKnownName="JoueurB" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseGeneralizationConnector edgePoints="[(3.04807692307692 : 3.875); (2.70192307692308 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+      <generalizationMoniker Id="3dd0a13e-4588-4412-9ad8-245d08c8f08a" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="c2addd02-f810-4908-82f9-901b3eae7844" />
+        <actorShapeMoniker Id="7861d425-f4fd-45b9-8d1c-4485c26c60cc" />
+      </nodes>
+    </useCaseGeneralizationConnector>
+    <SubsystemShape Id="3932415c-3fce-4d7e-acee-b51b53b27c1c" absoluteBounds="5.5, 1.875, 3, 2.625" customColor="White">
+      <subsystemMoniker Id="a8770f8b-918f-4034-b408-b14bd1849bcc" LastKnownName="Global" />
+      <nestedChildShapes>
+        <useCaseShape Id="dd2e7cdf-3f85-44f6-9170-4deb7ce9a268" absoluteBounds="6.5, 2.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="a7775798-90fa-44cf-9169-fd86a6bdb174" LastKnownName="Créer partie" />
+          <relativeChildShapes />
+        </useCaseShape>
+        <useCaseShape Id="bf4140e9-8490-4b74-87d6-fb423f64fe58" absoluteBounds="6.5, 3.5, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="23ea070e-713b-4344-bf4c-d6f26e28675e" LastKnownName="Jouer" />
+          <relativeChildShapes />
+        </useCaseShape>
+      </nestedChildShapes>
+    </SubsystemShape>
+    <useCaseAssociationConnector edgePoints="[(2.875 : 2.52142857142857); (6.50718887259337 : 2.83275904622229)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="a492a986-f3cd-4c67-9555-481349db1976" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="7861d425-f4fd-45b9-8d1c-4485c26c60cc" />
+        <useCaseShapeMoniker Id="dd2e7cdf-3f85-44f6-9170-4deb7ce9a268" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(2.875 : 2.57142857142857); (6.56587842893777 : 3.62596526541079)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="b6bb7953-7f47-45a7-934e-1ffb24ce15f7" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="7861d425-f4fd-45b9-8d1c-4485c26c60cc" />
+        <useCaseShapeMoniker Id="bf4140e9-8490-4b74-87d6-fb423f64fe58" />
+      </nodes>
+    </useCaseAssociationConnector>
+  </nestedChildShapes>
+</useCaseDiagram>

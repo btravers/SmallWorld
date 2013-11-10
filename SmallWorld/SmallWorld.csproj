@@ -52,8 +52,8 @@
     <Compile Include="Unite.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Implementation.cd" />
-    <None Include="Interface.cd" />
+    <None Include="Diagrammes de classe\Implementation.cd" />
+    <None Include="Diagrammes de classe\Interface.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
