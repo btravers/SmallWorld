@@ -83,6 +83,20 @@ namespace SmallWorld
 
         public void joueurSuivant()
         {
+            if (this.joueJoueurA())
+            {
+                foreach (Unite unite in this._jA._unites)
+                {
+                    unite._passeTour = false;
+                }
+            }
+            else 
+            {
+                foreach (Unite unite in this._jB._unites)
+                {
+                    unite._passeTour = false;
+                }
+            }
             this._joueur = (this._joueur + 1) % 2;
             if (this._joueur == this._premierJoueur)
             {
@@ -90,7 +104,7 @@ namespace SmallWorld
             }
         }
 
-        public void selectCaseInitiale(int x, int y)
+        public List<Unite> selectCaseInitiale(int x, int y)
         {
             this._uniteSelectionnee = null;
 
@@ -103,15 +117,26 @@ namespace SmallWorld
             {
                 joueur = this._jB;
             }
-            
+
+            List<Unite> unitesCase = new List<Unite>(); 
+
             foreach (Unite unite in joueur._unites)
             {
                 if (unite.estSurCase(x, y))
                 {
-                    this._uniteSelectionnee = unite;
-                    break;
+                    if (!unite._passeTour)
+                    {
+                        unitesCase.Add(unite);
+                    }
                 }
             }
+
+            return unitesCase;
+        }
+
+        public void selectUnite(Unite unite)
+        {
+            this._uniteSelectionnee = unite;
         }
 
         public void selectCaseDestination(int x, int y)

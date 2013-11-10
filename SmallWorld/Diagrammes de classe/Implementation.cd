@@ -167,7 +167,7 @@
   <Class Name="SmallWorld.Unite">
     <Position X="5.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CBAAAgAICAQAACAAIQAAAAAAAAAAAAAAAgAAAEAAEAA=</HashCode>
+      <HashCode>CBAAAgAICAQAACAAIQAAAAAAAAAQAAAAQgAAAEAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -204,7 +204,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAMACIAAABQAAAAAAAAAgAAAAAAAAMAAEBhA=</HashCode>
+      <HashCode>AAAAAAAAAMACIAAABQAAAAAAAAAgAAAEAAAAMAAEBhA=</HashCode>
       <FileName>Partie.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -231,8 +231,8 @@
       <Path>
         <Point X="12.5" Y="10.097" />
         <Point X="13.375" Y="10.097" />
-        <Point X="13.375" Y="3.715" />
-        <Point X="13" Y="3.715" />
+        <Point X="13.375" Y="3.811" />
+        <Point X="13" Y="3.811" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.277" Y="0.133" />
@@ -280,7 +280,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.UniteVikings">
-    <Position X="4.25" Y="12.75" Width="1.5" />
+    <Position X="4.25" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
@@ -288,7 +288,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.UniteGaulois">
-    <Position X="5.75" Y="12.75" Width="1.5" />
+    <Position X="5.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
@@ -296,7 +296,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmallWorld.UniteNains">
-    <Position X="7.25" Y="12.75" Width="1.5" />
+    <Position X="7.25" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>

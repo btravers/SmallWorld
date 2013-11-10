@@ -36,6 +36,20 @@
       <SubType>Content</SubType>
       <DependentUpon>Global.usecasediagram</DependentUpon>
     </Content>
+    <Content Include="MonteurPartieDemo_addCarte.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MonteurPartieDemo_addCarte.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>MonteurPartieDemo_addCarte.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="MonteurPartieDemo_addJoueurs.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MonteurPartieDemo_addJoueurs.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>MonteurPartieDemo_addJoueurs.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="TourDeJeu.sequencediagram">
       <SubType>Content</SubType>
     </Content>

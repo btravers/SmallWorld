@@ -59,6 +59,12 @@ namespace SmallWorld
             set;
         }
 
+        public bool _passeTour
+        {
+            get;
+            set;
+        }
+
         public Unite()
         {
             this._attaque = 2;
@@ -91,6 +97,11 @@ namespace SmallWorld
         public void attaquer(Unite adversaire)
         {
             // TODO
+        }
+
+        public void passerTour()
+        {
+            this._passeTour = true;
         }
     }
 
