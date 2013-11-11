@@ -64,6 +64,20 @@
       <SubType>Content</SubType>
       <DependentUpon>TourDeJeu.usecasediagram</DependentUpon>
     </Content>
+    <Content Include="DeroulementJeu.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DeroulementJeu.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DeroulementJeu.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="DeroulementTour.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DeroulementTour.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DeroulementTour.activitydiagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="CreationPartie.usecasediagram">
       <SubType>Content</SubType>
