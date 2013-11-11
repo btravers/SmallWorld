@@ -86,6 +86,11 @@ namespace SmallWorld
             return (this._x == x && this._y == y);
         }
 
+        public bool estAPortee(int x, int y)
+        {
+            return this._pm - Math.Abs(this._x - x) + Math.Abs(this._y - y) > 0;
+        }
+
         public bool peutDeplacer(int x, int y, Case c);
 
         public void deplacer(int x, int y)

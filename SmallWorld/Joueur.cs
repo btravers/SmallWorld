@@ -80,5 +80,10 @@ namespace SmallWorld
                 return null;
             }
         }
+
+        public void perdreUnite(Unite u)
+        {
+            this._unites.Remove(u);
+        }
     }
 }

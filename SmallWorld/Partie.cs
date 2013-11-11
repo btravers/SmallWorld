@@ -141,7 +141,7 @@ namespace SmallWorld
 
         public void selectCaseDestination(int x, int y)
         {
-            if (_uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x,y]))
+            if (_uniteSelectionnee.estAPortee(x, y))
             {
                 Joueur joueur;
                 if (this.joueJoueurA())
@@ -161,7 +161,10 @@ namespace SmallWorld
                 }
                 else
                 {
-                    this._uniteSelectionnee.deplacer(x, y);
+                    if (_uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
+                    {
+                        this._uniteSelectionnee.deplacer(x, y);
+                    }
                 }
             }
 
