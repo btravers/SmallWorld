@@ -57,10 +57,7 @@ namespace SmallWorld
             {
                 if (unite.estSurCase(x, y))
                 {
-                    if (! unite._passeTour)
-                    {
-                        unites.Add(unite);
-                    }
+                    unites.Add(unite);
                 }
             }
 
