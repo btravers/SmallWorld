@@ -49,7 +49,7 @@ namespace SmallWorld
             this._points += pts;
         }
 
-        public Unite getMeilleurUnite(int x, int y)
+        public Unite obtenirMeilleurUnite(int x, int y)
         {
             List<Unite> unites = new List<Unite>();
 

@@ -167,7 +167,7 @@
   <Class Name="SmallWorld.Unite">
     <Position X="5.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CBAAAgAICAQAACAAIQAAAAAAAAAQAAAAQgAAAEAAEAA=</HashCode>
+      <HashCode>CBAAAgAICQQAACAAIQAAAAAAAAAQAAAAQgAAAEAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -185,7 +185,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAgAAAAABQAAAAAAAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAgAAAAABQAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Joueur.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>

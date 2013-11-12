@@ -51,7 +51,7 @@ namespace SmallWorld
                     UniteGaulois.utilise();
                     break;
                 case "nains":
-                    UniteGaulois.utilise();
+                    UniteNains.utilise();
                     break;
             }
         }
@@ -59,18 +59,6 @@ namespace SmallWorld
         public void addPeupleB(String pB)
         {
             this._peupleA = pB;
-            switch (pB)
-            {
-                case "vikings":
-                    UniteVikings.utilise();
-                    break;
-                case "gaulois":
-                    UniteGaulois.utilise();
-                    break;
-                case "nains":
-                    UniteGaulois.utilise();
-                    break;
-            }
         }
 
         public void construire()

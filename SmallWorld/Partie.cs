@@ -153,7 +153,7 @@ namespace SmallWorld
                     joueur = this._jA;
                 }
 
-                Unite uniteAdverse = joueur.getMeilleurUnite(x, y);
+                Unite uniteAdverse = joueur.obtenirMeilleurUnite(x, y);
 
                 if (uniteAdverse != null)
                 {
