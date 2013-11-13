@@ -6,6 +6,9 @@
 \usepackage{graphicx}
 \usepackage{float}
 
+\usepackage[toc,page]{appendix} 
+\usepackage{fullpage}
+
 \title{\bsc{INSA} de Rennes \\ Quatrième année - Informatique \\ \bigskip \hrule \bigskip Projet d'Analyse, Conception et POO \\ \bigskip Rapport de conception \bigskip \hrule}
 \author{Mickaël \bsc{Olivier}, Benoit \bsc{Travers}}
 
@@ -21,26 +24,107 @@
 
 \section*{Introduction}
 
+\newpage
+
+
+
 \section{Cas d'utilisation}
 
-	\subsection{Création de partie}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{global_usecase.png}
+\caption{\label{fig:global_usecase}Diagramme de cas d'utilisation global}
+\end{figure}
 
-	\subsection{Tour de jeu}
+\subsection{Création de partie}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{creation_usecase.png}
+\caption{\label{fig:creation_usecase}Diagramme de cas d'utilisation : Création de la partie}
+\end{figure}
+
+\subsection{Tour de jeu}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{tour_usecase.png}
+\caption{\label{fig:tour_usecase}Diagramme de cas d'utilisation : Tour de Jeu}
+\end{figure}
+
+
+
+\newpage
 
 \section{Diagrammes de classe}
 	
-	\subsection{Modélisation globale du jeu}
+\subsection{Modélisation globale du jeu}
 
-	\subsection{Patrons utilisés}
+Annexe \ref{sec:annexe 1}
+
+\subsection{Patrons utilisés}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{fabrique.png}
+\caption{\label{fig:fabrique}Fabrique}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{monteur.png}
+\caption{\label{fig:monteur}Monteur}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{poids_mouche.png}
+\caption{\label{fig:poids_mouche}Poids-Mouche}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{strategie.png}
+\caption{\label{fig:strategie}Stratégie}
+\end{figure}
+
+
+
+\newpage
 
 \section{Diagramme d'états-transitions}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{diagramme_etats-transitions.png}
+\caption{\label{fig:etats-transitions}Diagramme d'états-transitions}
+\end{figure}
+
+
+\newpage
+
 \section{Diagrammes d'intéraction}
 
-	\subsection{Création de partie}
+\subsection{Création de partie}
 
-	\subsection{Déplacer ou attaquer une unité}
+\subsection{Déplacer ou attaquer une unité}
+
+
+
+\newpage
 
 \section*{Conclusion}
+
+\newpage
+
+\appendix
+
+\section{Diagramme de classes}
+\label{sec:annexe 1}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{implementation.png}
+\end{figure}
 
 \end{document}

@@ -22,6 +22,13 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="CreateurPartie_addPeupleA.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CreateurPartie_addPeupleA.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>CreateurPartie_addPeupleA.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="CreationPartie.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -63,20 +70,6 @@
     <Content Include="TourDeJeu.usecasediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>TourDeJeu.usecasediagram</DependentUpon>
-    </Content>
-    <Content Include="DeroulementJeu.activitydiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="DeroulementJeu.activitydiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>DeroulementJeu.activitydiagram</DependentUpon>
-    </Content>
-    <Content Include="DeroulementTour.activitydiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="DeroulementTour.activitydiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>DeroulementTour.activitydiagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="CreationPartie.usecasediagram">

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.12)  12 NOV 2013 17:55
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.12)  13 NOV 2013 23:19
 entering extended mode
 **C:/Users/Benoit*Travers/Documents/GitHub/SmallWorld/Rapport*de*conception/rap
 port.tex
@@ -129,48 +129,58 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks21
 \@floatcapt=\box27
 )
+("C:\Users\Benoit Travers\Documents\Latex\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count93
+\c@@ppsavesec=\count94
+\c@@ppsaveapp=\count95
+)
+("C:\Users\Benoit Travers\Documents\Latex\tex\latex\preprint\fullpage.sty"
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip43
+)
 ("C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\Rapport de conception\rap
 port.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
  ("C:\Users\Benoit Travers\Documents\Latex\tex\latex\ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-LaTeX Info: Redefining \degres on input line 12.
-LaTeX Info: Redefining \dots on input line 12.
-LaTeX Info: Redefining \up on input line 12.
+LaTeX Info: Redefining \degres on input line 15.
+LaTeX Info: Redefining \dots on input line 15.
+LaTeX Info: Redefining \up on input line 15.
  ("C:\Users\Benoit Travers\Documents\Latex\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count93
+\scratchcounter=\count96
 \scratchdimen=\dimen108
 \scratchbox=\box28
-\nofMPsegments=\count94
-\nofMParguments=\count95
+\nofMPsegments=\count97
+\nofMParguments=\count98
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count96
+\MPscratchCnt=\count99
 \MPscratchDim=\dimen109
-\MPnumerator=\count97
-\makeMPintoPDFobject=\count98
+\MPnumerator=\count100
+\makeMPintoPDFobject=\count101
 \everyMPtoPDFconversion=\toks23
 ) ("C:\Users\Benoit Travers\Documents\Latex\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 14.
+(Font)              <12> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 14.
+(Font)              <8> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 14.
+(Font)              <6> on input line 17.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
@@ -182,31 +192,98 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 3.
 )
 \tf@toc=\write3
- [2] [3]
+ [2] [3] <global_usecase.png, id=18, 542.77782pt x 246.1697pt>
+File: global_usecase.png Graphic file (type png)
+
+<use global_usecase.png>
+Package pdftex.def Info: global_usecase.png used on input line 35.
+(pdftex.def)             Requested size: 452.9679pt x 205.4439pt.
+
+<creation_usecase.png, id=20, 749.04843pt x 405.76593pt>
+File: creation_usecase.png Graphic file (type png)
+
+<use creation_usecase.png>
+Package pdftex.def Info: creation_usecase.png used on input line 43.
+(pdftex.def)             Requested size: 452.9679pt x 245.3808pt.
+ <tour_usecase.png, id=21, 650.43pt x 390.70969pt>
+File: tour_usecase.png Graphic file (type png)
+
+<use tour_usecase.png>
+Package pdftex.def Info: tour_usecase.png used on input line 51.
+(pdftex.def)             Requested size: 452.9679pt x 272.09985pt.
+ [4 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+global_usecase.png> <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rappor
+t de conception/creation_usecase.png>] [5 <C:/Users/Benoit Travers/Documents/Gi
+tHub/SmallWorld/Rapport de conception/tour_usecase.png>]
+<fabrique.png, id=33, 722.7pt x 578.16pt>
+File: fabrique.png Graphic file (type png)
+ <use fabrique.png>
+Package pdftex.def Info: fabrique.png used on input line 69.
+(pdftex.def)             Requested size: 452.9679pt x 362.37247pt.
+
+<monteur.png, id=34, 721.94719pt x 420.06938pt>
+File: monteur.png Graphic file (type png)
+ <use monteur.png>
+Package pdftex.def Info: monteur.png used on input line 75.
+(pdftex.def)             Requested size: 452.9679pt x 263.56186pt.
+ [6 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+fabrique.png>] <poids_mouche.png, id=39, 732.48656pt x 300.3722pt>
+File: poids_mouche.png Graphic file (type png)
+ <use poids_mouche.png>
+Package pdftex.def Info: poids_mouche.png used on input line 81.
+(pdftex.def)             Requested size: 452.9679pt x 185.75215pt.
+
+<strategie.png, id=40, 395.22656pt x 276.28218pt>
+File: strategie.png Graphic file (type png)
+ <use strategie.png>
+Package pdftex.def Info: strategie.png used on input line 87.
+(pdftex.def)             Requested size: 317.07614pt x 221.65417pt.
+ [7 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+monteur.png> <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de co
+nception/poids_mouche.png>] [8 <C:/Users/Benoit Travers/Documents/GitHub/SmallW
+orld/Rapport de conception/strategie.png>]
+<diagramme_etats-transitions.png, id=51, 844.8307pt x 597.76814pt>
+File: diagramme_etats-transitions.png Graphic file (type png)
+
+<use diagramme_etats-transitions.png>
+Package pdftex.def Info: diagramme_etats-transitions.png used on input line 99.
+
+(pdftex.def)             Requested size: 452.9679pt x 320.50056pt.
+ [9 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+diagramme_etats-transitions.png>] [10]
+[11] <implementation.png, id=61, 590.95781pt x 1176.64594pt>
+File: implementation.png Graphic file (type png)
+
+<use implementation.png>
+Package pdftex.def Info: implementation.png used on input line 127.
+(pdftex.def)             Requested size: 317.07614pt x 631.33966pt.
+ [12 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception
+/implementation.png>]
 ("C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\Rapport de conception\rap
 port.aux") ) 
 Here is how much of TeX's memory you used:
- 2833 strings out of 493921
- 37621 string characters out of 3142442
- 95854 words of memory out of 3000000
- 6114 multiletter control sequences out of 15000+200000
- 13115 words of font info for 32 fonts, out of 3000000 for 9000
+ 3015 strings out of 493921
+ 40659 string characters out of 3142442
+ 97417 words of memory out of 3000000
+ 6278 multiletter control sequences out of 15000+200000
+ 13788 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,6n,24p,405b,607s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
 jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Benoit Travers\App
-Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\Benoit Travers\App
+Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users
 \Benoit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
-x1440.pk> <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkn
-appen\ec\dpi600\eccc1200.pk> <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2.9\
-fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Benoit Travers\AppDat
-a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk> <C:\Users\Be
-noit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc17
-28.pk>
-Output written on rapport.pdf (3 pages, 65780 bytes).
+x1000.pk> <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkn
+appen\ec\dpi600\ecbx1440.pk> <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\Benoit Travers\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Be
+noit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm17
+28.pk> <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
+en\ec\dpi600\eccc1728.pk>
+Output written on rapport.pdf (12 pages, 497914 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
+ 292 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
