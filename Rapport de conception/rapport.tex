@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 
-\usepackage[toc,page]{appendix} 
+\usepackage[titletoc,toc,title]{appendix} 
 \usepackage{fullpage}
 
 \title{\bsc{INSA} de Rennes \\ Quatrième année - Informatique \\ \bigskip \hrule \bigskip Projet d'Analyse, Conception et POO \\ \bigskip Rapport de conception \bigskip \hrule}
@@ -32,7 +32,7 @@
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{global_usecase.png}
+\includegraphics[width=1\textwidth]{usecase_global.png}
 \caption{\label{fig:global_usecase}Diagramme de cas d'utilisation global}
 \end{figure}
 
@@ -40,7 +40,7 @@
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{creation_usecase.png}
+\includegraphics[width=1\textwidth]{usecase_creation.png}
 \caption{\label{fig:creation_usecase}Diagramme de cas d'utilisation : Création de la partie}
 \end{figure}
 
@@ -48,7 +48,7 @@
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{tour_usecase.png}
+\includegraphics[width=1\textwidth]{usecase_tour.png}
 \caption{\label{fig:tour_usecase}Diagramme de cas d'utilisation : Tour de Jeu}
 \end{figure}
 
@@ -60,7 +60,7 @@
 	
 \subsection{Modélisation globale du jeu}
 
-Annexe \ref{sec:diagramme_classe}
+Annexe \ref{app:diagramme_classe}
 
 \subsection{Patrons utilisés}
 
@@ -107,7 +107,7 @@ Annexe \ref{sec:diagramme_classe}
 
 \subsection{Création de partie}
 
-Annexe \ref{sec:creation_partie}
+Annexe \ref{app:creation_partie}
 
 \begin{figure}[H]
 \centering
@@ -117,13 +117,13 @@ Annexe \ref{sec:creation_partie}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{addCarte.png}
+\includegraphics[width=0.6\textwidth]{addCarte.png}
 \caption{\label{fig:addCarte}Diagramme de séquence : Ajouter la carte}
 \end{figure}
 
 \subsection{Déplacer ou attaquer une unité}
 
-Annexe \ref{sec:tour}
+Annexe \ref{app:tour}
 
 
 
@@ -133,30 +133,34 @@ Annexe \ref{sec:tour}
 
 \newpage
 
-\appendix
+\begin{appendices}
 
-\section{Diagramme de classes}
-\label{sec:diagramme_classe}
+\section{Diagramme de classes} \label{app:diagramme_classe}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{implementation.png}
+\includegraphics[width=0.7\textwidth]{diagramme_classes.png}
 \end{figure}
 
-\section{Diagramme de séquence : Création de partie}
-\label{sec:creation_partie}
+\newpage
+\section{Diagramme de séquence : Création de partie} \label{app:creation_partie}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{creation.png}
 \end{figure}
 
-\section{Diagramme de séquence : Déplacer ou attaquer une unité}
-\label{sec:tour}
+\newpage
+\section{Diagramme de séquence : Déplacer ou attaquer une unité} \label{app:tour}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{tourDeJeu.png}
+\includegraphics[width=0.65\textwidth]{tourDeJeu.png}
 \end{figure}
+
+\end{appendices}
+
+\newpage
+\listoffigures
 
 \end{document}
