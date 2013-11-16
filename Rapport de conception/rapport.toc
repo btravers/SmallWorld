@@ -2,14 +2,14 @@
 \contentsline {section}{\numberline {1}Cas d'utilisation}{4}
 \contentsline {subsection}{\numberline {1.1}Cr\IeC {\'e}ation de partie}{4}
 \contentsline {subsection}{\numberline {1.2}Tour de jeu}{5}
-\contentsline {section}{\numberline {2}Diagrammes de classe}{6}
-\contentsline {subsection}{\numberline {2.1}Mod\IeC {\'e}lisation globale du jeu}{6}
-\contentsline {subsection}{\numberline {2.2}Patrons utilis\IeC {\'e}s}{6}
-\contentsline {section}{\numberline {3}Diagramme d'\IeC {\'e}tats-transitions}{9}
-\contentsline {section}{\numberline {4}Diagrammes d'int\IeC {\'e}raction}{10}
-\contentsline {subsection}{\numberline {4.1}Cr\IeC {\'e}ation de partie}{10}
-\contentsline {subsection}{\numberline {4.2}D\IeC {\'e}placer ou attaquer une unit\IeC {\'e}}{11}
-\contentsline {section}{Appendices}{13}
-\contentsline {section}{Annexe \numberline {A}Diagramme de classes}{13}
-\contentsline {section}{Annexe \numberline {B}Diagramme de s\IeC {\'e}quence : Cr\IeC {\'e}ation de partie}{14}
-\contentsline {section}{Annexe \numberline {C}Diagramme de s\IeC {\'e}quence : D\IeC {\'e}placer ou attaquer une unit\IeC {\'e}}{15}
+\contentsline {section}{\numberline {2}Diagrammes de classe}{7}
+\contentsline {subsection}{\numberline {2.1}Mod\IeC {\'e}lisation globale du jeu}{7}
+\contentsline {subsection}{\numberline {2.2}Patrons utilis\IeC {\'e}s}{7}
+\contentsline {section}{\numberline {3}Diagramme d'\IeC {\'e}tats-transitions}{10}
+\contentsline {section}{\numberline {4}Diagrammes d'int\IeC {\'e}raction}{11}
+\contentsline {subsection}{\numberline {4.1}Cr\IeC {\'e}ation de partie}{11}
+\contentsline {subsection}{\numberline {4.2}D\IeC {\'e}placer ou attaquer une unit\IeC {\'e}}{12}
+\contentsline {section}{Appendices}{14}
+\contentsline {section}{Annexe \numberline {A}Diagramme de classes}{14}
+\contentsline {section}{Annexe \numberline {B}Diagramme de s\IeC {\'e}quence : Cr\IeC {\'e}ation de partie}{15}
+\contentsline {section}{Annexe \numberline {C}Diagramme de s\IeC {\'e}quence : D\IeC {\'e}placer ou attaquer une unit\IeC {\'e}}{16}

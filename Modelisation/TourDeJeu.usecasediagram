@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="06e1551e-b6bf-4603-b697-7a380c869e1a" name="TourDeJeu" linkedPackageId="b88dd47d-322a-4921-a0ba-24c6e40fe7fd" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="06e1551e-b6bf-4603-b697-7a380c869e1a" name="TourDeJeu" linkedPackageId="b88dd47d-322a-4921-a0ba-24c6e40fe7fd" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="18c40ef2-df52-469d-92a3-a83bac5e1187" name="Joueur" isAbstract="false" isLeaf="false">
@@ -111,6 +111,10 @@
             <useCaseMoniker Id="44254ffb-8d89-4c96-b843-0dec85483e73" LastKnownName="Selectionner case destination" />
             <elementDefinition Id="303f2266-eb1e-4aa5-9779-c6653852edf0" />
           </include>
+          <include Id="38e26086-766a-453a-8cc0-37726d1f490c">
+            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="SelectionnerUnite d'une case" />
+            <elementDefinition Id="a043bc89-2658-4664-a2d1-77926f7a5a5c" />
+          </include>
         </additions>
         <subjects>
           <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
@@ -129,6 +133,10 @@
             <useCaseMoniker Id="44254ffb-8d89-4c96-b843-0dec85483e73" LastKnownName="Selectionner case destination" />
             <elementDefinition Id="c239d1e0-c44a-4d8b-8403-eb7a04a733b5" />
           </include>
+          <include Id="24cce245-a072-4da6-a1cc-a094834916c9">
+            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="SelectionnerUnite d'une case" />
+            <elementDefinition Id="e8023048-baf2-4555-9c63-2cbca41c731f" />
+          </include>
         </additions>
         <subjects>
           <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
@@ -146,6 +154,16 @@
     <useCaseModelRootHasTypes>
       <useCase Id="0afcbb29-91fd-495a-9478-7a9b7cea06ac" name="Passer le tour de l'unité" isAbstract="false" isLeaf="false">
         <elementDefinition Id="f4f390e3-6f98-4612-b04f-b7f5ebf30270" />
+        <additions>
+          <include Id="89d13e0b-5920-441d-a393-9c45885443fc">
+            <useCaseMoniker Id="4f204b5b-7336-49ad-a659-288f2911ce83" LastKnownName="Selectionner case initiale" />
+            <elementDefinition Id="0544039f-fb0a-498f-86e9-3420982b823e" />
+          </include>
+          <include Id="c979bf16-4fbf-48b1-8d01-66609eea2d04">
+            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="SelectionnerUnite d'une case" />
+            <elementDefinition Id="0e3593de-2394-4351-add3-3b2e7b52c3f1" />
+          </include>
+        </additions>
         <subjects>
           <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
         </subjects>
@@ -162,6 +180,14 @@
     <packageHasNamedElement>
       <useCase Id="44254ffb-8d89-4c96-b843-0dec85483e73" name="Selectionner case destination" isAbstract="false" isLeaf="false">
         <elementDefinition Id="e0562b36-457d-45e4-b234-466ef47129c8" />
+        <subjects>
+          <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" name="SelectionnerUnite d'une case" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b0594cb9-37ee-434d-b062-b829c8779629" />
         <subjects>
           <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
         </subjects>
