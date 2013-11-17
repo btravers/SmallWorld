@@ -64,9 +64,11 @@ Avant de pouvoir jouer, il faut créer la partie. Pour cela, le joueur A choisit
 
 \subsection{Tour de jeu}
 
-Lors de son tour de jeu, un joueur peut effectuer différentes actions. Il peut déplacer une unité et pour se faire, il doit sélectionner la case avec l'unité qu'il souhaite déplacer, il doit chosir l'unité sur la case selectionnée (il peut y avoir plusieurs unités d'un même joueur sur une même case) puis il doit sélectionner une case de destination. Un joueur peut aussi attaquer une unité. \\
+Lors de son tour de jeu, un joueur peut effectuer différentes actions. Il peut déplacer une unité et pour se faire, il doit sélectionner la case contenant l'unité qu'il souhaite déplacer, il chosit l'unité sur la case selectionnée (il peut y avoir plusieurs unités d'un même joueur sur une même case) puis il sélectionne une case de destination. \\ 
 
-Pour attaquer une unité, un joueur doit séléctionner la case avec l'unité qu'il souhaite engager au combat, il doit choisir l'unité sur la case selectionnée puis il doit selectionner la case de destination avec l'unité adversaire qu'il souhaite attaquer. Un joueur peut aussi passer le tour d'une unité en selectionnant la case avec l'unité puis en choisissant l'unité sur cette case ou il peut simplement passer son tour. Ces actions sont illustrées dans le diagramme de cas d'utilisation de la Figure \ref{fig:tour_usecase}.
+Un joueur peut aussi attaquer une unité. Pour cela, le joueur doit séléctionner la case contenant l'unité qu'il souhaite engager au combat, il choisit l'unité sur la case selectionnée puis il selectionne la case de destination avec l'unité adversaire qu'il souhaite attaquer. \\
+
+Enfin, un joueur peut passer le tour d'une unité en selectionnant la case contenant l'unité puis en choisissant l'unité sur cette case ou il peut simplement passer son tour. Ces actions sont illustrées dans le diagramme de cas d'utilisation de la Figure \ref{fig:tour_usecase}.
 
 \begin{figure}[H]
 \centering
@@ -94,7 +96,7 @@ Le premier patron utilisé est la fabrique. La classe Peuple est considérée co
 \caption{\label{fig:fabrique}Fabrique}
 \end{figure}
 
-La deuxième patron utilisé est le monteur. Ce patron permet l'assemblage des différents composant de la partie.
+La deuxième patron utilisé est le monteur. Ce patron permet l'assemblage des différents composants de la partie.
 
 \begin{figure}[H]
 \centering
@@ -112,7 +114,7 @@ Un autre patron utilisé est le poids-mouche. La classe Carte contient un tablea
 
 \newpage
 
-Le dernier partron utilisé est la stratégie. Le créateur carte va faire appel à l'algorythme de création de carte développé en C++. Mais l'appel a cet algorithme sera différence selon le type de carte à utiliser. (On rappelle que l'on considère dans notre implémentation trois types de cartes : Démo, Petite et Normale).
+Le dernier patron utilisé est la stratégie. Le créateur carte va faire appel à l'algorythme de création de carte développé en C++. Mais l'appel a cet algorithme sera différent selon le type de carte à créer. (On rappelle que l'on considère dans notre implémentation trois types de cartes : Démo, Petite et Normale).
 
 \begin{figure}[H]
 \centering
@@ -126,7 +128,7 @@ Le dernier partron utilisé est la stratégie. Le créateur carte va faire appel
 
 \section{Diagramme d'états-transitions}
 
-Le diagramme d'états-transitions représenté Figure \ref{fig:etats-transitions} illustre le cycle de vie d'une unité. Pour commencer, une unité est positionné sur la carte. Puis durant son tour de jeu, elle pourra soit être sélectionnée puis ensuite être déplacée, attaquer ou passer son tour, soit ne rien faire. Lorsque l'adversaire joue, une unité pourra se faire attaquer, dans ce cas, elle rentre dans l'état Défense.
+Le diagramme d'états-transitions représenté Figure \ref{fig:etats-transitions} illustre le cycle de vie d'une unité. Pour commencer, une unité est positionnée sur la carte. Puis durant son tour de jeu, elle pourra soit être sélectionnée puis ensuite être déplacée, attaquer ou passer son tour, soit ne rien faire. Lorsque l'adversaire joue, une unité pourra se faire attaquer, dans ce cas, elle rentre dans l'état Défense.
 
 \begin{figure}[H]
 \centering
@@ -161,7 +163,7 @@ Puis lors du montage de la partie, trois cas vont se présenter : il faut créer
 
 En annexe \ref{app:tour}, on retrouve le diagramme de séquence modélisant le déplacement ou le lancement d'un combat d'une unité. Pour commencer, le joueur selectionne une case. Si ce joueur n'a pas d'unité sur cette case, il ne pourra pas poursuivre cette action.\\
 
-Si, au contraire, le joueur a au moins une unité sur la case sélectionnée, il devra choisir l'unitée à sélectionnée qui sera concervé par l'atribut \_unitéSelectionnée de la classe Partie. Ensuite, le joueur devra selectionner une case de destination. On vérifie si cette case est à portée de l'unité sélectionnée, c'est-à-dire si il existe un chemin pour aller jusqu'à cette case sans dépasser le nombre de point de mouvement de l'unité.\\
+Si, au contraire, le joueur a au moins une unité sur la case sélectionnée, il devra choisir l'unitée à sélectionner et qui sera concervé par l'atribut \_unitéSelectionnée de la classe Partie. Ensuite, le joueur devra selectionner une case de destination. On vérifie si cette case est à portée de l'unité sélectionnée, c'est-à-dire si il existe un chemin pour aller jusqu'à cette case sans dépasser le nombre de point de mouvement de l'unité.\\
 
  Ensuite, soit la case de destination sélectionnée n'a pas d'unités ennemies et l'unité sélectionnée va se déplacer sur cette case, soit il y a au moins une unité ennemie et l'unité sélectionnée attaque la meilleure unitée ennemie présente sur la case.
 
@@ -169,7 +171,7 @@ Si, au contraire, le joueur a au moins une unité sur la case sélectionnée, il
 
 \section*{Conclusion}
 
-Ce rapport nous donne une idée de la modélisation de notre jeu. Mais notre modèle n'est pas définitif, il évoluera par la suite avec la phase d'implémentation.
+Ce rapport nous donne une idée de la modélisation de notre jeu. Cependant notre modèle n'est pas définitif, il évoluera par la suite avec la phase d'implémentation.
 
 \newpage
 
