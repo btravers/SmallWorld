@@ -24,10 +24,13 @@
 
 \section*{Introduction}
 
-Nous avons étés amenés à modéliser un jeu small world en C sharp cette année et dans ce but il nous a été donné l'occasion de modéliser le problème sous la forme de diagrammes UML. Ce rapport marque la fin de cette phase d'analyse et de conception, regroupant les différents diagrammes de cas d'utilisation, diagrammes de classe, diagramme d'états-transitions et diagrammes d'intéraction. \\\\
-Rappellons rapidement le principe du jeu que l'on doit implémenter : il se compose d'une seule fenêtre active que se partagent deux joueur au moyen des mêmes périphériques (en l'occurence, clavier et souris). Cette fenêtre présente un plateau qui regroupe différents éléments : des cases, des unités, des ressources.\\\\
-Au début du jeu, chaque joueur choisit un peuple parmi les trois proposés : Nains, Gaulois et Viking. \\\\
-Le but du jeu est de gagner le maximum de points victoire en un certain nombre de tours de jeu défini au début de la partie. Les points de victoire se gagnent en occupant des cases ressources. Un tour consiste, pour chaque joueur, à utiliser pour chaque unité une des trois actions (déplacer, attaquer, passer).\\
+Nous avons étés amenés à modéliser un jeu small world en C sharp cette année et dans ce but il nous a été donné l'occasion de modéliser le problème sous la forme de diagrammes UML. Ce rapport marque la fin de cette phase d'analyse et de conception, regroupant les différents diagrammes de cas d'utilisation, diagrammes de classe, diagramme d'états-transitions et diagrammes d'intéraction. \\
+
+Rappellons rapidement le principe du jeu que l'on doit implémenter : il se compose d'une seule fenêtre active que se partagent deux joueur au moyen des mêmes périphériques (en l'occurence, clavier et souris). Cette fenêtre présente un plateau qui regroupe différents éléments : des cases, des unités, des ressources. \\
+
+Au début du jeu, chaque joueur choisit un peuple parmi les trois proposés : Nains, Gaulois et Viking. \\
+
+Le but du jeu est de gagner le maximum de points victoire en un certain nombre de tours de jeu défini au début de la partie. Les points de victoire se gagnent en occupant des cases ressources. Un tour consiste, pour chaque joueur, à utiliser pour chaque unité une des trois actions (déplacer, attaquer, passer). \\
 
 \begin{figure}[H]
 \centering
@@ -49,7 +52,7 @@ Premièrement, nous retrouvons un diagramme de cas d'utilisation illustrant la g
 \caption{\label{fig:global_usecase}Diagramme de cas d'utilisation global}
 \end{figure}
 
-\subsection{Création de partie}
+\subsection{Création d'une partie}
 
 Avant de pouvoir jouer, il faut créer la partie. Pour cela, le joueur A choisit la carte, à savoir, soit une carte de démonstration, soit une petite carte, soit une carte de taille normale. Ensuite, les joueurs devront choisir leur peuple parmis les Vikings, les Gaulois et les Nains. Ces actions sont illustrées dans le diagramme de cas d'utilisation de la Figure \ref{fig:creation_usecase}.
 
@@ -61,7 +64,8 @@ Avant de pouvoir jouer, il faut créer la partie. Pour cela, le joueur A choisit
 
 \subsection{Tour de jeu}
 
-Lors de son tour de jeu, un joueur peut effectuer différentes actions. Il peut déplacer une unité et pour se faire, il doit sélectionner la case avec l'unité qu'il souhaite déplacer, il doit chosir l'unité sur la case selectionnée (il peut y avoir plusieurs unités d'un même joueur sur une même case) puis il doit sélectionner une case de destination. Un joueur peut aussi attaquer une unité. \\\\
+Lors de son tour de jeu, un joueur peut effectuer différentes actions. Il peut déplacer une unité et pour se faire, il doit sélectionner la case avec l'unité qu'il souhaite déplacer, il doit chosir l'unité sur la case selectionnée (il peut y avoir plusieurs unités d'un même joueur sur une même case) puis il doit sélectionner une case de destination. Un joueur peut aussi attaquer une unité. \\
+
 Pour attaquer une unité, un joueur doit séléctionner la case avec l'unité qu'il souhaite engager au combat, il doit choisir l'unité sur la case selectionnée puis il doit selectionner la case de destination avec l'unité adversaire qu'il souhaite attaquer. Un joueur peut aussi passer le tour d'une unité en selectionnant la case avec l'unité puis en choisissant l'unité sur cette case ou il peut simplement passer son tour. Ces actions sont illustrées dans le diagramme de cas d'utilisation de la Figure \ref{fig:tour_usecase}.
 
 \begin{figure}[H]
@@ -137,7 +141,8 @@ Le diagramme d'états-transitions représenté Figure \ref{fig:etats-transitions
 
 \subsection{Création de partie}
 
-En annexe \ref{app:creation_partie}, on retrouve le diagramme de séquence modélisant la création d'une partie. Pour commencer, le joueur A selectionne la carte et son peuple, puis le joueur B sélectionne son peuple avant que le joueur A lance la création de la partie. La Figure \ref{fig:addPeupleA} montre les actions effectuées lors de la selection du peuple par le joueur A pour que le joueur B ne puisse séléctionner le même peuple.\\\\
+En annexe \ref{app:creation_partie}, on retrouve le diagramme de séquence modélisant la création d'une partie. Pour commencer, le joueur A selectionne la carte et son peuple, puis le joueur B sélectionne son peuple avant que le joueur A lance la création de la partie. La Figure \ref{fig:addPeupleA} montre les actions effectuées lors de la selection du peuple par le joueur A pour que le joueur B ne puisse séléctionner le même peuple.\\
+
 Puis lors du montage de la partie, trois cas vont se présenter : il faut créer une partie de démonstration, une petite partie ou une partie normale. Pour chaque cas, on va utiliser le monteur adéquat puis lancer le procéssus de création de partie. La Figure \ref{fig:addCarte} montre les actions effectuées pour créer et ajouter la carte.
 
 \begin{figure}[H]
@@ -154,8 +159,10 @@ Puis lors du montage de la partie, trois cas vont se présenter : il faut créer
 
 \subsection{Déplacer ou attaquer une unité}
 
-En annexe \ref{app:tour}, on retrouve le diagramme de séquence modélisant le déplacement ou le lancement d'un combat d'une unité. Pour commencer, le joueur selectionne une case. Si ce joueur n'a pas d'unité sur cette case, il ne pourra pas poursuivre cette action.\\\\
-Si, au contraire, le joueur a au moins une unité sur la case sélectionnée, il devra choisir l'unitée à sélectionnée qui sera concervé par l'atribut \_unitéSelectionnée de la classe Partie. Ensuite, le joueur devra selectionner une case de destination. On vérifie si cette case est à portée de l'unité sélectionnée, c'est-à-dire si il existe un chemin pour aller jusqu'à cette case sans dépasser le nombre de point de mouvement de l'unité.\\\\
+En annexe \ref{app:tour}, on retrouve le diagramme de séquence modélisant le déplacement ou le lancement d'un combat d'une unité. Pour commencer, le joueur selectionne une case. Si ce joueur n'a pas d'unité sur cette case, il ne pourra pas poursuivre cette action.\\
+
+Si, au contraire, le joueur a au moins une unité sur la case sélectionnée, il devra choisir l'unitée à sélectionnée qui sera concervé par l'atribut \_unitéSelectionnée de la classe Partie. Ensuite, le joueur devra selectionner une case de destination. On vérifie si cette case est à portée de l'unité sélectionnée, c'est-à-dire si il existe un chemin pour aller jusqu'à cette case sans dépasser le nombre de point de mouvement de l'unité.\\
+
  Ensuite, soit la case de destination sélectionnée n'a pas d'unités ennemies et l'unité sélectionnée va se déplacer sur cette case, soit il y a au moins une unité ennemie et l'unité sélectionnée attaque la meilleure unitée ennemie présente sur la case.
 
 \newpage
