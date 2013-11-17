@@ -1,0 +1,7 @@
+Rapport\ de\ conception/rapport.aux
+Rapport\ de\ conception/rapport.lof
+Rapport\ de\ conception/rapport.pdf
+Rapport\ de\ conception/rapport.synctex.gz
+Rapport\ de\ conception/rapport.toc
+Rapport\ de\ conception/rapport.log
+Rapport\ de\ conception/rapport.out
