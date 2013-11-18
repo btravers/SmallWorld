@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="07f0fd52-5dd3-4dab-a6cd-a8d0f1b88e2b"
   name="Modelisation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -148,6 +148,45 @@
                 <memberEnd
                   Id="04a61fbd-c67a-4eac-9ec7-a0fb01c6b7fe"
                   name="Choisir carte"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f0645069-4126-418d-a6b2-257086116c6f"
+            isDerived="false"
+            sourceEndRoleName="JoueurA"
+            targetEndRoleName="Lancer la partie"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="2c91fd03-0af1-4972-92ff-6a25357c68fe"
+              LastKnownName="Lancer la partie"
+              LastKnownLocation="Modelisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="136eee9f-d7e6-46bd-8fc1-c553b975c3a2"
+                  name="JoueurA"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6a251d37-432a-47a6-9963-f88695bdb105"
+                  name="Lancer la partie"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -11791,6 +11830,113 @@
           <subsystemMoniker
             Id="0d773106-e475-4488-995a-8477cf02ec1f"
             LastKnownName="Jouer"
+            LastKnownLocation="Modelisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="6b94567e-4590-4c19-9601-524c05cb2d24"
+        name="CreationPartie"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="16c72dc3-c2c0-47d3-8658-8207225bd8ac"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="067384c3-24c1-44ed-8eff-a23d706ce740"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="523b6fd6-555f-4b91-b5c2-14bf7f7d145a"
+                  LastKnownName="Choisir le Peuple A"
+                  LastKnownLocation="Modelisation.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="523b6fd6-555f-4b91-b5c2-14bf7f7d145a"
+            name="Choisir le Peuple A"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c031c2bb-1503-4370-80b7-b174d47553b9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e9026546-556f-420e-a58c-b4a94035476e"
+                  LastKnownName="Choisir le Peuple B"
+                  LastKnownLocation="Modelisation.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e9026546-556f-420e-a58c-b4a94035476e"
+            name="Choisir le Peuple B"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3bebf5ee-baa0-49a0-9cd7-b169c50710cc"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d58c5448-1483-4dd1-bc42-baee3600c1f5"
+                  LastKnownName="Choisir la Carte"
+                  LastKnownLocation="Modelisation.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="d58c5448-1483-4dd1-bc42-baee3600c1f5"
+            name="Choisir la Carte"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="73d7df23-9561-41e7-87a5-f58b9805256a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="fb8584a4-e033-458b-aa02-4029cc10c52c"
+                  LastKnownName="Lancer la partie"
+                  LastKnownLocation="Modelisation.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="fb8584a4-e033-458b-aa02-4029cc10c52c"
+            name="Lancer la partie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4a1db258-c551-466d-b643-3b702b320fc7"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="d9337489-a9f7-4168-ba40-b0a4913a55d2"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modelisation.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="d9337489-a9f7-4168-ba40-b0a4913a55d2"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2c91fd03-0af1-4972-92ff-6a25357c68fe"
+        name="Lancer la partie"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="68c26fc7-fff9-48e8-9fca-4d6faee2c7a8"
+            LastKnownName="Créer partie"
             LastKnownLocation="Modelisation.uml" />
         </subjects>
       </useCase>

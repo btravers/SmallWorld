@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="e9f01e4a-86b3-4ead-8855-0095576b9e4c" name="CreationPartie" linkedPackageId="dbcbcee3-821a-42b3-a52d-1e7ef3b14552" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="2459df0d-e23a-438d-ab08-37d3f0e70568">
+      <profileInstance Id="cb8ac31e-8ac3-4a9c-b184-5a70bf205670" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="d015216d-affe-4137-947e-d4b919f55342">
+      <profileInstance Id="ab3b1121-e2c3-40f6-9611-2a842b8a14c1" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="b3a5a2a8-f881-425a-b333-b53fc0c6d18f" name="CreationPartie" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="6b94567e-4590-4c19-9601-524c05cb2d24" />
+        <nodes>
+          <initialNode Id="7f971504-5ee1-44f7-9e4e-b81a2a3b3c07" name="Initial1" isLeaf="false">
+            <elementDefinition Id="16c72dc3-c2c0-47d3-8658-8207225bd8ac" />
+            <flowNodeTargets>
+              <controlFlow Id="b0f623c7-9ddf-4502-9426-14fb5b29e52e" isLeaf="false">
+                <opaqueActionMoniker Id="7b85d270-6d71-44a9-90a4-d917a9b02df7" LastKnownName="Choisir le Peuple A" />
+                <elementDefinition Id="067384c3-24c1-44ed-8eff-a23d706ce740" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="7b85d270-6d71-44a9-90a4-d917a9b02df7" name="Choisir le Peuple A" isLeaf="false">
+            <elementDefinition Id="523b6fd6-555f-4b91-b5c2-14bf7f7d145a" />
+            <flowNodeTargets>
+              <controlFlow Id="cb1ae46f-23d1-407c-9654-633146931642" isLeaf="false">
+                <opaqueActionMoniker Id="613f674c-66de-41b1-8e05-1349ef7660df" LastKnownName="Choisir le Peuple B" />
+                <elementDefinition Id="c031c2bb-1503-4370-80b7-b174d47553b9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="613f674c-66de-41b1-8e05-1349ef7660df" name="Choisir le Peuple B" isLeaf="false">
+            <elementDefinition Id="e9026546-556f-420e-a58c-b4a94035476e" />
+            <flowNodeTargets>
+              <controlFlow Id="530f4f5b-7574-4946-a012-6966c42c4e94" isLeaf="false">
+                <opaqueActionMoniker Id="653070b6-e54a-4aae-a687-634d950cb143" LastKnownName="Choisir la Carte" />
+                <elementDefinition Id="3bebf5ee-baa0-49a0-9cd7-b169c50710cc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="653070b6-e54a-4aae-a687-634d950cb143" name="Choisir la Carte" isLeaf="false">
+            <elementDefinition Id="d58c5448-1483-4dd1-bc42-baee3600c1f5" />
+            <flowNodeTargets>
+              <controlFlow Id="d3e40254-a999-4f7f-9c0f-567a01f39148" isLeaf="false">
+                <opaqueActionMoniker Id="63ddd5eb-4afb-479f-8aa5-a9231fad346f" LastKnownName="Lancer la partie" />
+                <elementDefinition Id="73d7df23-9561-41e7-87a5-f58b9805256a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="63ddd5eb-4afb-479f-8aa5-a9231fad346f" name="Lancer la partie" isLeaf="false">
+            <elementDefinition Id="fb8584a4-e033-458b-aa02-4029cc10c52c" />
+            <flowNodeTargets>
+              <controlFlow Id="1417d550-5acd-4e19-a77d-29dff998e756" isLeaf="false">
+                <activityFinalNodeMoniker Id="e888dcc0-f1b2-4958-8809-558cd4b24aef" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="4a1db258-c551-466d-b643-3b702b320fc7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="e888dcc0-f1b2-4958-8809-558cd4b24aef" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="d9337489-a9f7-4168-ba40-b0a4913a55d2" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="dbcbcee3-821a-42b3-a52d-1e7ef3b14552" name="Modelisation">
+    <elementDefinition Id="07f0fd52-5dd3-4dab-a6cd-a8d0f1b88e2b" />
+  </package>
+</activityRootModel>

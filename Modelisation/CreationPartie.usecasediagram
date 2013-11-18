@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="de59ff14-4816-4514-b252-94d5c5ac9383" name="CreationPartie" linkedPackageId="ca147348-c06a-4a2f-b397-ec825e9ce9b0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="e9b26704-b33d-4ccb-9cbb-866044972a34">
-      <profileInstance Id="fe148aba-09a7-4651-848d-60c18086ad30" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="c570a656-27f2-4af0-a44b-a097e5bbfd8e">
-      <profileInstance Id="bc9c6246-1a74-4988-a4ab-6d32d32e0fc5" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="de59ff14-4816-4514-b252-94d5c5ac9383" name="CreationPartie" linkedPackageId="ca147348-c06a-4a2f-b397-ec825e9ce9b0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="d7eacc7c-4505-4d51-b8ec-736c62a84653" name="Joueur" isAbstract="false" isLeaf="false">
@@ -63,6 +49,22 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="e1a0c6f4-7d24-4a67-9577-bc903de30d0a" />
+          </association>
+          <association Id="0ad81e0c-082e-4db0-8041-06ecfbd77a83" isDerived="false" sourceEndRoleName="JoueurA" targetEndRoleName="Lancer la partie" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f757d1d8-a3cb-4d4a-813e-3e3e09f9c0d1" LastKnownName="Lancer la partie" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="41473a7b-a101-450c-8e5e-00198ba801a2" name="JoueurA" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="136eee9f-d7e6-46bd-8fc1-c553b975c3a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b00f969-cbdb-4d5b-9e1e-82781e5a891d" name="Lancer la partie" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6a251d37-432a-47a6-9963-f88695bdb105" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f0645069-4126-418d-a6b2-257086116c6f" />
           </association>
         </targetEnds>
       </actor>
@@ -183,8 +185,30 @@
         </subjects>
       </useCase>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f757d1d8-a3cb-4d4a-813e-3e3e09f9c0d1" name="Lancer la partie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2c91fd03-0af1-4972-92ff-6a25357c68fe" />
+        <subjects>
+          <subsystemMoniker Id="5869a756-e86c-44b8-bd24-6c7b650e8572" LastKnownName="Créer partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="ca147348-c06a-4a2f-b397-ec825e9ce9b0" name="Modelisation">
     <elementDefinition Id="07f0fd52-5dd3-4dab-a6cd-a8d0f1b88e2b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e9b26704-b33d-4ccb-9cbb-866044972a34">
+        <profileInstance Id="fe148aba-09a7-4651-848d-60c18086ad30" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="c570a656-27f2-4af0-a44b-a097e5bbfd8e">
+        <profileInstance Id="bc9c6246-1a74-4988-a4ab-6d32d32e0fc5" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

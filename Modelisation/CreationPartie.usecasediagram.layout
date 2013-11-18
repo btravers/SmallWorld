@@ -10,7 +10,7 @@
       <actorMoniker Id="ff934bba-a158-4d0f-af3b-b5d77b786b90" LastKnownName="JoueurA" />
       <relativeChildShapes />
     </actorShape>
-    <useCaseGeneralizationConnector edgePoints="[(2.4375 : 2.375); (1.3125 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+    <useCaseGeneralizationConnector edgePoints="[(2.4375 : 2.375); (1.3125 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
       <generalizationMoniker Id="af907f45-a238-4e2d-9bb0-09f9b9fff32a" />
       <relativeChildShapes />
       <nodes>
@@ -22,7 +22,7 @@
       <actorMoniker Id="aa8cc494-8a3e-43f8-bffa-7cc9e0e217ad" LastKnownName="JoueurB" />
       <relativeChildShapes />
     </actorShape>
-    <useCaseGeneralizationConnector edgePoints="[(2.375 : 3.5); (1.375 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110">
+    <useCaseGeneralizationConnector edgePoints="[(2.375 : 3.5); (1.375 : 4)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
       <generalizationMoniker Id="c73a283f-3b00-42ab-ad44-0f7fe9e3882a" />
       <relativeChildShapes />
       <nodes>
@@ -30,7 +30,7 @@
         <actorShapeMoniker Id="901001c0-4c04-4d28-851f-9521bc2c2d3b" />
       </nodes>
     </useCaseGeneralizationConnector>
-    <SubsystemShape Id="306858df-edb9-46ac-8c78-9b9eb7ef9114" absoluteBounds="5.25, 0.875, 4.625, 4.625" customColor="White">
+    <SubsystemShape Id="306858df-edb9-46ac-8c78-9b9eb7ef9114" absoluteBounds="5.25, 0.875, 4.625, 6.25" customColor="White">
       <subsystemMoniker Id="5869a756-e86c-44b8-bd24-6c7b650e8572" LastKnownName="Créer partie" />
       <nestedChildShapes>
         <useCaseShape Id="acfd8cdd-f646-4b12-828c-4f721d6a5a13" absoluteBounds="5.875, 1.875, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
@@ -63,6 +63,10 @@
         </useCaseShape>
         <useCaseShape Id="183dfdfa-fcdd-4d02-82d6-6add81f16f23" absoluteBounds="8.125, 4.125, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
           <useCaseMoniker Id="e8dd8a22-407f-48bc-975f-74192fe9c8c8" LastKnownName="Choisir Gaulois" />
+          <relativeChildShapes />
+        </useCaseShape>
+        <useCaseShape Id="9a10e169-aeeb-4eea-8c13-006733f60d0f" absoluteBounds="5.875, 5.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="f757d1d8-a3cb-4d4a-813e-3e3e09f9c0d1" LastKnownName="Lancer la partie" />
           <relativeChildShapes />
         </useCaseShape>
       </nestedChildShapes>
@@ -129,6 +133,14 @@
       <nodes>
         <actorShapeMoniker Id="901001c0-4c04-4d28-851f-9521bc2c2d3b" />
         <useCaseShapeMoniker Id="0fe51e85-0111-4469-93c9-1ac291ddf6c7" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(2.875 : 2.375); (6.15139320225002 : 5.65139320225002)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="0ad81e0c-082e-4db0-8041-06ecfbd77a83" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="17944e7d-9412-4eaf-90f2-2ad6b7d7ec18" />
+        <useCaseShapeMoniker Id="9a10e169-aeeb-4eea-8c13-006733f60d0f" />
       </nodes>
     </useCaseAssociationConnector>
   </nestedChildShapes>

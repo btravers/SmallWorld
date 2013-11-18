@@ -29,6 +29,13 @@
       <SubType>Content</SubType>
       <DependentUpon>CreateurPartie_addPeupleA.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="CreationPartie.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CreationPartie.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>CreationPartie.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="CreationPartie.sequencediagram">
       <SubType>Content</SubType>
     </Content>
