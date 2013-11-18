@@ -147,7 +147,7 @@ En annexe \ref{app:creation_partie}, on retrouve le diagramme de séquence modé
 
 Puis lors du montage de la partie, trois cas vont se présenter : il faut créer une partie de démonstration, une petite partie ou une partie normale. Pour chaque cas, on va utiliser le monteur adéquat puis lancer le procéssus de création de partie qui consiste à ajouter le nombre de tour, ajouter la carte puis ajouter les joueurs. L'ajout de la carte et l'ajout des joueurs pour la création d'une partie de démonstration sont détaillés dans les Figures \ref{fig:addCarte} et \ref{fig:addJoueur}  \\
 
-Détailler l'ajout des joueurs ...
+Concernant l'ajout des joueurs modélisé dans la Figure \ref{fig:addJoueur}, on commence par créer le joueur modélisant le joueur A puis selon son peuple choisi au départ, on va créer une instance soit de Viking, soit de Gaulois, soit de Nains. Cette instance va jouer le rôle de fabrique d'unité, dans l'objectif est de créer un certain nombre d'uniteViking, d'uniteGaulois ou d'uniteNains. Ce nombre d'unité va dépendre du type de jeu choisi. On réitère cette opération pour le joueur B.
 
 
 
@@ -167,9 +167,9 @@ Détailler l'ajout des joueurs ...
 
 En annexe \ref{app:tour}, on retrouve le diagramme de séquence modélisant le déplacement ou le lancement d'un combat d'une unité. Pour commencer, le joueur selectionne une case. Si ce joueur n'a pas d'unité sur cette case, il ne pourra pas poursuivre cette action.\\
 
-Si, au contraire, le joueur a au moins une unité sur la case sélectionnée, il devra choisir l'unitée à sélectionner et qui sera concervé par l'atribut \_unitéSelectionnée de la classe Partie. Ensuite, le joueur devra selectionner une case de destination. On vérifie si cette case est à portée de l'unité sélectionnée, c'est-à-dire si il existe un chemin pour aller jusqu'à cette case sans dépasser le nombre de point de mouvement de l'unité.\\
+Si, au contraire, le joueur a au moins une unité sur la case sélectionnée, il devra choisir l'unitée à sélectionner et qui sera concervée par l'atribut \_unitéSelectionnee de la classe Partie. Ensuite, le joueur devra selectionner une case de destination. On vérifie si cette case est à portée de l'unité sélectionnée, c'est-à-dire si il existe un chemin pour aller jusqu'à cette case sans dépasser le nombre de point de mouvement de l'unité.\\
 
- Ensuite, soit la case de destination sélectionnée n'a pas d'unités ennemies et l'unité sélectionnée va se déplacer sur cette case, soit il y a au moins une unité ennemie et l'unité sélectionnée attaque la meilleure unitée ennemie présente sur la case.
+ Ensuite, soit la case de destination sélectionnée n'a pas d'unité ennemie et l'unité sélectionnée va se déplacer sur cette case, soit il y a au moins une unité ennemie et l'unité sélectionnée attaque la meilleure unitée ennemie présente sur la case.
 
 \newpage
 

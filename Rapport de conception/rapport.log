@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.12)  18 NOV 2013 20:32
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.12)  18 NOV 2013 20:54
 entering extended mode
 **C:/Users/Benoit*Travers/Documents/GitHub/SmallWorld/Rapport*de*conception/rap
 port.tex
@@ -302,13 +302,13 @@ File: addCarte.png Graphic file (type png)
  <use addCarte.png>
 Package pdftex.def Info: addCarte.png used on input line 156.
 (pdftex.def)             Requested size: 271.7835pt x 430.02835pt.
-
-<addJoueur.png, id=62, 1192.455pt x 942.52126pt>
+ [12]
+<addJoueur.png, id=65, 1192.455pt x 942.52126pt>
 File: addJoueur.png Graphic file (type png)
  <use addJoueur.png>
 Package pdftex.def Info: addJoueur.png used on input line 162.
 (pdftex.def)             Requested size: 452.9679pt x 358.01799pt.
- [12 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception
+ [13 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception
 /addCarte.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
@@ -319,19 +319,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-[13 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
-addJoueur.png>] <diagramme_classes.png, id=72, 551.05875pt x 1171.37625pt>
+[14 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+addJoueur.png>] <diagramme_classes.png, id=75, 551.05875pt x 1171.37625pt>
 File: diagramme_classes.png Graphic file (type png)
 
 <use diagramme_classes.png>
 Package pdftex.def Info: diagramme_classes.png used on input line 187.
 (pdftex.def)             Requested size: 317.07614pt x 674.0187pt.
- [14]
+ [15]
 Overfull \vbox (37.2115pt too high) has occurred while \output is active []
 
 
-[15 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
-diagramme_classes.png>] <creation.png, id=80, 1035.87pt x 1737.49126pt>
+[16 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+diagramme_classes.png>] <creation.png, id=83, 1035.87pt x 1737.49126pt>
 File: creation.png Graphic file (type png)
 
 <use creation.png>
@@ -341,8 +341,8 @@ Package pdftex.def Info: creation.png used on input line 195.
 Overfull \vbox (122.9722pt too high) has occurred while \output is active []
 
 
-[16 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
-creation.png>] <tourDeJeu.png, id=85, 798.73407pt x 1728.4575pt>
+[17 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+creation.png>] <tourDeJeu.png, id=88, 798.73407pt x 1728.4575pt>
 File: tourDeJeu.png Graphic file (type png)
 
 <use tourDeJeu.png>
@@ -352,12 +352,12 @@ Package pdftex.def Info: tourDeJeu.png used on input line 203.
 Overfull \vbox (15.5391pt too high) has occurred while \output is active []
 
 
-[17 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+[18 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
 tourDeJeu.png>]
 ("C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\Rapport de conception\rap
 port.lof")
 \tf@lof=\write4
- [18]
+ [19]
 ("C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\Rapport de conception\rap
 port.aux") ) 
 Here is how much of TeX's memory you used:
@@ -380,9 +380,9 @@ a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Be
 noit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm17
 28.pk> <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
 en\ec\dpi600\eccc1728.pk>
-Output written on rapport.pdf (18 pages, 1218207 bytes).
+Output written on rapport.pdf (19 pages, 1219449 bytes).
 PDF statistics:
- 362 PDF objects out of 1000 (max. 8388607)
+ 367 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

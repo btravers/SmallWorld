@@ -8,8 +8,8 @@
 \contentsline {section}{\numberline {3}Diagramme d'\IeC {\'e}tats-transitions}{11}
 \contentsline {section}{\numberline {4}Diagrammes d'int\IeC {\'e}raction}{12}
 \contentsline {subsection}{\numberline {4.1}Cr\IeC {\'e}ation de partie}{12}
-\contentsline {subsection}{\numberline {4.2}D\IeC {\'e}placer ou attaquer une unit\IeC {\'e}}{13}
-\contentsline {section}{Appendices}{14}
-\contentsline {section}{Annexe \numberline {A}Diagramme de classes}{15}
-\contentsline {section}{Annexe \numberline {B}Diagramme de s\IeC {\'e}quence : Cr\IeC {\'e}ation de partie}{16}
-\contentsline {section}{Annexe \numberline {C}Diagramme de s\IeC {\'e}quence : D\IeC {\'e}placer ou attaquer une unit\IeC {\'e}}{17}
+\contentsline {subsection}{\numberline {4.2}D\IeC {\'e}placer ou attaquer une unit\IeC {\'e}}{14}
+\contentsline {section}{Appendices}{15}
+\contentsline {section}{Annexe \numberline {A}Diagramme de classes}{16}
+\contentsline {section}{Annexe \numberline {B}Diagramme de s\IeC {\'e}quence : Cr\IeC {\'e}ation de partie}{17}
+\contentsline {section}{Annexe \numberline {C}Diagramme de s\IeC {\'e}quence : D\IeC {\'e}placer ou attaquer une unit\IeC {\'e}}{18}
