@@ -42,18 +42,6 @@ namespace SmallWorld
         public void addPeupleA(String pA)
         {
             this._peupleA = pA;
-            switch (pA)
-            {
-                case "vikings":
-                    UniteVikings.utilise();
-                    break;
-                case "gaulois":
-                    UniteGaulois.utilise();
-                    break;
-                case "nains":
-                    UniteNains.utilise();
-                    break;
-            }
         }
 
         public void addPeupleB(String pB)

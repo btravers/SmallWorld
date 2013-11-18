@@ -55,27 +55,14 @@ namespace SmallWorld
             return _joueur == 0;
         }
 
-        public bool peutPositionnerUnitesJoueurA(int x, int y)
+        public bool peutPositionnerUnitesJoueurA(Joueur j,int x, int y)
         {
-            return this._jA._unites.First().peutPositionner(x, y, this._carte._cases[x,y]);
+            return j._unites.First().peutPositionner(x, y, this._carte._cases[x,y]);
         }
 
-        public void positionnerUnitesJoueurA(int x, int y)
+        public void positionnerUnites(Joueur j, int x, int y)
         {
-            foreach (Unite unite in this._jA._unites)
-            {
-                unite.positionner(x, y);
-            }
-        }
-
-        public bool peutPositionnerUnitesJoueurB(int x, int y)
-        {
-            return this._jB._unites.First().peutPositionner(x, y, this._carte._cases[x, y]);
-        }
-
-        public void positionnerUnitesJoueurB(int x, int y)
-        {
-            foreach (Unite unite in this._jB._unites)
+            foreach (Unite unite in j._unites)
             {
                 unite.positionner(x, y);
             }
@@ -132,11 +119,6 @@ namespace SmallWorld
             }
 
             return unitesCase;
-        }
-
-        public void selectUnite(Unite unite)
-        {
-            this._uniteSelectionnee = unite;
         }
 
         public void selectCaseDestination(int x, int y)

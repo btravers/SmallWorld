@@ -176,7 +176,7 @@
     <Position X="14.5" Y="1.25" Width="1.5" />
     <AssociationLine Name="_unites" Type="SmallWorld.Unite">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.22" Y="-0.488" />
+        <Position X="-0.488" Y="0.22" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -202,7 +202,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAMACIAAABQAAAAAAAAAgAAAEAAAAMAAEBhA=</HashCode>
+      <HashCode>AAAAAAAAAMACIAAAAQAAAAAIAAAgAAAAAAAAEAAEBhA=</HashCode>
       <FileName>Partie.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -229,8 +229,8 @@
       <Path>
         <Point X="18.5" Y="5.847" />
         <Point X="19.875" Y="5.847" />
-        <Point X="19.875" Y="2.561" />
-        <Point X="19.5" Y="2.561" />
+        <Point X="19.875" Y="2.273" />
+        <Point X="19.5" Y="2.273" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.277" Y="0.133" />
@@ -280,7 +280,7 @@
   <Class Name="SmallWorld.UniteVikings">
     <Position X="10.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -288,7 +288,7 @@
   <Class Name="SmallWorld.UniteGaulois">
     <Position X="11.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -296,7 +296,7 @@
   <Class Name="SmallWorld.UniteNains">
     <Position X="13.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgACAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
       <FileName>Unite.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

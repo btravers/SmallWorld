@@ -112,8 +112,6 @@ namespace SmallWorld
 
     public class UniteVikings : Unite, IUniteVikings
     {
-        private static bool _utilise = false;
-
         public bool peutPositionner(int x, int y, Case c)
         {
             return true;
@@ -123,22 +121,10 @@ namespace SmallWorld
         {
             return false; // TODO
         }
-
-        public static bool estUtilise()
-        {
-            return _utilise;
-        }
-
-        public static void utilise()
-        {
-            _utilise = true;
-        }
     }
 
     public class UniteGaulois : Unite, IUniteGaulois
     {
-        private static bool _utilise = false;
-
         public bool peutPositionner(int x, int y, Case c)
         {
             if (c is Eau)
@@ -152,22 +138,10 @@ namespace SmallWorld
         {
             return false; // TODO
         }
-
-        public static bool estUtilise()
-        {
-            return _utilise;
-        }
-
-        public static void utilise()
-        {
-            _utilise = true;
-        }
     }
 
     public class UniteNains : Unite, IUniteNains
     {
-        private static bool _utilise = false;
-
         public bool peutPositionner(int x, int y, Case c)
         {
             if(c is Eau)
@@ -180,16 +154,6 @@ namespace SmallWorld
         public bool peutDeplacer(int x, int y)
         {
             return false; // TODO
-        }
-
-        public static bool estUtilise()
-        {
-            return _utilise;
-        }
-
-        public static void utilise()
-        {
-            _utilise = true;
         }
     }
 }

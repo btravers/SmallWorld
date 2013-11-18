@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="de59ff14-4816-4514-b252-94d5c5ac9383" name="CreationPartie" linkedPackageId="ca147348-c06a-4a2f-b397-ec825e9ce9b0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="de59ff14-4816-4514-b252-94d5c5ac9383" name="CreationPartie" linkedPackageId="ca147348-c06a-4a2f-b397-ec825e9ce9b0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="d7eacc7c-4505-4d51-b8ec-736c62a84653" name="Joueur" isAbstract="false" isLeaf="false">
@@ -20,6 +20,22 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="68437467-b6cc-47b2-a1fb-15cb51550632" />
+          </association>
+          <association Id="9059646e-3629-4c72-a8af-1d3e42482906" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Positionner unité" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="aba34ee1-95ea-4a6f-b3b5-b1e40afa7522" LastKnownName="Positionner unités" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4731c331-5304-474e-a4e4-9b7ee027004e" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3aedcf2b-d083-478d-a8f7-6f05b8bb57ca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eb1ddda3-7a63-4d2b-bc2d-b11bf8a3b5d7" name="Positionner unité" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1a13eeaa-df51-4c86-ac39-367e4ca62429" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9944b843-4c23-4626-b417-fbba4a83bfc3" />
           </association>
         </targetEnds>
       </actor>
@@ -188,6 +204,56 @@
     <packageHasNamedElement>
       <useCase Id="f757d1d8-a3cb-4d4a-813e-3e3e09f9c0d1" name="Lancer la partie" isAbstract="false" isLeaf="false">
         <elementDefinition Id="2c91fd03-0af1-4972-92ff-6a25357c68fe" />
+        <subjects>
+          <subsystemMoniker Id="5869a756-e86c-44b8-bd24-6c7b650e8572" LastKnownName="Créer partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="24fd1f03-79e8-4161-870a-f6ee95affd71" name="Peuple déjà choisi" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="59e0942c-8953-4363-9e0a-340b9a9db34c" />
+        <extendedCases>
+          <extend Id="6dd7151a-6eab-448c-a515-23c92faea1d6">
+            <useCaseMoniker Id="ae82b689-b3d3-4f90-8fd1-b6b8536a1ae8" LastKnownName="Choisir peuple" />
+            <elementDefinition Id="27a849f1-e9c1-4ab6-bf6b-6e52e65f5d22" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="5869a756-e86c-44b8-bd24-6c7b650e8572" LastKnownName="Créer partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="aba34ee1-95ea-4a6f-b3b5-b1e40afa7522" name="Positionner unités" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e8411e8e-6da9-445a-ab7d-5b1fc23f9310" />
+        <additions>
+          <include Id="6c862a55-5223-4fe9-994c-c10d7d30bf75">
+            <useCaseMoniker Id="5eeb2f09-9c42-47c8-b581-44178fc84c3f" LastKnownName="Slectionner case où positionner les unités" />
+            <elementDefinition Id="1dbd7c91-471c-451b-95a9-bc68bf22d19b" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="5869a756-e86c-44b8-bd24-6c7b650e8572" LastKnownName="Créer partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="9ccef511-32a7-49cf-b72d-be1e718db5b3" name="Impossible de positionner à la case indiquée" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e6919b02-885b-4fbe-a5ac-b0fab14c501f" />
+        <extendedCases>
+          <extend Id="376c6b51-9735-419c-a314-b25859ea7077">
+            <useCaseMoniker Id="5eeb2f09-9c42-47c8-b581-44178fc84c3f" LastKnownName="Slectionner case où positionner les unités" />
+            <elementDefinition Id="8d4e4e11-966b-47c4-8efb-bf68d310ff26" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="5869a756-e86c-44b8-bd24-6c7b650e8572" LastKnownName="Créer partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5eeb2f09-9c42-47c8-b581-44178fc84c3f" name="Slectionner case où positionner les unités" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5636f052-44ab-46f0-8eec-28338bb975b6" />
         <subjects>
           <subsystemMoniker Id="5869a756-e86c-44b8-bd24-6c7b650e8572" LastKnownName="Créer partie" />
         </subjects>

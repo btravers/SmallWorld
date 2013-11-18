@@ -22,13 +22,6 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="CreateurPartie_addPeupleA.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="CreateurPartie_addPeupleA.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>CreateurPartie_addPeupleA.sequencediagram</DependentUpon>
-    </Content>
     <Content Include="CreationPartie.activitydiagram">
       <SubType>Content</SubType>
     </Content>

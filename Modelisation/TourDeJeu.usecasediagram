@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="06e1551e-b6bf-4603-b697-7a380c869e1a" name="TourDeJeu" linkedPackageId="b88dd47d-322a-4921-a0ba-24c6e40fe7fd" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="06e1551e-b6bf-4603-b697-7a380c869e1a" name="TourDeJeu" linkedPackageId="b88dd47d-322a-4921-a0ba-24c6e40fe7fd" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="18c40ef2-df52-469d-92a3-a83bac5e1187" name="Joueur" isAbstract="false" isLeaf="false">
         <elementDefinition Id="0187d61d-7b9e-44c4-aa80-0fad5fa483a5" />
         <targetEnds>
           <association Id="048512d9-ee4a-4060-ae82-690aac7da493" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Déplacer unité" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="4965010c-f27e-4d9d-8985-8f9dfb9d88a5" LastKnownName="Déplacer unité" />
+            <useCaseMoniker Id="4965010c-f27e-4d9d-8985-8f9dfb9d88a5" LastKnownName="Déplacer  une unité" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="329a9498-4261-43a0-a185-f31cbeb4ea1e" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -100,19 +100,19 @@
       </subsystem>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="4965010c-f27e-4d9d-8985-8f9dfb9d88a5" name="Déplacer unité" isAbstract="false" isLeaf="false">
+      <useCase Id="4965010c-f27e-4d9d-8985-8f9dfb9d88a5" name="Déplacer  une unité" isAbstract="false" isLeaf="false">
         <elementDefinition Id="80b03fbc-4a57-4422-b334-bc155a9a9300" />
         <additions>
           <include Id="06ef93b6-e4be-430a-9098-dea6366b147e">
-            <useCaseMoniker Id="4f204b5b-7336-49ad-a659-288f2911ce83" LastKnownName="Selectionner case initiale" />
+            <useCaseMoniker Id="4f204b5b-7336-49ad-a659-288f2911ce83" LastKnownName="Selectionner la case initiale avec unité que l'on souhaite utiliser" />
             <elementDefinition Id="f7528342-26dd-4344-aec5-ba9fb2056680" />
           </include>
           <include Id="20b4c684-b95e-4e85-83af-052ae041cbf3">
-            <useCaseMoniker Id="44254ffb-8d89-4c96-b843-0dec85483e73" LastKnownName="Selectionner case destination" />
+            <useCaseMoniker Id="44254ffb-8d89-4c96-b843-0dec85483e73" LastKnownName="Selectionner la case de destination de l'unité sélectionnée" />
             <elementDefinition Id="303f2266-eb1e-4aa5-9779-c6653852edf0" />
           </include>
           <include Id="38e26086-766a-453a-8cc0-37726d1f490c">
-            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="SelectionnerUnite d'une case" />
+            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="Selectionner l'unite que l'on souhaite utiliser parmi les unités de la case" />
             <elementDefinition Id="a043bc89-2658-4664-a2d1-77926f7a5a5c" />
           </include>
         </additions>
@@ -125,17 +125,17 @@
       <useCase Id="03174501-0be0-4430-8da5-4e5cd21e0db1" name="Attaquer unité adverse" isAbstract="false" isLeaf="false">
         <elementDefinition Id="c9b75c54-6cd7-4209-a0bc-6b08cdceb598" />
         <additions>
-          <include Id="07e3f3e3-4d92-408e-8125-110e8245c143">
-            <useCaseMoniker Id="4f204b5b-7336-49ad-a659-288f2911ce83" LastKnownName="Selectionner case initiale" />
-            <elementDefinition Id="33f65dc4-9240-4f86-b522-d02c73e67574" />
-          </include>
           <include Id="bbc96491-aa7e-4d00-9833-ae41f519ce25">
-            <useCaseMoniker Id="44254ffb-8d89-4c96-b843-0dec85483e73" LastKnownName="Selectionner case destination" />
+            <useCaseMoniker Id="44254ffb-8d89-4c96-b843-0dec85483e73" LastKnownName="Selectionner la case de destination de l'unité sélectionnée" />
             <elementDefinition Id="c239d1e0-c44a-4d8b-8403-eb7a04a733b5" />
           </include>
           <include Id="24cce245-a072-4da6-a1cc-a094834916c9">
-            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="SelectionnerUnite d'une case" />
+            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="Selectionner l'unite que l'on souhaite utiliser parmi les unités de la case" />
             <elementDefinition Id="e8023048-baf2-4555-9c63-2cbca41c731f" />
+          </include>
+          <include Id="66202d9c-0d42-4a5d-88bc-df1d7a446732">
+            <useCaseMoniker Id="4f204b5b-7336-49ad-a659-288f2911ce83" LastKnownName="Selectionner la case initiale avec unité que l'on souhaite utiliser" />
+            <elementDefinition Id="109cb6dd-fe0b-4f03-ace9-92a95427e324" />
           </include>
         </additions>
         <subjects>
@@ -155,13 +155,13 @@
       <useCase Id="0afcbb29-91fd-495a-9478-7a9b7cea06ac" name="Passer le tour de l'unité" isAbstract="false" isLeaf="false">
         <elementDefinition Id="f4f390e3-6f98-4612-b04f-b7f5ebf30270" />
         <additions>
-          <include Id="89d13e0b-5920-441d-a393-9c45885443fc">
-            <useCaseMoniker Id="4f204b5b-7336-49ad-a659-288f2911ce83" LastKnownName="Selectionner case initiale" />
-            <elementDefinition Id="0544039f-fb0a-498f-86e9-3420982b823e" />
-          </include>
           <include Id="c979bf16-4fbf-48b1-8d01-66609eea2d04">
-            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="SelectionnerUnite d'une case" />
+            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="Selectionner l'unite que l'on souhaite utiliser parmi les unités de la case" />
             <elementDefinition Id="0e3593de-2394-4351-add3-3b2e7b52c3f1" />
+          </include>
+          <include Id="f1d73dc4-d401-45df-bd44-dcfe88b3ada0">
+            <useCaseMoniker Id="4f204b5b-7336-49ad-a659-288f2911ce83" LastKnownName="Selectionner la case initiale avec unité que l'on souhaite utiliser" />
+            <elementDefinition Id="bb0e6094-0111-40e4-a852-c17670fc0079" />
           </include>
         </additions>
         <subjects>
@@ -170,7 +170,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <packageHasNamedElement>
-      <useCase Id="4f204b5b-7336-49ad-a659-288f2911ce83" name="Selectionner case initiale" isAbstract="false" isLeaf="false">
+      <useCase Id="4f204b5b-7336-49ad-a659-288f2911ce83" name="Selectionner la case initiale avec unité que l'on souhaite utiliser" isAbstract="false" isLeaf="false">
         <elementDefinition Id="04e12ef0-b11b-4058-a1fc-49fc058068ea" />
         <subjects>
           <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
@@ -178,7 +178,7 @@
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="44254ffb-8d89-4c96-b843-0dec85483e73" name="Selectionner case destination" isAbstract="false" isLeaf="false">
+      <useCase Id="44254ffb-8d89-4c96-b843-0dec85483e73" name="Selectionner la case de destination de l'unité sélectionnée" isAbstract="false" isLeaf="false">
         <elementDefinition Id="e0562b36-457d-45e4-b234-466ef47129c8" />
         <subjects>
           <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
@@ -186,8 +186,36 @@
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" name="SelectionnerUnite d'une case" isAbstract="false" isLeaf="false">
+      <useCase Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" name="Selectionner l'unite que l'on souhaite utiliser parmi les unités de la case" isAbstract="false" isLeaf="false">
         <elementDefinition Id="b0594cb9-37ee-434d-b062-b829c8779629" />
+        <subjects>
+          <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="c9aeef59-75c0-4e04-9a68-9808ad1cc34a" name="Action impossible" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2ae3fb1d-3e8f-49df-bc94-7cc91caefaf9" />
+        <extendedCases>
+          <extend Id="225c865a-65c0-4164-baf7-a2f155fc04ac">
+            <useCaseMoniker Id="44254ffb-8d89-4c96-b843-0dec85483e73" LastKnownName="Selectionner la case de destination de l'unité sélectionnée" />
+            <elementDefinition Id="8ceb4fc7-cc61-4a58-aebc-b5da21f65e40" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="1ff7e81a-0c9b-4557-8c9b-1764339bec31" name="L'unité à passé son tour" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7f05f13f-0010-476c-b961-c40081348c4c" />
+        <extendedCases>
+          <extend Id="d370fb5e-373e-4f43-bdf4-50ba8351d9ad">
+            <useCaseMoniker Id="9f74d332-cd1e-4db3-a276-1e84630de1bd" LastKnownName="Selectionner l'unite que l'on souhaite utiliser parmi les unités de la case" />
+            <elementDefinition Id="a234cad7-a8a1-436d-938d-b2db5049816f" />
+          </extend>
+        </extendedCases>
         <subjects>
           <subsystemMoniker Id="c9ff3d93-f9d5-468a-81db-0bc61c241da9" LastKnownName="Jouer" />
         </subjects>

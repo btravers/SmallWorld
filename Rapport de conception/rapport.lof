@@ -1,12 +1,12 @@
 \select@language {french}
-\contentsline {figure}{\numberline {1}{\ignorespaces Small World}}{3}
+\contentsline {figure}{\numberline {1}{\ignorespaces Plateau du jeu Small World}}{3}
 \contentsline {figure}{\numberline {2}{\ignorespaces Diagramme de cas d'utilisation global}}{4}
 \contentsline {figure}{\numberline {3}{\ignorespaces Diagramme de cas d'utilisation : Cr\IeC {\'e}ation de la partie}}{5}
 \contentsline {figure}{\numberline {4}{\ignorespaces Diagramme de cas d'utilisation : Tour de Jeu}}{6}
 \contentsline {figure}{\numberline {5}{\ignorespaces Fabrique}}{7}
 \contentsline {figure}{\numberline {6}{\ignorespaces Monteur}}{8}
-\contentsline {figure}{\numberline {7}{\ignorespaces Poids-Mouche}}{8}
-\contentsline {figure}{\numberline {8}{\ignorespaces Strat\IeC {\'e}gie}}{9}
-\contentsline {figure}{\numberline {9}{\ignorespaces Diagramme d'\IeC {\'e}tats-transitions}}{10}
-\contentsline {figure}{\numberline {10}{\ignorespaces Diagramme de s\IeC {\'e}quence : Ajouter le peuple du joueur A}}{11}
-\contentsline {figure}{\numberline {11}{\ignorespaces Diagramme de s\IeC {\'e}quence : Ajouter la carte}}{12}
+\contentsline {figure}{\numberline {7}{\ignorespaces Poids-Mouche}}{9}
+\contentsline {figure}{\numberline {8}{\ignorespaces Strat\IeC {\'e}gie}}{10}
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagramme d'\IeC {\'e}tats-transitions}}{11}
+\contentsline {figure}{\numberline {10}{\ignorespaces Diagramme de s\IeC {\'e}quence : Ajouter la carte \IeC {\`a} la partie}}{12}
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagramme de s\IeC {\'e}quence : Ajouter les joueurs \IeC {\`a} la partie}}{13}
