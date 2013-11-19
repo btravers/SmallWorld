@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.12)  18 NOV 2013 23:19
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.12)  19 NOV 2013 14:36
 entering extended mode
 **C:/Users/Benoit*Travers/Documents/GitHub/SmallWorld/Rapport*de*conception/rap
 port.tex
@@ -270,104 +270,104 @@ Package pdftex.def Info: poids_mouche.png used on input line 111.
 (pdftex.def)             Requested size: 452.9679pt x 185.75215pt.
 
 [8 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/m
-onteur.png>] [9 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de
- conception/poids_mouche.png>]
-<strategie.png, id=52, 395.22656pt x 276.28218pt>
+onteur.png>] <strategie.png, id=48, 395.22656pt x 276.28218pt>
 File: strategie.png Graphic file (type png)
- <use strategie.png>
-Package pdftex.def Info: strategie.png used on input line 121.
+
+<use strategie.png>
+Package pdftex.def Info: strategie.png used on input line 120.
 (pdftex.def)             Requested size: 317.07614pt x 221.65417pt.
- [10 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception
-/strategie.png>] <diagramme_etats-transitions.png, id=57, 844.8307pt x 597.7681
-4pt>
+ [9 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+poids_mouche.png> <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport 
+de conception/strategie.png>]
+<diagramme_etats-transitions.png, id=54, 844.8307pt x 597.76814pt>
 File: diagramme_etats-transitions.png Graphic file (type png)
 
 <use diagramme_etats-transitions.png>
-Package pdftex.def Info: diagramme_etats-transitions.png used on input line 135
+Package pdftex.def Info: diagramme_etats-transitions.png used on input line 134
 .
 (pdftex.def)             Requested size: 452.9679pt x 320.50056pt.
- [11 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception
+ [10 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception
 /diagramme_etats-transitions.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
-<addCarte.png, id=61, 448.67625pt x 709.90219pt>
+<addCarte.png, id=58, 448.67625pt x 709.90219pt>
 File: addCarte.png Graphic file (type png)
  <use addCarte.png>
-Package pdftex.def Info: addCarte.png used on input line 156.
+Package pdftex.def Info: addCarte.png used on input line 155.
 (pdftex.def)             Requested size: 271.7835pt x 430.02835pt.
- [12]
-<addJoueur.png, id=65, 1192.455pt x 942.52126pt>
+ [11]
+<addJoueur.png, id=62, 1192.455pt x 942.52126pt>
 File: addJoueur.png Graphic file (type png)
  <use addJoueur.png>
-Package pdftex.def Info: addJoueur.png used on input line 162.
+Package pdftex.def Info: addJoueur.png used on input line 161.
 (pdftex.def)             Requested size: 452.9679pt x 358.01799pt.
- [13 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception
+ [12 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception
 /addCarte.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
-[14 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
-addJoueur.png>] <diagramme_classes.png, id=75, 551.05875pt x 1171.37625pt>
+[13 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+addJoueur.png>] <diagramme_classes.png, id=72, 551.05875pt x 1171.37625pt>
 File: diagramme_classes.png Graphic file (type png)
 
 <use diagramme_classes.png>
-Package pdftex.def Info: diagramme_classes.png used on input line 187.
+Package pdftex.def Info: diagramme_classes.png used on input line 186.
 (pdftex.def)             Requested size: 317.07614pt x 674.0187pt.
- [15]
+ [14]
 Overfull \vbox (37.2115pt too high) has occurred while \output is active []
 
 
-[16 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
-diagramme_classes.png>] <creation.png, id=83, 1035.87pt x 1737.49126pt>
+[15 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+diagramme_classes.png>] <creation.png, id=80, 1035.87pt x 1737.49126pt>
 File: creation.png Graphic file (type png)
 
 <use creation.png>
-Package pdftex.def Info: creation.png used on input line 195.
+Package pdftex.def Info: creation.png used on input line 194.
 (pdftex.def)             Requested size: 452.9679pt x 759.7794pt.
 
 Overfull \vbox (122.9722pt too high) has occurred while \output is active []
 
 
-[17 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
-creation.png>] <tourDeJeu.png, id=88, 798.73407pt x 1728.4575pt>
+[16 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+creation.png>] <tourDeJeu.png, id=85, 798.73407pt x 1728.4575pt>
 File: tourDeJeu.png Graphic file (type png)
 
 <use tourDeJeu.png>
-Package pdftex.def Info: tourDeJeu.png used on input line 203.
+Package pdftex.def Info: tourDeJeu.png used on input line 202.
 (pdftex.def)             Requested size: 294.42636pt x 637.1456pt.
 
 Overfull \vbox (15.5391pt too high) has occurred while \output is active []
 
 
-[18 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
+[17 <C:/Users/Benoit Travers/Documents/GitHub/SmallWorld/Rapport de conception/
 tourDeJeu.png>]
 ("C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\Rapport de conception\rap
 port.lof")
 \tf@lof=\write4
- [19]
+ [18]
 ("C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\Rapport de conception\rap
 port.aux") ) 
 Here is how much of TeX's memory you used:
  3049 strings out of 493921
  41357 string characters out of 3142442
- 98475 words of memory out of 3000000
+ 98474 words of memory out of 3000000
  6303 multiletter control sequences out of 15000+200000
  13788 words of font info for 33 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,6n,26p,1064b,607s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,6n,26p,1061b,607s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
 jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2
 .9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\Benoit Travers\App
@@ -380,9 +380,9 @@ a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Be
 noit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm17
 28.pk> <C:\Users\Benoit Travers\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
 en\ec\dpi600\eccc1728.pk>
-Output written on rapport.pdf (19 pages, 1218030 bytes).
+Output written on rapport.pdf (18 pages, 1218189 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
+ 364 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

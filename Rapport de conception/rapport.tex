@@ -24,9 +24,9 @@
 
 \section*{Introduction}
 
-En cette quatrième année Informatique, nous sommes amenés à modéliser un jeu tour-par-tour similaire à Small World.L'une des premières étape dans la réalisation d'un tel projet est la modélisation à l'aide des différents types de diagramme UML. Ce rapport marque la fin de cette phase d'analyse et de conception, regroupant les différents diagrammes de cas d'utilisation, diagrammes de classe, diagramme d'états-transitions et diagrammes d'intéraction. \\
+En cette quatrième année Informatique, nous sommes amenés à modéliser un jeu tour-par-tour similaire à Small World. L'une des premières étape dans la réalisation d'un tel projet est la modélisation à l'aide des différents types de diagramme UML. Ce rapport marque la fin de cette phase d'analyse et de conception, regroupant les différents diagrammes de cas d'utilisation, diagrammes de classe, diagramme d'états-transitions et diagrammes d'intéraction. \\
 
-Un rapide rappel du principe du jeu à implémenter s'impose. Deux joueurs, que l'on appelera joueur A et joueur B, gère un peuple (Nains, Gaulois et Vikings) composé de plusieurs unités. L'objectif est de gérer ses unités sur une carte, que se partage les deux joueurs, pour obtenir le plus de points possible à la fin d'un certain nombre de tours. Initialement, les joueurs positionnent leurs unités sur une case, un placement qui rapportera plus ou moins de points. Ensuite, les joueurs devront déplacer leurs unités, encore une fois l'occupation d'une case rapporte plus ou moins de points, et attaquer les unités de leur adversaire dans l'objectif de limiter l'acquisition de points de l'adversaire. Après un certain nombre de tours la partie s'arrête et les points sont comptés.\\
+Un rapide rappel du principe du jeu à implémenter s'impose. Deux joueurs, que l'on appelera joueur A et joueur B, gère un peuple (Nains, Gaulois et Vikings) composé de plusieurs unités. L'objectif est de gérer ses unités sur une carte, que se partage les deux joueurs, pour le plus de points possible à la fin d'un certain nombre de tours. Initialement, les joueurs positionnent leurs unités sur une case, un placement qui rapportera plus ou moins de points. Ensuite, les joueurs devront déplacer leurs unités, encore une fois l'occupation d'une case rapporte plus ou moins de points, et attaquer les unités de leur adversaire dans l'objectif de limiter l'acquisition de points de l'adversaire. Après un certain nombre de tours, la partie s'arrête et les points sont comptés.\\
 
 \begin{figure}[H]
 \centering
@@ -60,7 +60,7 @@ Avant de pouvoir jouer, il faut créer la partie. Pour cela, le joueur A choisit
 
 \subsection{Tour de jeu}
 
-Lors de son tour de jeu, un joueur peut effectuer différentes actions. Il peut déplacer une unité qui n'a pas passé son tour et pour se faire, il doit sélectionner la case contenant l'unité, il chosit l'unité sur la case selectionnée (il peut y avoir plusieurs unités d'un même joueur sur une même case) puis il sélectionne une case de destination. Cependant, il est necessaire de veiller à ce que l'unité sélectionnée par le joueur puisse effectuer le déplacement (l'unité à les points de mouvement necessaires et la type de la case de destination est compatible avec le peuple du joueur). \\ 
+Lors de son tour de jeu, un joueur peut effectuer différentes actions. Il peut déplacer une unité qui n'a pas passé son tour et pour se faire, il doit sélectionner la case contenant l'unité, il chosit l'unité sur la case selectionnée (il peut y avoir plusieurs unités d'un même joueur sur une même case) puis il sélectionne une case de destination. Cependant, il est necessaire de veiller à ce que l'unité sélectionnée par le joueur puisse effectuer le déplacement (l'unité à les points de mouvement necessaires et le type de la case de destination est compatible avec le peuple du joueur). \\ 
 
 Un joueur peut aussi attaquer une unité adverse avec une de ses unités qui n'a pas passé son tour. Pour cela, le joueur doit séléctionner la case contenant l'unité qu'il souhaite engager au combat, il choisit l'unité sur la case selectionnée puis il selectionne la case de destination avec l'unité adversaire qu'il souhaite attaquer. Encore une fois, il faut veiller à ce que l'unité sélectionnée par le joueur puisse attaquer l'adversaire. \\
 
@@ -96,7 +96,7 @@ En ce qui concerne la classe Unite, on remarque qu'elle contient de nombreux att
 
 Le deuxième patron utilisé est le monteur. Ce patron permet l'assemblage des différents composants de la partie. La classe CreateurPartie reccueille les informations concernant la création de partie telles que les peuples et la carte choisis puis lance la création de la partie à l'aide du bon monteur. Le monteur assemble les différents composants de la partie (la carte et les joueurs) avant de la renvoyer. \\
 
-La classe Partie va contenir tout ce qui est utile au déroulement de la partie. Si l'on regarde les attributs, on a les deux joueurs ("\_jA" et "\_jB"), la carte ("\_carte"), le nombre de tour restant ("\_toursRestant"), le joueur qui commence ("\_premierJoueur"), le joueur qui joue ("\_joueur") et l'unité sélectionnée ("\_uniteSelectionnee"). Le constructeur de Partie est choisi aléatoirement le joueur qui va débuter la partie. Côté méthodes, on va retrouver les méthodes pour positionner les unités en début de partie("bool peutPositionnerUnites(Joueur j, int x, int y)", "void positionnerUnites(Joueur j, int x, int y)"), une méthode pour passer au joueur suivant ("void joueurSuivant()"), une méthode pour savoir si c'est au tour du joueur A ("bool joueJoueurA()") et les méthodes de selection de cases pour le déplacement et l'attaque ("List<Unite> selectCaseInitiale(int x, int y)", "void selectCaseDestination(int x, int y)").
+La classe Partie va contenir tout ce qui est utile au déroulement de la partie. Si l'on regarde les attributs, on a les deux joueurs ("\_jA" et "\_jB"), la carte ("\_carte"), le nombre de tour restant ("\_toursRestant"), le joueur qui commence ("\_premierJoueur"), le joueur qui joue ("\_joueur") et l'unité sélectionnée ("\_uniteSelectionnee"). Le constructeur de Partie choisit aléatoirement le joueur qui va débuter la partie. Côté méthodes, on va retrouver les méthodes pour positionner les unités en début de partie("bool peutPositionnerUnites(Joueur j, int x, int y)", "void positionnerUnites(Joueur j, int x, int y)"), une méthode pour passer au joueur suivant ("void joueurSuivant()"), une méthode pour savoir si c'est au tour du joueur A ("bool joueJoueurA()") et les méthodes de selection de cases pour le déplacement et l'attaque ("List<Unite> selectCaseInitiale(int x, int y)", "void selectCaseDestination(int x, int y)").
 
 \begin{figure}[H]
 \centering
@@ -104,7 +104,7 @@ La classe Partie va contenir tout ce qui est utile au déroulement de la partie.
 \caption{\label{fig:monteur}Monteur}
 \end{figure}
 
-Un autre patron utilisé est le poids-mouche. La classe Carte contient un tableau de Cases. Cependant chaque case n'est instanciée qu'une seule fois par la classe FabriqueCase dans l'objectif de ne pas consommer trop de mémoire. L'instance de case souhaitée est donnée par la méthode "Case getCase(string c)".
+Un autre patron utilisé est le poids-mouche. La classe Carte contient un tableau de Cases. Cependant chaque case n'est instanciée qu'une seule fois par la classe FabriqueCase lors de sa création dans l'objectif de ne pas consommer trop de mémoire. L'instance de case souhaitée est délivrée par la méthode "Case getCase(string c)".
 
 \begin{figure}[H]s
 \centering
@@ -112,9 +112,8 @@ Un autre patron utilisé est le poids-mouche. La classe Carte contient un tablea
 \caption{\label{fig:poids_mouche}Poids-Mouche}
 \end{figure}
 
-\newpage
 
-Le dernier patron utilisé est la stratégie. Le créateur carte va faire appel à l'algorythme de création de carte développé en C++ à travaers la méthode "Carte construire()". Mais l'appel a cet algorithme sera différent selon le type de carte à créer. (On rappelle que l'on considère dans notre implémentation trois types de cartes : Démo, Petite et Normale).
+Le dernier patron utilisé est la stratégie. Le CréateurCarte va faire appel à l'algorythme de création de carte développé en C++ à travaers la méthode "Carte construire()". Mais l'appel a cet algorithme sera différent selon le type de carte à créer. (On rappelle que l'on considère dans notre implémentation trois types de cartes : Démo, Petite et Normale).
 
 \begin{figure}[H]
 \centering
@@ -169,13 +168,13 @@ En annexe \ref{app:tour}, on retrouve le diagramme de séquence modélisant le d
 
 Si, au contraire, le joueur a au moins une unité sur la case sélectionnée, il devra choisir l'unitée à sélectionner et qui sera concervée par l'atribut \_unitéSelectionnee de la classe Partie. Ensuite, le joueur devra selectionner une case de destination. On vérifie si cette case est à portée de l'unité sélectionnée, c'est-à-dire si il existe un chemin pour aller jusqu'à cette case sans dépasser le nombre de point de mouvement de l'unité.\\
 
- Ensuite, soit la case de destination sélectionnée n'a pas d'unité ennemie et l'unité sélectionnée va se déplacer sur cette case, soit il y a au moins une unité ennemie et l'unité sélectionnée attaque la meilleure unitée ennemie présente sur la case.
+ Ensuite, soit la case de destination sélectionnée n'a pas d'unité ennemie et l'unité sélectionnée va se déplacer sur cette case (on vérifie que le type de la case de destination est en accord avec le peuple choisi par le joueur), soit il y a au moins une unité ennemie et l'unité sélectionnée attaque la meilleure unitée ennemie présente sur la case. Avec cette modélisation, on suppose que les Nains et les Gaulois ont la possibilité d'attaquer les Vikings sur une case eau, cependant ils n'ont pas le droit de se déplacer sur une case de ce type, d'où une première vérification cherchant à savoir si la case est à porté de l'unité sélectionnée puis si on se déplace, on vérifie la possibilité de déplacement.
 
 \newpage
 
 \section*{Conclusion}
 
-Ce rapport nous donne une idée de la modélisation de notre jeu. Cependant notre modèle n'est pas définitif, il évoluera par la suite avec la phase d'implémentation.
+Ce rapport marque la fin de la phase d'annalyse et de conception. Les diagrammes présentés dans ce rapport nous servirons de base pour notre phase d'implémentation. Cependant ces diagrammes sont susceptibles d'évoluer avec les eventuels problèmes pouvant se confronter à nous lors de cette phase d'implémentation.
 
 
 \begin{appendices}
