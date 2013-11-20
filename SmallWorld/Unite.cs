@@ -73,7 +73,7 @@ namespace SmallWorld
             this._pm = 1;
         }
 
-        public bool peutPositionner(int x, int y, Case c);
+        public abstract bool peutPositionner(int x, int y, Case c);
 
         public void positionner(int x, int y)
         {
@@ -91,7 +91,7 @@ namespace SmallWorld
             return this._pm - Math.Abs(this._x - x) + Math.Abs(this._y - y) > 0;
         }
 
-        public bool peutDeplacer(int x, int y, Case c);
+        public abstract bool peutDeplacer(int x, int y, Case c);
 
         public void deplacer(int x, int y)
         {
@@ -112,12 +112,12 @@ namespace SmallWorld
 
     public class UniteVikings : Unite, IUniteVikings
     {
-        public bool peutPositionner(int x, int y, Case c)
+        public override bool peutPositionner(int x, int y, Case c)
         {
             return true;
         }
 
-        public bool peutDeplacer(int x, int y)
+        public override bool peutDeplacer(int x, int y, Case c)
         {
             return false; // TODO
         }
@@ -125,7 +125,7 @@ namespace SmallWorld
 
     public class UniteGaulois : Unite, IUniteGaulois
     {
-        public bool peutPositionner(int x, int y, Case c)
+        public override bool peutPositionner(int x, int y, Case c)
         {
             if (c is Eau)
             {
@@ -134,7 +134,7 @@ namespace SmallWorld
             return true;
         }
 
-        public bool peutDeplacer(int x, int y)
+        public override bool peutDeplacer(int x, int y, Case c)
         {
             return false; // TODO
         }
@@ -142,7 +142,7 @@ namespace SmallWorld
 
     public class UniteNains : Unite, IUniteNains
     {
-        public bool peutPositionner(int x, int y, Case c)
+        public override bool peutPositionner(int x, int y, Case c)
         {
             if(c is Eau)
             {
@@ -151,7 +151,7 @@ namespace SmallWorld
             return true;
         }
 
-        public bool peutDeplacer(int x, int y)
+        public override bool peutDeplacer(int x, int y, Case c)
         {
             return false; // TODO
         }

@@ -23,15 +23,15 @@ namespace SmallWorld
             set;
         }
 
-        private String _peupleA
+        public String _peupleA
         {
-            public get;
+            get;
             private set;
         }
 
-        private String _peupleB
+        public String _peupleB
         {
-            public get;
+            get;
             private set;
         }
 

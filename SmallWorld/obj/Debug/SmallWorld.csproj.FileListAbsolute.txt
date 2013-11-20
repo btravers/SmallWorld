@@ -1,0 +1,4 @@
+H:\POO\SmallWorld\SmallWorld\SmallWorld\bin\Debug\SmallWorld.dll
+H:\POO\SmallWorld\SmallWorld\SmallWorld\bin\Debug\SmallWorld.pdb
+H:\POO\SmallWorld\SmallWorld\SmallWorld\obj\Debug\SmallWorld.dll
+H:\POO\SmallWorld\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb

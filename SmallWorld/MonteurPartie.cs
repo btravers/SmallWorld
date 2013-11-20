@@ -38,27 +38,27 @@ namespace SmallWorld
             return this._partie;
         }
 
-        private void addNbTours();
+        protected abstract void addNbTours();
 
-        private void addCarte();
+        protected abstract void addCarte();
 
-        private void addJoueurs(String peupleA, String peupleB);
+        protected abstract void addJoueurs(String peupleA, String peupleB);
     }
 
     public class MonteurPartieDemo : MonteurPartie, IMonteurPartieDemo
     {
-        private void addNbTours()
+        protected override void addNbTours()
         {
             this._partie._toursRestant = 5;
         }
 
-        private void addCarte()
+        protected override void addCarte()
         {
             CreateurCarte createurCarte = new CreateurCarteDemo();
             this._partie._carte = createurCarte.construire();
         }
 
-        private void addJoueurs(String peupleA, String peupleB)
+        protected override void addJoueurs(String peupleA, String peupleB)
         {
             this._partie._jA = new Joueur(peupleA, 4);
             this._partie._jB = new Joueur(peupleB, 4);
@@ -67,18 +67,18 @@ namespace SmallWorld
 
     public class MonteurPartiePetite : MonteurPartie, IMonteurPartiePetite
     {
-        private void addNbTours()
+        protected override void addNbTours()
         {
             this._partie._toursRestant = 20;
         }
 
-        private void addCarte()
+        protected override void addCarte()
         {
             CreateurCarte createurCarte = new CreateurCartePetite();
             this._partie._carte = createurCarte.construire();
         }
 
-        private void addJoueurs(String peupleA, String peupleB)
+        protected override void addJoueurs(String peupleA, String peupleB)
         {
             this._partie._jA = new Joueur(peupleA, 6);
             this._partie._jB = new Joueur(peupleB, 9);
@@ -87,19 +87,19 @@ namespace SmallWorld
 
     public class MonteurPartieNormale : MonteurPartie, IMonteurPartieNormale
     {
-        private void addNbTours()
+        protected override void addNbTours()
         {
             this._partie._toursRestant = 30;
         }
 
 
-        private void addCarte()
+        protected override void addCarte()
         {
             CreateurCarte createurCarte = new CreateurCarteNormale();
             this._partie._carte = createurCarte.construire();
         }
 
-        private void addJoueurs(String peupleA, String peupleB)
+        protected override void addJoueurs(String peupleA, String peupleB)
         {
             this._partie._jA = new Joueur(peupleA, 8);
             this._partie._jB = new Joueur(peupleB, 8);

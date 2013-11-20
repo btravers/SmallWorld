@@ -23,12 +23,12 @@ namespace SmallWorld
 
     public abstract class Peuple : IPeuple
     {
-        public Unite fabriquerUnite();
+        public abstract Unite fabriquerUnite();
     }
 
     public class Vikings : Peuple, IVikings
     {
-        public Unite fabriquerUnite()
+        public override Unite fabriquerUnite()
         {
             return new UniteVikings();
         }
@@ -36,7 +36,7 @@ namespace SmallWorld
 
     public class Gaulois : Peuple, IGaulois
     {
-        public Unite fabriquerUnite()
+        public override Unite fabriquerUnite()
         {
             return new UniteGaulois();
         }
@@ -44,7 +44,7 @@ namespace SmallWorld
 
     public class Nains : Peuple, INains
     {
-        public Unite fabriquerUnite()
+        public override Unite fabriquerUnite()
         {
             return new UniteNains();
         }

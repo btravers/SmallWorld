@@ -23,12 +23,12 @@ namespace SmallWorld
 
     public abstract class CreateurCarte : ICreateurCarte
     {
-        public Carte construire();
+        public abstract Carte construire();
     }
 
     public class CreateurCarteDemo : CreateurCarte, ICreateurCarteDemo
     {
-        public Carte construire()
+        public override Carte construire()
         {
             Carte carte = new Carte(5); // TODO
             return carte;
@@ -37,7 +37,7 @@ namespace SmallWorld
 
     public class CreateurCartePetite : CreateurCarte, ICreateurCartePetite
     {
-        public Carte construire()
+        public override Carte construire()
         {
             Carte carte = new Carte(10); // TODO
             return carte;
@@ -46,7 +46,7 @@ namespace SmallWorld
 
     public class CreateurCarteNormale : CreateurCarte, ICreateurCarteNormale
     {
-        public Carte construire()
+        public override Carte construire()
         {
             Carte carte = new Carte(15); // TODO
             return carte;
