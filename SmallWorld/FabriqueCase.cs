@@ -50,19 +50,19 @@ namespace SmallWorld
             this._f = new Foret();
         }
 
-        public Case getCase(String c)
+        public Case getCase(TypeCase c)
         {
             switch (c)
             {
-                case "montagne":
+                case TypeCase.montagne:
                     return this._m;
-                case "plaine":
+                case TypeCase.plaine:
                     return this._p;
-                case "desert":
+                case TypeCase.desert:
                     return this._d;
-                case "eau":
+                case TypeCase.eau:
                     return this._e;
-                case "foret":
+                case TypeCase.foret:
                     return this._f;
             }
             return null;

@@ -52,4 +52,12 @@ namespace SmallWorld
     public class Foret : Case, IForet
     {
     }
+
+    enum TypeCase { 
+        montagne,
+        plaine,
+        desert,
+        eau,
+        foret
+    };
 }
