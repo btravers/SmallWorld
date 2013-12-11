@@ -16,6 +16,6 @@
     
     <Grid>
         <local:Select x:Name="SelectScreen"/>
-        <local:Game x:Name="GameScreen" Visibility="Collapsed"/>
+        <!--<local:Game x:Name="GameScreen" Visibility="Collapsed"/>-->
     </Grid>
 </Window>

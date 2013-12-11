@@ -53,7 +53,7 @@ namespace SmallWorld
     {
     }
 
-    enum TypeCase { 
+    public enum TypeCase { 
         montagne,
         plaine,
         desert,
