@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+//Carte est stocké dans this._partie._carte
+
 namespace SmallWorld
 {
     public interface IMonteurPartie
@@ -34,7 +36,7 @@ namespace SmallWorld
             this._partie = new Partie();
             this.addNbTours();
             this.addCarte();
-            this.addJoueurs(peupleA, peupleB);
+            //this.addJoueurs(peupleA, peupleB);
             return this._partie;
         }
 

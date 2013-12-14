@@ -40,6 +40,7 @@ namespace SmallWorld
             }
             for (int i = 0; i < nbUnites; i++)
             {
+                //Erreur ici !
                 this._unites.Add(peuple.fabriquerUnite());
             }
         }

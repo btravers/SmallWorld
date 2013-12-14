@@ -10,12 +10,20 @@ int * Carte::generateMap(int size)
 
 	int * carte;
 	carte = new int[s];
+	bool ok = false;
 
 	for(int i = 0 ; i < s ; i++) {
 		do {
 			carte[i] = rand() % 5;
-		} while((s/NB_TYPE+2) > nbType[carte[i]]);
+			if(nbType[carte[i]]-1 < s/NB_TYPE)
+			{
+				ok = true;
+			}
+		} while (!ok);
+
 		nbType[carte[i]]++;
+		ok = false;
 	}
+
 	return carte;
 }

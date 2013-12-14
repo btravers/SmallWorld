@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="WPFSmallWorld.Select"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock FontWeight="Bold" FontSize="14" TextAlignment="Center">SmallWorld</TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="0">
+                <TextBlock FontWeight="Bold" FontSize="14">Joueur 1</TextBlock>
+                <RadioButton Name="j1Nains" Checked="j1NainsChecked">
+                    Nains
+                </RadioButton>
+                <RadioButton Name="j1Vikings" Checked="j1VikingsChecked">
+                    Vikings
+                </RadioButton>
+                <RadioButton Name="j1Gaulois" Checked="j1GauloisChecked">
+                    Gaulois
+                </RadioButton>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="1">
+                <TextBlock FontWeight="Bold" FontSize="14">Joueur 2</TextBlock>
+                <RadioButton Name="j2Nains" Checked="j2NainsChecked">
+                    Nains
+                </RadioButton>
+                <RadioButton Name="j2Vikings" Checked="j2VikingsChecked">
+                    Vikings
+                </RadioButton>
+                <RadioButton Name="j2Gaulois" Checked="j2GauloisChecked">
+                    Gaulois
+                </RadioButton>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackPanel>
+                <TextBlock FontWeight="Bold" FontSize="14">Choix de la carte</TextBlock>
+                <RadioButton Name="cDemo" Checked="cDemoChecked">
+                    Demonstration
+                </RadioButton>
+                <RadioButton Name="cPetite" Checked="cPetiteChecked">
+                    Petite
+                </RadioButton>
+                <RadioButton Name="cNormale" Checked="cNormaleChecked">
+                    Normale
+                </RadioButton>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <StackPanel>
+                <Button Content="Valider" Click="valider"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
