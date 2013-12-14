@@ -10,64 +10,37 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height ="*" />
-            <RowDefinition Height ="*" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <TextBlock FontWeight="Bold" FontSize="14" TextAlignment="Center">SmallWorld</TextBlock>
-        </Grid>
-
-        <Grid Grid.Row="1">
+        <Grid Background="Azure" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-
-            <StackPanel HorizontalAlignment="Stretch" Grid.Column="0">
-                <TextBlock FontWeight="Bold" FontSize="14">Joueur 1</TextBlock>
-                <RadioButton Name="j1Nains" Checked="j1NainsChecked">
-                    Nains
-                </RadioButton>
-                <RadioButton Name="j1Vikings" Checked="j1VikingsChecked">
-                    Vikings
-                </RadioButton>
-                <RadioButton Name="j1Gaulois" Checked="j1GauloisChecked">
-                    Gaulois
-                </RadioButton>
-            </StackPanel>
-
-            <StackPanel HorizontalAlignment="Stretch" Grid.Column="1">
-                <TextBlock FontWeight="Bold" FontSize="14">Joueur 2</TextBlock>
-                <RadioButton Name="j2Nains" Checked="j2NainsChecked">
-                    Nains
-                </RadioButton>
-                <RadioButton Name="j2Vikings" Checked="j2VikingsChecked">
-                    Vikings
-                </RadioButton>
-                <RadioButton Name="j2Gaulois" Checked="j2GauloisChecked">
-                    Gaulois
-                </RadioButton>
-            </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="2">
-            <StackPanel>
-                <TextBlock FontWeight="Bold" FontSize="14">Choix de la carte</TextBlock>
-                <RadioButton Name="cDemo" Checked="cDemoChecked">
-                    Demonstration
-                </RadioButton>
-                <RadioButton Name="cPetite" Checked="cPetiteChecked">
-                    Petite
-                </RadioButton>
-                <RadioButton Name="cNormale" Checked="cNormaleChecked">
-                    Normale
-                </RadioButton>
-            </StackPanel>
-        </Grid>
+        <Grid Background="Azure" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="3">
-            <StackPanel>
-                <Button Content="Valider" Click="valider"/>
+            <StackPanel Background="Blue" HorizontalAlignment="Stretch" Grid.Column="0">
+                <TextBlock FontWeight="Bold" FontSize="14">Peuple 1</TextBlock>
+                <TextBlock>points</TextBlock>
+                <TextBlock>unités restantes</TextBlock>
+            </StackPanel>
+
+            <StackPanel Background="Red" HorizontalAlignment="Stretch" Grid.Column="1">
+                <TextBlock FontWeight="Bold" FontSize="14">Peuple 2</TextBlock>
+                <TextBlock>points</TextBlock>
+                <TextBlock>unités restantes</TextBlock>
+            </StackPanel>
+
+            <StackPanel Background="Green" HorizontalAlignment="Stretch" Grid.Column="2">
+                <Button x:Name="finDeTour" Content="Fin de Tour" Click="Button_Click" HorizontalAlignment="Center"/>
+                <TextBlock><Run Text="tours avant fin"/></TextBlock>
             </StackPanel>
         </Grid>
     </Grid>

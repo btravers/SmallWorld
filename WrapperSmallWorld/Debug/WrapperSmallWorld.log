@@ -1,23 +1,18 @@
-﻿La génération a démarré 11/12/2013 11:32:53.
+﻿La génération a démarré 04/12/2013 12:01:20.
      1>Projet "H:\POO\SmallWorld\SmallWorld\WrapperSmallWorld\WrapperSmallWorld.vcxproj" sur le nœud 2 (Build cible(s)).
      1>InitializeBuildStatus:
-         Création de "Debug\WrapperSmallWorld.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+         Mise à jour de l'horodatage "Debug\WrapperSmallWorld.unsuccessfulbuild".
        GenerateTargetFrameworkMonikerAttribute:
        La cible est ignorée "GenerateTargetFrameworkMonikerAttribute", car tous les fichiers de sortie sont à jour par rapport aux fichiers d'entrée.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\LibrarySmallWorld\ /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.0\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib WrapperSmallWorld.cpp
-         WrapperSmallWorld.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\LibrarySmallWorld\ /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /TP /analyze- /errorReport:prompt "C:\Users\btravers\AppData\Local\Temp\.NETFramework,Version=v4.5.AssemblyAttributes.cpp"
-         .NETFramework,Version=v4.5.AssemblyAttributes.cpp
+         Toutes les sorties sont à jour.
+         Toutes les sorties sont à jour.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\POO\SmallWorld\SmallWorld\Debug\WrapperSmallWorld.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\LibrarySmallWorld\Debug\ LibrarySmallWorld.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\POO\SmallWorld\SmallWorld\Debug\WrapperSmallWorld.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /DLL Debug\WrapperSmallWorld.obj
          "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
-         WrapperSmallWorld.vcxproj -> H:\POO\SmallWorld\SmallWorld\Debug\WrapperSmallWorld.dll
-       FinalizeBuildStatus:
-         Suppression du fichier "Debug\WrapperSmallWorld.unsuccessfulbuild".
-         Mise à jour de l'horodatage "Debug\WrapperSmallWorld.lastbuildstate".
-     1>Génération du projet "H:\POO\SmallWorld\SmallWorld\WrapperSmallWorld\WrapperSmallWorld.vcxproj" terminée (Build cible(s)).
+     1>LINK : fatal error LNK1207: format PDB non compatible dans 'H:\POO\SmallWorld\SmallWorld\Debug\WrapperSmallWorld.pdb'á; supprimez et rÚgÚnÚrez
+     1>Génération du projet "H:\POO\SmallWorld\SmallWorld\WrapperSmallWorld\WrapperSmallWorld.vcxproj" terminée (Build cible(s)) -- ÉCHEC.
 
-La génération a réussi.
+ÉCHEC de la build.
 
-Temps écoulé 00:00:01.64
+Temps écoulé 00:00:01.38

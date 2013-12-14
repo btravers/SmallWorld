@@ -81,7 +81,7 @@ namespace SmallWorld
         protected override void addJoueurs(String peupleA, String peupleB)
         {
             this._partie._jA = new Joueur(peupleA, 6);
-            this._partie._jB = new Joueur(peupleB, 6);
+            this._partie._jB = new Joueur(peupleB, 9);
         }
     }
 
