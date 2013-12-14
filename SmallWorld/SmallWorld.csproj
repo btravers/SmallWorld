@@ -55,18 +55,6 @@
     <None Include="Diagrammes de classe\Implementation.cd" />
     <None Include="Diagrammes de classe\Interface.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WrapperSmallWorld\WrapperSmallWorld.vcxproj">
-      <Project>{4fd32404-b429-4d6b-96e4-16162d93910b}</Project>
-      <Name>WrapperSmallWorld</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Debug\LibrarySmallWorld.dll">
-      <Link>LibrarySmallWorld.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

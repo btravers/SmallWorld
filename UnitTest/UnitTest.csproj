@@ -54,19 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LibrarySmallWorld\LibrarySmallWorld.vcxproj">
-      <Project>{468d5d50-b218-4345-a899-f8e508390d8d}</Project>
-      <Name>LibrarySmallWorld %28Visual Studio 2010%29</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WrapperSmallWorld\WrapperSmallWorld.vcxproj">
       <Project>{4fd32404-b429-4d6b-96e4-16162d93910b}</Project>
       <Name>WrapperSmallWorld %28Visual Studio 2010%29</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\Debug\WrapperSmallWorld.dll">
-      <Link>WrapperSmallWorld.dll</Link>
-    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

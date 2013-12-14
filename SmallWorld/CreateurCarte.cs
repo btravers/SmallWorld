@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using WrapperSmallWorld;
 
 namespace SmallWorld
 {
@@ -31,15 +30,7 @@ namespace SmallWorld
     {
         public override Carte construire()
         {
-            Carte carte = new Carte(5);
-            int i = 0;
-            FabriqueCase fab = new FabriqueCase(); 
-            List<int> listeCases = WrapperCarte.genererCarte(5);
-            foreach ( TypeCase c in listeCases )
-            {
-                carte._cases[i%5,i/5] = fab.getCase(c);
-                i++;
-            }
+            Carte carte = new Carte(5); // TODO
             return carte;
         }
     }
@@ -48,15 +39,7 @@ namespace SmallWorld
     {
         public override Carte construire()
         {
-            Carte carte = new Carte(10);
-            int i = 0;
-            FabriqueCase fab = new FabriqueCase();
-            List<int> listeCases = WrapperCarte.genererCarte(10);
-            foreach (TypeCase c in listeCases)
-            {
-                carte._cases[i % 10, i / 10] = fab.getCase(c);
-                i++;
-            }
+            Carte carte = new Carte(10); // TODO
             return carte;
         }
     }
@@ -65,15 +48,7 @@ namespace SmallWorld
     {
         public override Carte construire()
         {
-            Carte carte = new Carte(15);
-            int i = 0;
-            FabriqueCase fab = new FabriqueCase();
-            List<int> listeCases = WrapperCarte.genererCarte(15);
-            foreach (TypeCase c in listeCases)
-            {
-                carte._cases[i % 15, i / 15] = fab.getCase(c);
-                i++;
-            }
+            Carte carte = new Carte(15); // TODO
             return carte;
         }
     }
