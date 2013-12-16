@@ -22,9 +22,9 @@ namespace WPFSmallWorld
     /// </summary>
     public partial class Select : UserControl
     {
-        public String peupleA;
-        public String peupleB;
-        public String carte;
+        private String peupleA;
+        private String peupleB;
+        private String carte;
 
         public Select()
         {
@@ -104,6 +104,11 @@ namespace WPFSmallWorld
         {
             //TODO (ceci ne marche pas)
             /*GlobalWindow.initCreateur();*/
+            CreateurPartie createur = new CreateurPartie();
+            createur.PeupleA = peupleA;
+            createur.PeupleB = peupleB;
+            createur.TypeCarte = carte;
+            Partie partie = createur.construire();
         }
     }
 }

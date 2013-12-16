@@ -8,9 +8,13 @@
 class Carte
 {
 	private:
-		  
+		int * carte;
+		int posJA;
+		int posJB;
 	public:
-		static int * generateMap(int size);
+		int * generateMap(int size);
+		int getPosJA();
+		int getPosJB();
 };
 
 #endif

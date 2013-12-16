@@ -3,5 +3,6 @@
 
 EXTERNC DLL int * create_map(int size)
 { 
-	return Carte::generateMap(size); 
+	Carte carte = Carte();
+	return carte.generateMap(size); 
 }

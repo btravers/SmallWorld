@@ -11,28 +11,28 @@ namespace SmallWorld
 
     public class CreateurPartie : ICreateurPartie
     {
-        public MonteurPartie _monteur
+        public MonteurPartie Monteur
         {
             get;
             set;
         }
 
-        public String _typeCarte
+        public String TypeCarte
         {
             get;
             set;
         }
 
-        public String _peupleA
+        public String PeupleA
         {
             get;
-            private set;
+            set;
         }
 
-        public String _peupleB
+        public String PeupleB
         {
             get;
-            private set;
+            set;
         }
 
         public CreateurPartie()
@@ -41,30 +41,29 @@ namespace SmallWorld
 
         public void addPeupleA(String pA)
         {
-            this._peupleA = pA;
+            this.PeupleA = pA;
         }
 
         public void addPeupleB(String pB)
         {
-            this._peupleA = pB;
+            this.PeupleA = pB;
         }
 
-        public void construire()
+        public Partie construire()
         {
-            switch (_typeCarte)
+            switch (TypeCarte)
             {
                 case "demo":
-                    this._monteur = new MonteurPartieDemo();
-                    this._monteur.monterPartie(_peupleA,_peupleB);
-                    break;
+                    this.Monteur = new MonteurPartieDemo();
+                    return this.Monteur.monterPartie(PeupleA,PeupleB);
                 case "petite":
-                    this._monteur = new MonteurPartiePetite();
-                    this._monteur.monterPartie(_peupleA,_peupleB);
-                    break;
+                    this.Monteur = new MonteurPartiePetite();
+                    return this.Monteur.monterPartie(PeupleA,PeupleB);
                 case "normale":
-                    this._monteur = new MonteurPartieNormale();
-                    this._monteur.monterPartie(_peupleA,_peupleB);
-                    break;
+                    this.Monteur = new MonteurPartieNormale();
+                    return this.Monteur.monterPartie(PeupleA,PeupleB);
+                default:
+                    throw new Exception("Type de carte introuvable.");
             }
         }
     }
