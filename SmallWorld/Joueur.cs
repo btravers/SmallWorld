@@ -26,6 +26,7 @@ namespace SmallWorld
         public Joueur(String typePeuple, int nbUnites)
         {
             Peuple peuple = null;
+            this._unites = new List<Unite>();
             switch (typePeuple)
             {
                 case "vikings":
@@ -40,7 +41,6 @@ namespace SmallWorld
             }
             for (int i = 0; i < nbUnites; i++)
             {
-                //Erreur ici !
                 this._unites.Add(peuple.fabriquerUnite());
             }
         }

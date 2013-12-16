@@ -17,9 +17,6 @@ using SmallWorld;
 
 namespace WPFSmallWorld
 {
-    /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public CreateurPartie createur
@@ -31,20 +28,7 @@ namespace WPFSmallWorld
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        public void initCreateur()
-        {
-            /*createur = new CreateurPartie();
-            createur.addPeupleA(SelectScreen.peupleA);
-            createur.addPeupleB(SelectScreen.peupleB);
-            createur._typeCarte = SelectScreen.carte;
-            createur.construire();*/
-
-            MessageBox.Show("Test");
-
-            /*SelectScreen.Visibility = Visibility.Collapsed;
-            GameScreen.Visibility = Visibility.Visible;*/
+            SelectScreen.addReference(this);
         }
     }
 }

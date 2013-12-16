@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("librarysmallworld.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("textures/desert.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("textures/eau.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("textures/foret.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("textures/montagne.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("textures/plaine.png")]
 
 

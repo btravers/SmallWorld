@@ -11,21 +11,24 @@ namespace UnitTest
         [TestMethod]
         public void TestNotNull()
         {
-            List<int> carte =  WrapperCarte.genererCarte(5);
+            WrapperCarte wrapper = new WrapperCarte(5);
+            List<int> carte =  wrapper.getCarte();
             Assert.IsNotNull(carte);
         }
 
         [TestMethod]
         public void TestNbCase()
         {
-            List<int> carte = WrapperCarte.genererCarte(5);
+            WrapperCarte wrapper = new WrapperCarte(5);
+            List<int> carte = wrapper.getCarte();
             Assert.AreEqual(carte.Count,25);
         }
 
         [TestMethod]
         public void TestTypeCase()
         {
-            List<int> carte = WrapperCarte.genererCarte(5);
+            WrapperCarte wrapper = new WrapperCarte(5);
+            List<int> carte = wrapper.getCarte();
             int[] type = new int[5];
             foreach(int c in carte)
             {

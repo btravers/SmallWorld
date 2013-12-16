@@ -33,9 +33,10 @@ namespace SmallWorld
         {
             this._partie = new Partie();
             this.addNbTours();
-            this.addCarte();
             this.addJoueurs(peupleA, peupleB);
+            this.addCarte();
             return this._partie;
+
         }
 
         protected abstract void addNbTours();

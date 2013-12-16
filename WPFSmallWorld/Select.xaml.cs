@@ -26,9 +26,16 @@ namespace WPFSmallWorld
         private String peupleB;
         private String carte;
 
+        private MainWindow window;
+
         public Select()
         {
             InitializeComponent();
+        }
+
+        public void addReference(MainWindow win)
+        {
+            window = win;
         }
  
         private void enabledItems1(RadioButton button)
@@ -100,15 +107,31 @@ namespace WPFSmallWorld
             carte = "normale";
         }
 
+        private Boolean verifierValidation()
+        {
+            return (peupleA != null) && (peupleB != null) && (carte != null);
+        }
+
         public void valider(object sender, RoutedEventArgs e)
         {
-            //TODO (ceci ne marche pas)
-            /*GlobalWindow.initCreateur();*/
-            CreateurPartie createur = new CreateurPartie();
-            createur.PeupleA = peupleA;
-            createur.PeupleB = peupleB;
-            createur.TypeCarte = carte;
-            Partie partie = createur.construire();
+            if (!verifierValidation())
+            {
+                MessageBox.Show("Veuillez sélectionner le type de carte et le peuple des deux joueurs.");
+            }
+
+            else
+            {
+                CreateurPartie createur = new CreateurPartie();
+                createur.PeupleA = peupleA;
+                createur.PeupleB = peupleB;
+                createur.TypeCarte = carte;
+                Partie partie = createur.construire();
+
+                Visibility = Visibility.Collapsed;
+                window.GameScreen.addReference(partie);
+                window.GameScreen.buildMap();
+                window.GameScreen.Visibility = Visibility.Visible;
+            }
         }
     }
 }

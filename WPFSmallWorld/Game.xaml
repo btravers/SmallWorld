@@ -4,35 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="400" d:DesignWidth="525">
 
-        <StackPanel>
-            <Grid Background="Azure" VerticalAlignment="Stretch">
+    <StackPanel>
+        <Grid Name="Background">
+            <Grid Name="mapGrid" Background="Azure" Width="300" Height="300">
             </Grid>
+        </Grid>
 
-            <Grid Background="Azure">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-                <StackPanel Background="Blue" HorizontalAlignment="Stretch" Grid.Column="0">
-                    <TextBlock FontWeight="Bold" FontSize="14">Peuple 1</TextBlock>
-                    <TextBlock>points</TextBlock>
-                    <TextBlock>unités restantes</TextBlock>
-                </StackPanel>
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="0" Margin="2">
+                <TextBlock FontWeight="Bold" FontSize="14">Peuple 1</TextBlock>
+                <TextBlock>Points :</TextBlock>
+                <TextBlock>Unités :</TextBlock>
+            </StackPanel>
 
-                <StackPanel Background="Red" HorizontalAlignment="Stretch" Grid.Column="1">
-                    <TextBlock FontWeight="Bold" FontSize="14">Peuple 2</TextBlock>
-                    <TextBlock>points</TextBlock>
-                    <TextBlock>unités restantes</TextBlock>
-                </StackPanel>
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" Margin="2">
+                <TextBlock FontWeight="Bold" FontSize="14">Peuple 2</TextBlock>
+                <TextBlock>Points :</TextBlock>
+                <TextBlock>Unités :</TextBlock>
+            </StackPanel>
 
-                <StackPanel Background="Green" HorizontalAlignment="Stretch" Grid.Column="2">
-                    <Button x:Name="finDeTour" Content="Fin de Tour" Click="Button_Click" HorizontalAlignment="Center"/>
-                    <TextBlock><Run Text="tours avant fin"/></TextBlock>
-                </StackPanel>
-            </Grid>
-        </StackPanel>
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="2" Margin="2">
+                <Button x:Name="finDeTour" Content="Fin de Tour" Click="Button_Click" HorizontalAlignment="Center"/>
+                <TextBlock><Run Text="Tours restants :"/></TextBlock>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
 </UserControl>

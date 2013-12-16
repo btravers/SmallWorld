@@ -17,6 +17,12 @@ namespace SmallWorld
             set;
         }
 
+        public int _width
+        {
+            get;
+            set;
+        }
+
         public Case[,] _cases
         {
             get;
@@ -26,6 +32,7 @@ namespace SmallWorld
         public Carte(int taille)
         {
             this._cases = new Case[taille,taille];
+            this._width = taille;
         }
     }
 }

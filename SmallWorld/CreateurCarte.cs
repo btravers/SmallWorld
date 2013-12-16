@@ -32,9 +32,10 @@ namespace SmallWorld
         public override Carte construire()
         {
             Carte carte = new Carte(5);
+            WrapperCarte wrapper = new WrapperCarte(5);
             int i = 0;
             FabriqueCase fab = new FabriqueCase();
-            List<int> listeCases = WrapperCarte.genererCarte(5);
+            List<int> listeCases = wrapper.getCarte();
             foreach (TypeCase c in listeCases)
             {
                 carte._cases[i % 5, i / 5] = fab.getCase(c);
@@ -49,9 +50,10 @@ namespace SmallWorld
         public override Carte construire()
         {
             Carte carte = new Carte(10);
+            WrapperCarte wrapper = new WrapperCarte(10);
             int i = 0;
             FabriqueCase fab = new FabriqueCase();
-            List<int> listeCases = WrapperCarte.genererCarte(10);
+            List<int> listeCases = wrapper.getCarte();
             foreach (TypeCase c in listeCases)
             {
                 carte._cases[i % 10, i / 10] = fab.getCase(c);
@@ -66,9 +68,10 @@ namespace SmallWorld
         public override Carte construire()
         {
             Carte carte = new Carte(15);
+            WrapperCarte wrapper = new WrapperCarte(15);
             int i = 0;
             FabriqueCase fab = new FabriqueCase();
-            List<int> listeCases = WrapperCarte.genererCarte(15);
+            List<int> listeCases = wrapper.getCarte();
             foreach (TypeCase c in listeCases)
             {
                 carte._cases[i % 15, i / 15] = fab.getCase(c);

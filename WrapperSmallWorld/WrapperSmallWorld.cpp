@@ -1,14 +1,33 @@
-// Il s'agit du fichier DLL principal.
-
 #include "WrapperSmallWorld.h"
+using namespace WrapperSmallWorld;
 
-List<int> ^ WrapperSmallWorld::WrapperCarte::genererCarte(int size)
+WrapperCarte::WrapperCarte(int size)
+{
+	_generateur = GenerateurCarte_New(size);
+}
+
+WrapperCarte::~WrapperCarte()
+{
+	GenerateurCarte_Delete(_generateur);
+}
+
+List<int> ^ WrapperCarte::getCarte()
 {
 	List<int> ^ list = gcnew List<int>();
-	int * buffer = create_map(size);
+	int * buffer = _generateur->getCarte();
 
-	for(int i = 0 ; i < size * size ; i++)
+	for(int i = 0 ; i < _generateur->getSize()^2 ; i++)
 		list->Add(buffer[i]);
 
 	return list;
+}
+			
+int WrapperCarte::getPosJA()
+{
+	return _generateur->getPosJA();
+}
+			
+int WrapperCarte::getPosJB()
+{
+	return _generateur->getPosJB();
 }
