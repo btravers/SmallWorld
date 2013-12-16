@@ -112,7 +112,12 @@
       <Name>SmallWorld</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="..\Debug\LibrarySmallWorld.dll">
+      <Link>LibrarySmallWorld.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Textures\desert.png" />
     <Resource Include="Textures\eau.png" />

@@ -16,7 +16,7 @@ List<int> ^ WrapperCarte::getCarte()
 	List<int> ^ list = gcnew List<int>();
 	int * buffer = _generateur->getCarte();
 
-	for(int i = 0 ; i < _generateur->getSize()^2 ; i++)
+	for(int i = 0 ; i < (_generateur->getSize())*(_generateur->getSize()) ; i++)
 		list->Add(buffer[i]);
 
 	return list;
