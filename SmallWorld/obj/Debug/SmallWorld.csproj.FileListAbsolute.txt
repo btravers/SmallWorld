@@ -17,3 +17,4 @@ C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\SmallWorld\bin\Debug\Wrapper
 C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csprojResolveAssemblyReference.cache
 C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\SmallWorld\obj\Debug\SmallWorld.dll
 C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb
+C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\SmallWorld\bin\Debug\LibrarySmallWorld.dll

@@ -71,3 +71,5 @@ C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\WPFSmallWorld\obj\Debug\WPFS
 C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\WPFSmallWorld\obj\Debug\WPFSmallWorld.csproj.GenerateResource.Cache
 C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\WPFSmallWorld\obj\Debug\WPFSmallWorld.exe
 C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\WPFSmallWorld\obj\Debug\WPFSmallWorld.pdb
+C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\WPFSmallWorld\bin\Debug\LibrarySmallWorld.dll
+C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\WPFSmallWorld\obj\Debug\WPFSmallWorld_Content.g.cs
