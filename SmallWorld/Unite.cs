@@ -96,7 +96,7 @@ namespace SmallWorld
         public void deplacer(int x, int y)
         {
             this._x = x;
-            this._x = y;
+            this._y = y;
         }
 
         public void attaquer(Unite adversaire)

@@ -57,8 +57,8 @@ namespace SmallWorld
         {
             CreateurCarte createurCarte = new CreateurCarteDemo();
             this._partie._carte = createurCarte.construire(peupleA, peupleB);
-            this._partie.positionnerUnites(this._partie._jA, createurCarte.PosJA % 5, createurCarte.PosJA / 5);
-            this._partie.positionnerUnites(this._partie._jB, createurCarte.PosJB % 5, createurCarte.PosJB / 5);
+            this._partie.positionnerUnites(this._partie._jA, createurCarte.PosJA / 5, createurCarte.PosJA % 5);
+            this._partie.positionnerUnites(this._partie._jB, createurCarte.PosJB / 5, createurCarte.PosJB % 5);
         }
 
         protected override void addJoueurs(String peupleA, String peupleB)
@@ -79,8 +79,8 @@ namespace SmallWorld
         {
             CreateurCarte createurCarte = new CreateurCartePetite();
             this._partie._carte = createurCarte.construire(peupleA, peupleB);
-            this._partie.positionnerUnites(this._partie._jA, createurCarte.PosJA % 10, createurCarte.PosJA / 10);
-            this._partie.positionnerUnites(this._partie._jB, createurCarte.PosJB % 10, createurCarte.PosJB / 10);
+            this._partie.positionnerUnites(this._partie._jA, createurCarte.PosJA / 10, createurCarte.PosJA % 10);
+            this._partie.positionnerUnites(this._partie._jB, createurCarte.PosJB / 10, createurCarte.PosJB % 10);
         }
 
         protected override void addJoueurs(String peupleA, String peupleB)
@@ -102,8 +102,8 @@ namespace SmallWorld
         {
             CreateurCarte createurCarte = new CreateurCarteNormale();
             this._partie._carte = createurCarte.construire(peupleA, peupleB);
-            this._partie.positionnerUnites(this._partie._jA, createurCarte.PosJA % 15, createurCarte.PosJA / 15);
-            this._partie.positionnerUnites(this._partie._jB, createurCarte.PosJB % 15, createurCarte.PosJB / 15);
+            this._partie.positionnerUnites(this._partie._jA, createurCarte.PosJA / 15, createurCarte.PosJA % 15);
+            this._partie.positionnerUnites(this._partie._jB, createurCarte.PosJB / 15, createurCarte.PosJB % 15);
         }
 
         protected override void addJoueurs(String peupleA, String peupleB)

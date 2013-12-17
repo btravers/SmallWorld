@@ -51,19 +51,16 @@ namespace WPFSmallWorld
             //On définit la répartition de la grille
             var w = _engine._carte._width;
             var h = _engine._carte._width;
-            for (int c = 0; c < w; c++)
+            for (int j = 0; j < w; j++)
             {
                 mapGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Pixel) });
             }
 
-            for (int c = 0; c < h; c++)
+            for (int i = 0; i < h; i++)
             {
                 mapGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(50, GridUnitType.Pixel) });
-            }
 
-            for (int i = 0; i < w; i++)
-            {
-                for (int j = 0; j < h; j++)
+                for (int j = 0; j < w; j++)
                 {
                     Case tile = _engine._carte._cases[i, j];
                     var rect = createImage(i, j, tile);
@@ -85,8 +82,8 @@ namespace WPFSmallWorld
             var uri = new Uri(@"../" + tile._sourceImage, UriKind.Relative);
             brush.ImageSource = new BitmapImage(uri);
             rectangle.Fill = brush;
-            Grid.SetColumn(rectangle, i);
-            Grid.SetRow(rectangle, j);
+            Grid.SetRow(rectangle, i);
+            Grid.SetColumn(rectangle, j);
             rectangle.StrokeThickness = 1;
             rectangle.Stroke = Brushes.Black;
 
@@ -98,16 +95,7 @@ namespace WPFSmallWorld
             return rectangle;
         }
 
-        private void Mouse_OnTile(object sender, MouseButtonEventArgs e)
-        {
-            Grid grid = sender as Grid;
-            if (_tempGrid != null)
-            {
-                _tempGrid.Children.Remove(_selection);
-            }
-            grid.Children.Add(_selection);
-            _tempGrid = grid;
-        }
+        
 
         private void displayUnits(Joueur j)
         {

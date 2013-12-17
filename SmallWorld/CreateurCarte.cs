@@ -58,7 +58,7 @@ namespace SmallWorld
             List<int> listeCases = Wrapper.getCarte();
             foreach (TypeCase c in listeCases)
             {
-                carte._cases[i % 5, i / 5] = fab.getCase(c);
+                carte._cases[i / 5, i % 5] = fab.getCase(c);
                 i++;
             }
             PosJA = Wrapper.getPosJA();
@@ -78,7 +78,7 @@ namespace SmallWorld
             List<int> listeCases = Wrapper.getCarte();
             foreach (TypeCase c in listeCases)
             {
-                carte._cases[i % 10, i / 10] = fab.getCase(c);
+                carte._cases[i / 10, i % 10] = fab.getCase(c);
                 i++;
             }
             PosJA = Wrapper.getPosJA();
@@ -98,7 +98,7 @@ namespace SmallWorld
             List<int> listeCases = Wrapper.getCarte();
             foreach (TypeCase c in listeCases)
             {
-                carte._cases[i % 15, i / 15] = fab.getCase(c);
+                carte._cases[i / 15, i % 15] = fab.getCase(c);
                 i++;
             }
             PosJA = Wrapper.getPosJA();

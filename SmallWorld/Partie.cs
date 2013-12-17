@@ -127,7 +127,7 @@ namespace SmallWorld
 
         public void selectCaseDestination(int x, int y)
         {
-            if (_uniteSelectionnee == null)
+            if (this._uniteSelectionnee == null)
                 return;
 
             if (_uniteSelectionnee.estAPortee(x, y))
@@ -142,20 +142,22 @@ namespace SmallWorld
                     joueur = this._jA;
                 }
 
-                /*Unite uniteAdverse = joueur.obtenirMeilleurUnite(x, y);
+                Unite uniteAdverse = joueur.obtenirMeilleurUnite(x, y);
 
                 if (uniteAdverse != null)
                 {
                     this._uniteSelectionnee.attaquer(uniteAdverse);
                 }
                 else
-                {*/
+                {
                     if (_uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
                     {
                         this._uniteSelectionnee.deplacer(x, y);
                     }
-                /*}*/
+                }
             }
+
+            this._uniteSelectionnee._pm--;
 
             this._uniteSelectionnee = null;
         }
