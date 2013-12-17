@@ -25,14 +25,17 @@ namespace WPFSmallWorld
         private Partie _engine;
         private Rectangle _selection;
         private Grid _tempGrid;
-        private List<Rectangle> unitRectangle;
+        List<Rectangle> unitRectangles;
+        Dictionary<Border, Unite> selectedUnits;
+        Border selectedUnit;
 
         public Game()
         {
             InitializeComponent();
 
-            unitRectangle = new List<Rectangle>();
-            
+            unitRectangles = new List<Rectangle>();
+            selectedUnits = new Dictionary<Border, Unite>();
+
             _selection = new Rectangle();
             _selection.Stroke = Brushes.Red;
             _selection.StrokeThickness = 1;
@@ -50,51 +53,49 @@ namespace WPFSmallWorld
             var h = _engine._carte._width;
             for (int c = 0; c < w; c++)
             {
-                mapGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(300 / w, GridUnitType.Pixel) });
+                mapGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50, GridUnitType.Pixel) });
             }
 
             for (int c = 0; c < h; c++)
             {
-                mapGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(300 / h, GridUnitType.Pixel) });
+                mapGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(50, GridUnitType.Pixel) });
             }
 
             for (int i = 0; i < w; i++)
             {
                 for (int j = 0; j < h; j++)
                 {
-                    var tile = _engine._carte._cases[i, j];
-                    var canvas = createImage(i, j, tile);
-                    mapGrid.Children.Add(canvas);
+                    Case tile = _engine._carte._cases[i, j];
+                    var rect = createImage(i, j, tile);
+                    mapGrid.Children.Add(rect);
                 }
             }
 
-            unitRectangle.Clear();
+            unitRectangles.Clear();
             displayUnits(_engine._jA);
             displayUnits(_engine._jB);
         }
 
-        private Grid createImage(int i, int j, Case tile)
+        private Rectangle createImage(int i, int j, Case tile)
         {
+            Rectangle rectangle = new Rectangle();
+            
             var image = new Image();
-            Grid grid = new Grid();
+            ImageBrush brush = new ImageBrush();
+            var uri = new Uri(@"../" + tile._sourceImage, UriKind.Relative);
+            brush.ImageSource = new BitmapImage(uri);
+            rectangle.Fill = brush;
+            Grid.SetColumn(rectangle, i);
+            Grid.SetRow(rectangle, j);
+            rectangle.StrokeThickness = 1;
+            rectangle.Stroke = Brushes.Black;
 
-            var uriSource = new Uri(@"/WPFSmallWorld;component/Textures/" + tile._sourceImage, UriKind.Relative);
-            image.Source = new BitmapImage(uriSource);
-            image.Tag = tile;
-            grid.Children.Add(image);
+            rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangleMouseLeftMapHandler);
+            rectangle.MouseRightButtonDown += new MouseButtonEventHandler(rectangleMouseRightHandler);
+            rectangle.MouseEnter += new MouseEventHandler(mouseEnterHandler);
+            rectangle.MouseLeave += new MouseEventHandler(mouseLeaveHandler);
 
-            Grid.SetColumn(grid, i);
-            Grid.SetRow(grid, j);
-
-            grid.MouseLeftButtonDown += new MouseButtonEventHandler(Mouse_OnTile);
-
-            return grid;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            int i = 4 / 3;
-            MessageBox.Show(i.ToString());
+            return rectangle;
         }
 
         private void Mouse_OnTile(object sender, MouseButtonEventArgs e)
@@ -130,13 +131,63 @@ namespace WPFSmallWorld
                 Grid.SetColumn(rectangle, u._y);
                 rectangle.StrokeThickness = 1;
                 rectangle.Stroke = Brushes.Black;
+                rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangleMouseLeftMapHandler);
+                rectangle.MouseRightButtonDown += new MouseButtonEventHandler(rectangleMouseRightHandler);
                 rectangle.MouseEnter += new MouseEventHandler(mouseEnterHandler);
                 rectangle.MouseLeave += new MouseEventHandler(mouseLeaveHandler);
                 mapGrid.Children.Add(rectangle);
 
-                unitRectangle.Add(rectangle);
+                unitRectangles.Add(rectangle);
             }
 
+        }
+
+        public void displaySelectedUnits(List<Unite> units)
+        {
+            selectedUnits = new Dictionary<Border, Unite>();
+            int i = 0;
+            ImageBrush brush = new ImageBrush();
+            var uri = new Uri(@"../../Textures/gaulois.png", UriKind.Relative);
+            if (units[0] is UniteNains)
+            {
+                uri = new Uri(@"../../Textures/dwarf.png", UriKind.Relative);
+            }
+            else if (units[0] is UniteVikings)
+            {
+                uri = new Uri(@"../../Textures/viking.png", UriKind.Relative);
+            }
+            brush.ImageSource = new BitmapImage(uri);
+            foreach (Unite unit in units)
+            {
+                Border border = new Border();
+                border.Background = brush;
+
+                TextBlock unitText = new TextBlock();
+                unitText.Text = unit._pm + " point(s) de mouvement \n" + unit._pdv + " point(s) de vie";
+                unitText.FontSize = 14;
+                unitText.Foreground = Brushes.Red;
+                unitText.FontWeight = FontWeights.Bold;
+                border.Child = unitText;
+                border.Width = 100;
+                border.Height = 100;
+                border.BorderThickness = new Thickness(3);
+                if (i == 0)
+                {
+                    border.BorderBrush = Brushes.Red;
+                    i++;
+                    selectedUnit = border;
+                }
+                else
+                {
+                    border.BorderBrush = Brushes.Black;
+                }
+
+                border.MouseLeftButtonDown += new MouseButtonEventHandler(rectangleMouseLefUnitSelectertHandler);
+
+                unitSelecter.Children.Add(border);
+
+                selectedUnits.Add(border, unit);
+            }
         }
 
 
@@ -162,6 +213,68 @@ namespace WPFSmallWorld
                 rectangle.StrokeThickness = 1;
                 rectangle.Stroke = Brushes.Black;
             }
+        }
+
+        public void rectangleMouseLeftMapHandler(object sender, MouseEventArgs e)
+        {
+            var rectangle = sender as Rectangle;
+            int column = Grid.GetColumn(rectangle);
+            int row = Grid.GetRow(rectangle);
+
+            selectedUnits.Clear();
+            unitSelecter.Children.Clear();
+            if (_selection != null)
+            {
+                _selection.Stroke = Brushes.Black;
+            }
+
+            List<Unite> units = _engine.selectCaseInitiale(row,column);
+
+            if (units.Any())
+            {
+                displaySelectedUnits(units);
+                rectangle.StrokeThickness = 1;
+                rectangle.Stroke = Brushes.Red;
+
+                _selection = rectangle;
+            }
+            e.Handled = true;
+        }
+
+        public void rectangleMouseRightHandler(object sender, MouseEventArgs e)
+        {
+            var rectangle = sender as Rectangle;
+            int column = Grid.GetColumn(rectangle);
+            int row = Grid.GetRow(rectangle);
+
+            _engine.selectCaseDestination(row, column);
+            _selection.Stroke = Brushes.Black;
+            unitRectangles.Clear();
+            displayUnits(_engine._jA);
+            displayUnits(_engine._jB);
+            //TODO afficher les info du joueur
+
+            selectedUnits.Clear();
+            unitSelecter.Children.Clear();
+
+            e.Handled = true;
+        }
+
+        public void rectangleMouseLefUnitSelectertHandler(object sender, MouseEventArgs e)
+        {
+            selectedUnit.BorderBrush = Brushes.Black;
+
+            Border border = sender as Border;
+            border.BorderBrush = Brushes.Red;
+            _engine._uniteSelectionnee = selectedUnits[border];
+            selectedUnit = border;
+            e.Handled = true;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int i = 4 / 3;
+            MessageBox.Show(i.ToString());
         }
     }
 }

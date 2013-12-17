@@ -39,7 +39,11 @@ namespace SmallWorld
 
         private int _joueur;
 
-        private Unite _uniteSelectionnee;
+        public Unite _uniteSelectionnee
+        {
+            get;
+            set;
+        }
 
 
         public Partie()
@@ -53,11 +57,6 @@ namespace SmallWorld
         public bool joueJoueurA()
         {
             return _joueur == 0;
-        }
-
-        public bool peutPositionnerUnitesJoueurA(Joueur j,int x, int y)
-        {
-            return j._unites.First().peutPositionner(x, y, this._carte._cases[x,y]);
         }
 
         public void positionnerUnites(Joueur j, int x, int y)
@@ -118,11 +117,19 @@ namespace SmallWorld
                 }
             }
 
+            if (unitesCase.Any())
+            {
+                _uniteSelectionnee = unitesCase[0];
+            }
+
             return unitesCase;
         }
 
         public void selectCaseDestination(int x, int y)
         {
+            if (_uniteSelectionnee == null)
+                return;
+
             if (_uniteSelectionnee.estAPortee(x, y))
             {
                 Joueur joueur;
@@ -135,19 +142,19 @@ namespace SmallWorld
                     joueur = this._jA;
                 }
 
-                Unite uniteAdverse = joueur.obtenirMeilleurUnite(x, y);
+                /*Unite uniteAdverse = joueur.obtenirMeilleurUnite(x, y);
 
                 if (uniteAdverse != null)
                 {
                     this._uniteSelectionnee.attaquer(uniteAdverse);
                 }
                 else
-                {
+                {*/
                     if (_uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
                     {
                         this._uniteSelectionnee.deplacer(x, y);
                     }
-                }
+                /*}*/
             }
 
             this._uniteSelectionnee = null;

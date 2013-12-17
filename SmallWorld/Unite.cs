@@ -73,7 +73,7 @@ namespace SmallWorld
             this._pm = 1;
         }
 
-        public abstract bool peutPositionner(int x, int y, Case c);
+        /*public abstract bool peutPositionner(int x, int y, Case c);*/
 
         public void positionner(int x, int y)
         {
@@ -88,7 +88,7 @@ namespace SmallWorld
 
         public bool estAPortee(int x, int y)
         {
-            return this._pm - Math.Abs(this._x - x) + Math.Abs(this._y - y) > 0;
+            return this._pm - Math.Abs(this._x - x) - Math.Abs(this._y - y) > -1;
         }
 
         public abstract bool peutDeplacer(int x, int y, Case c);
@@ -112,48 +112,48 @@ namespace SmallWorld
 
     public class UniteVikings : Unite, IUniteVikings
     {
-        public override bool peutPositionner(int x, int y, Case c)
+        /*public override bool peutPositionner(int x, int y, Case c)
         {
             return true;
-        }
+        }*/
 
         public override bool peutDeplacer(int x, int y, Case c)
         {
-            return false; // TODO
+            return true; // TODO
         }
     }
 
     public class UniteGaulois : Unite, IUniteGaulois
     {
-        public override bool peutPositionner(int x, int y, Case c)
+        /*public override bool peutPositionner(int x, int y, Case c)
         {
             if (c is Eau)
             {
                 return false;
             }
             return true;
-        }
+        }*/
 
         public override bool peutDeplacer(int x, int y, Case c)
         {
-            return false; // TODO
+            return ! (c is Eau); // TODO
         }
     }
 
     public class UniteNains : Unite, IUniteNains
     {
-        public override bool peutPositionner(int x, int y, Case c)
+        /*public override bool peutPositionner(int x, int y, Case c)
         {
             if(c is Eau)
             {
                 return false;
             }
             return true;
-        }
+        }*/
 
         public override bool peutDeplacer(int x, int y, Case c)
         {
-            return false; // TODO
+            return !(c is Eau); // TODO
         }
     }
 }
