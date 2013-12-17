@@ -3,7 +3,7 @@
 #define NB_TYPE 5
 
 
-GenerateurCarte::GenerateurCarte(int size)
+GenerateurCarte::GenerateurCarte(int size, std::string PeupleA, std::string PeupleB)
 {
 	srand (time(NULL));
 
@@ -26,6 +26,44 @@ GenerateurCarte::GenerateurCarte(int size)
 
 		nbType[_carte[i]]++;
 		ok = false;
+	}
+
+	if(PeupleA == "vikings")
+	{
+		_posJA = 0;
+	}
+	else
+	{
+		int i = 0;
+		bool positionne = false;
+		while (! positionne)
+		{
+			if(_carte[i]!=3)
+			{
+				_posJA = i;
+				positionne = true;
+			}
+			i++;
+		}
+	}
+
+	if(PeupleB == "vikings")
+	{
+		_posJB = size-1;
+	}
+	else
+	{
+		int i = size-1;
+		bool positionne = false;
+		while (! positionne)
+		{
+			if(_carte[i]!=3)
+			{
+				_posJB = i;
+				positionne = true;
+			}
+			i--;
+		}
 	}
 }
 
@@ -50,9 +88,9 @@ int  GenerateurCarte::getSize()
 	return _size;
 }
 
-EXTERNC DLL GenerateurCarte* GenerateurCarte_New(int size)
+EXTERNC DLL GenerateurCarte* GenerateurCarte_New(int size, std::string PeupleA, std::string PeupleB)
 {
-	return new GenerateurCarte(size);
+	return new GenerateurCarte(size, PeupleA, PeupleB);
 }
 
 EXTERNC DLL void GenerateurCarte_Delete(GenerateurCarte* gc)

@@ -1,9 +1,10 @@
 #include "WrapperSmallWorld.h"
 using namespace WrapperSmallWorld;
+using namespace msclr::interop;
 
-WrapperCarte::WrapperCarte(int size)
+WrapperCarte::WrapperCarte(int size, String^ PeupleA, String^ PeupleB)
 {
-	_generateur = GenerateurCarte_New(size);
+	_generateur = GenerateurCarte_New(size, marshal_as<std::string>(PeupleA), marshal_as<std::string>(PeupleB));
 }
 
 WrapperCarte::~WrapperCarte()

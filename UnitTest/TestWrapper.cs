@@ -11,7 +11,7 @@ namespace UnitTest
         [TestMethod]
         public void TestNotNull()
         {
-            WrapperCarte wrapper = new WrapperCarte(5);
+            WrapperCarte wrapper = new WrapperCarte(5, "gaulois", "nains");
             List<int> carte =  wrapper.getCarte();
             Assert.IsNotNull(carte);
         }
@@ -19,7 +19,7 @@ namespace UnitTest
         [TestMethod]
         public void TestNbCase()
         {
-            WrapperCarte wrapper = new WrapperCarte(5);
+            WrapperCarte wrapper = new WrapperCarte(5, "gaulois", "nains");
             List<int> carte = wrapper.getCarte();
             Assert.AreEqual(carte.Count,25);
         }
@@ -27,7 +27,7 @@ namespace UnitTest
         [TestMethod]
         public void TestTypeCase()
         {
-            WrapperCarte wrapper = new WrapperCarte(5);
+            WrapperCarte wrapper = new WrapperCarte(5, "gaulois", "nains");
             List<int> carte = wrapper.getCarte();
             int[] type = new int[5];
             foreach(int c in carte)

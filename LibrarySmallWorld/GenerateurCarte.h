@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string>
 
 class DLL GenerateurCarte
 {
@@ -20,12 +21,12 @@ private:
 	int _posJA;
 	int _posJB;
 public:
-	GenerateurCarte(int size);
+	GenerateurCarte(int size, std::string PeupleA, std::string PeupleB);
 	int getPosJA();
 	int getPosJB();
 	int * getCarte();
 	int getSize();
 };
 
-EXTERNC DLL GenerateurCarte* GenerateurCarte_New(int size);
+EXTERNC DLL GenerateurCarte* GenerateurCarte_New(int size, std::string PeupleA, std::string PeupleB);
 EXTERNC DLL void GenerateurCarte_Delete(GenerateurCarte* gc);

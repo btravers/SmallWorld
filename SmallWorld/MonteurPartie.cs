@@ -34,14 +34,14 @@ namespace SmallWorld
             this._partie = new Partie();
             this.addNbTours();
             this.addJoueurs(peupleA, peupleB);
-            this.addCarte();
+            this.addCarte(peupleA, peupleB);
             return this._partie;
 
         }
 
         protected abstract void addNbTours();
 
-        protected abstract void addCarte();
+        protected abstract void addCarte(String peupleA, String peupleB);
 
         protected abstract void addJoueurs(String peupleA, String peupleB);
     }
@@ -53,10 +53,11 @@ namespace SmallWorld
             this._partie._toursRestant = 5;
         }
 
-        protected override void addCarte()
+        protected override void addCarte(String peupleA, String peupleB)
         {
             CreateurCarte createurCarte = new CreateurCarteDemo();
-            this._partie._carte = createurCarte.construire();
+            this._partie._carte = createurCarte.construire(peupleA, peupleB);
+            this._partie.positionnerUnites(this._partie._jA, createurCarte.PosJA % 5, createurCarte.PosJA / 5);
         }
 
         protected override void addJoueurs(String peupleA, String peupleB)
@@ -73,10 +74,11 @@ namespace SmallWorld
             this._partie._toursRestant = 20;
         }
 
-        protected override void addCarte()
+        protected override void addCarte(String peupleA, String peupleB)
         {
             CreateurCarte createurCarte = new CreateurCartePetite();
-            this._partie._carte = createurCarte.construire();
+            this._partie._carte = createurCarte.construire(peupleA, peupleB);
+            this._partie.positionnerUnites(this._partie._jA, createurCarte.PosJA % 10, createurCarte.PosJA / 10);
         }
 
         protected override void addJoueurs(String peupleA, String peupleB)
@@ -94,10 +96,11 @@ namespace SmallWorld
         }
 
 
-        protected override void addCarte()
+        protected override void addCarte(String peupleA, String peupleB)
         {
             CreateurCarte createurCarte = new CreateurCarteNormale();
-            this._partie._carte = createurCarte.construire();
+            this._partie._carte = createurCarte.construire(peupleA, peupleB);
+            this._partie.positionnerUnites(this._partie._jA, createurCarte.PosJA % 15, createurCarte.PosJA / 15);
         }
 
         protected override void addJoueurs(String peupleA, String peupleB)
