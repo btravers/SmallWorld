@@ -22,29 +22,32 @@ namespace WPFSmallWorld
     /// </summary>
     public partial class Game : UserControl
     {
-        private Partie engine;
-        private Rectangle selection;
-        private Grid tempGrid;
+        private Partie _engine;
+        private Rectangle _selection;
+        private Grid _tempGrid;
+        private List<Rectangle> unitRectangle;
 
         public Game()
         {
             InitializeComponent();
 
-            selection = new Rectangle();
-            selection.Stroke = Brushes.Red;
-            selection.StrokeThickness = 1;
+            unitRectangle = new List<Rectangle>();
+            
+            _selection = new Rectangle();
+            _selection.Stroke = Brushes.Red;
+            _selection.StrokeThickness = 1;
         }
 
-        public void addReference(Partie _engine)
+        public void addReference(Partie engine)
         {
-            engine = _engine;
+            _engine = engine;
         }
 
         public void buildMap()
         {
             //On définit la répartition de la grille
-            var w = engine._carte._width;
-            var h = engine._carte._width;
+            var w = _engine._carte._width;
+            var h = _engine._carte._width;
             for (int c = 0; c < w; c++)
             {
                 mapGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(300 / w, GridUnitType.Pixel) });
@@ -59,11 +62,15 @@ namespace WPFSmallWorld
             {
                 for (int j = 0; j < h; j++)
                 {
-                    var tile = engine._carte._cases[i, j];
+                    var tile = _engine._carte._cases[i, j];
                     var canvas = createImage(i, j, tile);
                     mapGrid.Children.Add(canvas);
                 }
             }
+
+            unitRectangle.Clear();
+            displayUnits(_engine._jA);
+            displayUnits(_engine._jB);
         }
 
         private Grid createImage(int i, int j, Case tile)
@@ -93,12 +100,68 @@ namespace WPFSmallWorld
         private void Mouse_OnTile(object sender, MouseButtonEventArgs e)
         {
             Grid grid = sender as Grid;
-            if (tempGrid != null)
+            if (_tempGrid != null)
             {
-                tempGrid.Children.Remove(selection);
+                _tempGrid.Children.Remove(_selection);
             }
-            grid.Children.Add(selection);
-            tempGrid = grid;
+            grid.Children.Add(_selection);
+            _tempGrid = grid;
+        }
+
+        private void displayUnits(Joueur j)
+        {
+            List<Unite> unites = j._unites;
+            ImageBrush brush = new ImageBrush();
+            var uri = new Uri(@"../../Textures/gaulois.png", UriKind.Relative);
+            if (j._unites[0] is UniteNains)
+            {
+                uri = new Uri(@"../../Textures/dwarf.png", UriKind.Relative);
+            }
+            else if (j._unites[0] is UniteVikings)
+            {
+                uri = new Uri(@"../../Textures/viking.png", UriKind.Relative);
+            }
+            brush.ImageSource = new BitmapImage(uri);
+            foreach (Unite u in unites)
+            {
+                var rectangle = new Rectangle();
+                rectangle.Fill = brush;
+                Grid.SetRow(rectangle, u._x);
+                Grid.SetColumn(rectangle, u._y);
+                rectangle.StrokeThickness = 1;
+                rectangle.Stroke = Brushes.Black;
+                rectangle.MouseEnter += new MouseEventHandler(mouseEnterHandler);
+                rectangle.MouseLeave += new MouseEventHandler(mouseLeaveHandler);
+                mapGrid.Children.Add(rectangle);
+
+                unitRectangle.Add(rectangle);
+            }
+
+        }
+
+
+        /********* Listeners *********/
+
+        public void mouseEnterHandler(object sender, MouseEventArgs e)
+        {
+            var rectangle = sender as Rectangle;
+            rectangle.StrokeThickness = 1;
+            rectangle.Stroke = Brushes.Blue;
+        }
+
+        public void mouseLeaveHandler(object sender, MouseEventArgs e)
+        {
+            var rectangle = sender as Rectangle;
+            if (rectangle == _selection)
+            {
+                rectangle.StrokeThickness = 1;
+                rectangle.Stroke = Brushes.Red;
+            }
+            else
+            {
+                rectangle.StrokeThickness = 1;
+                rectangle.Stroke = Brushes.Black;
+            }
         }
     }
 }

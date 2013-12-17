@@ -49,11 +49,11 @@ GenerateurCarte::GenerateurCarte(int size, std::string PeupleA, std::string Peup
 
 	if(PeupleB == "vikings")
 	{
-		_posJB = size-1;
+		_posJB = (size*size)-1;
 	}
 	else
 	{
-		int i = size-1;
+		int i = (size*size)-1;
 		bool positionne = false;
 		while (! positionne)
 		{

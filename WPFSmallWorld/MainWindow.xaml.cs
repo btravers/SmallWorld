@@ -19,12 +19,6 @@ namespace WPFSmallWorld
 {
     public partial class MainWindow : Window
     {
-        public CreateurPartie createur
-        {
-            get;
-            set;
-        }
-
         public MainWindow()
         {
             InitializeComponent();

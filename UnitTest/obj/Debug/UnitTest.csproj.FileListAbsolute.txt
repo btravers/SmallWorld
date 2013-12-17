@@ -13,6 +13,3 @@ C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\obj\Debug\UnitTest.csp
 C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\obj\Debug\UnitTest.dll
 C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\obj\Debug\UnitTest.pdb
 C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\bin\Debug\LibrarySmallWorld.dll
-C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\UnitTest\bin\Debug\LibrarySmallWorld.dll
-C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\UnitTest\bin\Debug\WrapperSmallWorld.dll
-C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\UnitTest\bin\Debug\WrapperSmallWorld.pdb

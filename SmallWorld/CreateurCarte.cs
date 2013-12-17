@@ -26,7 +26,8 @@ namespace SmallWorld
 
     public abstract class CreateurCarte : ICreateurCarte
     {
-        public int PosJA{
+        public int PosJA
+        {
             get;
             set;
         }
