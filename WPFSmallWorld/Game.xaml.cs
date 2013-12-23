@@ -120,12 +120,15 @@ namespace WPFSmallWorld
             Dictionary<Point, List<Unite>> unites = new Dictionary<Point, List<Unite>>();
             foreach(Unite u in j._unites)
             {
-                Point p = new Point(u._x,u._y);
-                if(! unites.ContainsKey(p))
+                if (u.enVie)
                 {
-                    unites.Add(p, new List<Unite>());
+                    Point p = new Point(u._x, u._y);
+                    if (!unites.ContainsKey(p))
+                    {
+                        unites.Add(p, new List<Unite>());
+                    }
+                    unites[p].Add(u);
                 }
-                unites[p].Add(u);
             }
 
             foreach (Point p in unites.Keys)

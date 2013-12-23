@@ -146,18 +146,26 @@ namespace SmallWorld
 
                 if (uniteAdverse != null)
                 {
-                    this._uniteSelectionnee.attaquer(uniteAdverse);
+                    if (_uniteSelectionnee.peutAttaquer(x,y))
+                    {
+                        this._uniteSelectionnee.attaquer(uniteAdverse);
+                        Unite testPresence = joueur.obtenirMeilleurUnite(x, y);
+                        if ((testPresence == null) && _uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
+                        {
+                            this._uniteSelectionnee.deplacer(x, y);
+                            this._uniteSelectionnee._pm--;
+                        }
+                    }
                 }
                 else
                 {
                     if (_uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
                     {
                         this._uniteSelectionnee.deplacer(x, y);
+                        this._uniteSelectionnee._pm--; // TODO gérer le case des demi pm
                     }
                 }
             }
-
-            this._uniteSelectionnee._pm--;
 
             this._uniteSelectionnee = null;
         }

@@ -65,12 +65,21 @@ namespace SmallWorld
             set;
         }
 
+        public bool enVie
+        {
+            get;
+            set;
+        }
+
+        public readonly int vitaMax = 5;
+
         public Unite()
         {
             this._attaque = 2;
             this._defense = 1;
-            this._pdv = 5;
+            this._pdv = vitaMax;
             this._pm = 1;
+            this.enVie = true;
         }
 
         /*public abstract bool peutPositionner(int x, int y, Case c);*/
@@ -88,6 +97,12 @@ namespace SmallWorld
 
         public bool estAPortee(int x, int y)
         {
+            // TODO gérer la téléportation des nains
+            return this._pm - Math.Abs(this._x - x) - Math.Abs(this._y - y) > -1;
+        }
+
+        public bool peutAttaquer(int x, int y)
+        {
             return this._pm - Math.Abs(this._x - x) - Math.Abs(this._y - y) > -1;
         }
 
@@ -102,6 +117,50 @@ namespace SmallWorld
         public void attaquer(Unite adversaire)
         {
             // TODO
+            Random rnd = new Random();
+            int nb = 3 + rnd.Next(Math.Max(this._pdv, adversaire._pdv)+2);
+
+            while ((nb > 0) && this.enVie && adversaire.enVie)
+            {
+                int forceAttaque = this._attaque * (this._pdv / this.vitaMax);
+                int forceDefense = adversaire._defense * (adversaire._pdv / adversaire.vitaMax);
+                if (forceDefense == 0)
+                {
+                    this.enVie = false;
+                }
+                double ratioAttaqueDefense = (double)forceAttaque / (double)forceDefense;
+                double chanceDef = 0.5;
+                if(ratioAttaqueDefense > 1)
+                {
+                    chanceDef = 0.5 * (1 / ratioAttaqueDefense) + 0.5;
+                    chanceDef = 1 - chanceDef;
+                }
+                else if (ratioAttaqueDefense < 1) 
+                {
+                    chanceDef = 0.5 * ratioAttaqueDefense + 0.5;
+                }
+
+                double alea = ((double)rnd.Next(100) / (double)100);
+
+                if (alea < chanceDef)
+                {
+                    adversaire._pdv--;
+                    if (adversaire._pdv == 0)
+                    {
+                        adversaire.enVie = false;
+                    }
+                }
+                else
+                {
+                    this._pdv--;
+                    if (this._pdv == 0)
+                    {
+                        this.enVie = false;
+                    }
+                }
+                nb--;
+            }
+
         }
 
         public void passerTour()

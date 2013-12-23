@@ -82,9 +82,9 @@ namespace SmallWorld
             }
         }
 
-        public void perdreUnite(Unite u)
+        /*public void perdreUnite(Unite u)
         {
             this._unites.Remove(u);
-        }
+        }*/
     }
 }
