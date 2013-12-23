@@ -290,20 +290,23 @@ namespace WPFSmallWorld
 
         public void rectangleMouseRightHandler(object sender, MouseEventArgs e)
         {
-            var rectangle = sender as Rectangle;
-            int column = Grid.GetColumn(rectangle);
-            int row = Grid.GetRow(rectangle);
+            if (_engine._uniteSelectionnee != null)
+            {
+                var rectangle = sender as Rectangle;
+                int column = Grid.GetColumn(rectangle);
+                int row = Grid.GetRow(rectangle);
 
-            int x = _engine._uniteSelectionnee._x;
-            int y = _engine._uniteSelectionnee._y;
+                int x = _engine._uniteSelectionnee._x;
+                int y = _engine._uniteSelectionnee._y;
 
-            _engine.selectCaseDestination(row, column);
-            _selection.Stroke = Brushes.Black;
+                _engine.selectCaseDestination(row, column);
+                _selection.Stroke = Brushes.Black;
 
-            update();
+                update();
 
-            _selectedUnits.Clear();
-            unitSelecter.Children.Clear();
+                _selectedUnits.Clear();
+                unitSelecter.Children.Clear();
+            }
 
             e.Handled = true;
         }
@@ -321,6 +324,21 @@ namespace WPFSmallWorld
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Joueur j;
+            if (_engine.joueJoueurA())
+            {
+                j = _engine._jA;
+            }
+            else
+            {
+                j = _engine._jB;
+            }
+
+            foreach (Unite u in j._unites)
+            {
+                u._pm = 1;
+            }
+
             _engine.joueurSuivant();
 
             if (_engine._toursRestant < 1)
