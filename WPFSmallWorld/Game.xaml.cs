@@ -24,17 +24,16 @@ namespace WPFSmallWorld
     {
         private Partie _engine;
         private Rectangle _selection;
-        private Grid _tempGrid;
-        List<Rectangle> unitRectangles;
-        Dictionary<Border, Unite> selectedUnits;
-        Border selectedUnit;
+        Dictionary<Point, Rectangle> _unitRectangles;
+        Dictionary<Border, Unite> _selectedUnits;
+        Border _selectedUnit;
 
         public Game()
         {
             InitializeComponent();
 
-            unitRectangles = new List<Rectangle>();
-            selectedUnits = new Dictionary<Border, Unite>();
+            _unitRectangles = new Dictionary<Point, Rectangle>();
+            _selectedUnits = new Dictionary<Border, Unite>();
 
             _selection = new Rectangle();
             _selection.Stroke = Brushes.Red;
@@ -44,6 +43,26 @@ namespace WPFSmallWorld
         public void addReference(Partie engine)
         {
             _engine = engine;
+        }
+
+        private void update()
+        {
+            foreach (Rectangle rect in _unitRectangles.Values)
+            {
+                mapGrid.Children.Remove(rect);
+            }
+
+            _unitRectangles.Clear();
+            displayUnits(_engine._jA);
+            displayUnits(_engine._jB);
+
+            Tours.Text = "Tours restants : " + _engine._toursRestant.ToString();
+
+            pointsJ1.Text = "Points : " + _engine._jA._points;
+            pointsJ2.Text = "Points : " + _engine._jB._points;
+
+            unitesJ1.Text = "Points : " + _engine._jA._unites.Count;
+            unitesJ2.Text = "Points : " + _engine._jA._unites.Count;
         }
 
         public void buildMap()
@@ -68,9 +87,8 @@ namespace WPFSmallWorld
                 }
             }
 
-            unitRectangles.Clear();
-            displayUnits(_engine._jA);
-            displayUnits(_engine._jB);
+            update();
+            
         }
 
         private Rectangle createImage(int i, int j, Case tile)
@@ -99,24 +117,24 @@ namespace WPFSmallWorld
 
         private void displayUnits(Joueur j)
         {
-            List<Unite> unites = j._unites;
-            ImageBrush brush = new ImageBrush();
-            var uri = new Uri(@"../../Textures/gaulois.png", UriKind.Relative);
-            if (j._unites[0] is UniteNains)
+            Dictionary<Point, List<Unite>> unites = new Dictionary<Point, List<Unite>>();
+            foreach(Unite u in j._unites)
             {
-                uri = new Uri(@"../../Textures/dwarf.png", UriKind.Relative);
+                Point p = new Point(u._x,u._y);
+                if(! unites.ContainsKey(p))
+                {
+                    unites.Add(p, new List<Unite>());
+                }
+                unites[p].Add(u);
             }
-            else if (j._unites[0] is UniteVikings)
+
+            foreach (Point p in unites.Keys)
             {
-                uri = new Uri(@"../../Textures/viking.png", UriKind.Relative);
-            }
-            brush.ImageSource = new BitmapImage(uri);
-            foreach (Unite u in unites)
-            {
+                ImageBrush brush = getImageUri(unites[p][0], unites[p].Count());
                 var rectangle = new Rectangle();
                 rectangle.Fill = brush;
-                Grid.SetRow(rectangle, u._x);
-                Grid.SetColumn(rectangle, u._y);
+                Grid.SetRow(rectangle, unites[p][0]._x);
+                Grid.SetColumn(rectangle, unites[p][0]._y);
                 rectangle.StrokeThickness = 1;
                 rectangle.Stroke = Brushes.Black;
                 rectangle.MouseLeftButtonDown += new MouseButtonEventHandler(rectangleMouseLeftMapHandler);
@@ -125,14 +143,48 @@ namespace WPFSmallWorld
                 rectangle.MouseLeave += new MouseEventHandler(mouseLeaveHandler);
                 mapGrid.Children.Add(rectangle);
 
-                unitRectangles.Add(rectangle);
+                _unitRectangles.Add(new Point(unites[p][0]._x, unites[p][0]._y), rectangle);
             }
 
         }
 
+        private ImageBrush getImageUri(Unite u, int nb)
+        {
+            ImageBrush brush = new ImageBrush();
+            var uri = new Uri(@"../../Textures/gaulois.png", UriKind.Relative);
+            if (nb == 1)
+            {
+                if (u is UniteNains)
+                {
+                    uri = new Uri(@"../../Textures/dwarf.png", UriKind.Relative);
+                }
+                else if (u is UniteVikings)
+                {
+                    uri = new Uri(@"../../Textures/viking.png", UriKind.Relative);
+                }
+            }
+            else
+            {
+                if (u is UniteNains)
+                {
+                    uri = new Uri(@"../../Textures/dwarfM.png", UriKind.Relative);
+                }
+                else if (u is UniteVikings)
+                {
+                    uri = new Uri(@"../../Textures/vikingM.png", UriKind.Relative);
+                }
+                else
+                {
+                    uri = new Uri(@"../../Textures/gauloisM.png", UriKind.Relative); 
+                }
+            }
+            brush.ImageSource = new BitmapImage(uri);
+            return brush;
+        }
+
         public void displaySelectedUnits(List<Unite> units)
         {
-            selectedUnits = new Dictionary<Border, Unite>();
+            _selectedUnits = new Dictionary<Border, Unite>();
             int i = 0;
             ImageBrush brush = new ImageBrush();
             var uri = new Uri(@"../../Textures/gaulois.png", UriKind.Relative);
@@ -163,7 +215,7 @@ namespace WPFSmallWorld
                 {
                     border.BorderBrush = Brushes.Red;
                     i++;
-                    selectedUnit = border;
+                    _selectedUnit = border;
                 }
                 else
                 {
@@ -174,8 +226,15 @@ namespace WPFSmallWorld
 
                 unitSelecter.Children.Add(border);
 
-                selectedUnits.Add(border, unit);
+                _selectedUnits.Add(border, unit);
             }
+
+            displayDestinations();
+        }
+
+        public void displayDestinations()
+        {
+            
         }
 
 
@@ -209,7 +268,7 @@ namespace WPFSmallWorld
             int column = Grid.GetColumn(rectangle);
             int row = Grid.GetRow(rectangle);
 
-            selectedUnits.Clear();
+            _selectedUnits.Clear();
             unitSelecter.Children.Clear();
             if (_selection != null)
             {
@@ -235,14 +294,15 @@ namespace WPFSmallWorld
             int column = Grid.GetColumn(rectangle);
             int row = Grid.GetRow(rectangle);
 
+            int x = _engine._uniteSelectionnee._x;
+            int y = _engine._uniteSelectionnee._y;
+
             _engine.selectCaseDestination(row, column);
             _selection.Stroke = Brushes.Black;
-            unitRectangles.Clear();
-            displayUnits(_engine._jA);
-            displayUnits(_engine._jB);
-            //TODO afficher les info du joueur
 
-            selectedUnits.Clear();
+            update();
+
+            _selectedUnits.Clear();
             unitSelecter.Children.Clear();
 
             e.Handled = true;
@@ -250,19 +310,27 @@ namespace WPFSmallWorld
 
         public void rectangleMouseLefUnitSelectertHandler(object sender, MouseEventArgs e)
         {
-            selectedUnit.BorderBrush = Brushes.Black;
+            _selectedUnit.BorderBrush = Brushes.Black;
 
             Border border = sender as Border;
             border.BorderBrush = Brushes.Red;
-            _engine._uniteSelectionnee = selectedUnits[border];
-            selectedUnit = border;
+            _engine._uniteSelectionnee = _selectedUnits[border];
+            _selectedUnit = border;
             e.Handled = true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int i = 4 / 3;
-            MessageBox.Show(i.ToString());
+            _engine.joueurSuivant();
+
+            if (_engine._toursRestant < 1)
+            {
+                MessageBox.Show("Choix du gagnant");
+            }
+            else
+            {
+                Tours.Text = "Tours restants : " + _engine._toursRestant.ToString();
+            }
         }
     }
 }

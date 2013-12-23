@@ -8,17 +8,13 @@
 
     <StackPanel>
 
-        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="300">
             <Grid Background="Azure">
                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Name="mapGrid">
 
                 </Grid>
             </Grid>
         </ScrollViewer >
-
-        <StackPanel Orientation="Horizontal" Height="auto" Name="unitSelecter">
-
-        </StackPanel>
 
         <Grid Background="White">
             <Grid.ColumnDefinitions>
@@ -28,21 +24,26 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel HorizontalAlignment="Stretch" Grid.Column="0" Margin="2">
-                <TextBlock FontWeight="Bold" FontSize="14">Peuple 1</TextBlock>
-                <TextBlock>Points :</TextBlock>
-                <TextBlock>Unités :</TextBlock>
+                <TextBlock FontWeight="Bold" FontSize="14" Name="Joueur1">Peuple 1</TextBlock>
+                <TextBlock Name="pointsJ1">Points :</TextBlock>
+                <TextBlock Name="unitesJ1">Unités :</TextBlock>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" Margin="2">
-                <TextBlock FontWeight="Bold" FontSize="14">Peuple 2</TextBlock>
-                <TextBlock>Points :</TextBlock>
-                <TextBlock>Unités :</TextBlock>
+                <TextBlock FontWeight="Bold" FontSize="14" Name="Joueur2">Peuple 2</TextBlock>
+                <TextBlock Name="pointsJ2">Points :</TextBlock>
+                <TextBlock Name="unitesJ2">Unités :</TextBlock>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Stretch" Grid.Column="2" Margin="2">
                 <Button x:Name="finDeTour" Content="Fin de Tour" Click="Button_Click" HorizontalAlignment="Center"/>
-                <TextBlock><Run Text="Tours restants :"/></TextBlock>
+                <TextBlock Name="Tours"/>
             </StackPanel>
         </Grid>
+
+        <StackPanel Orientation="Horizontal" Height="auto" Name="unitSelecter">
+
+        </StackPanel>
+
     </StackPanel>
 </UserControl>
