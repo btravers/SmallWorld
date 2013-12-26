@@ -2,9 +2,9 @@
 using namespace WrapperSmallWorld;
 using namespace msclr::interop;
 
-WrapperCarte::WrapperCarte(int size, String^ PeupleA, String^ PeupleB)
+WrapperCarte::WrapperCarte(int size, String^ peupleA, String^ peupleB)
 {
-	_generateur = GenerateurCarte_New(size, marshal_as<std::string>(PeupleA), marshal_as<std::string>(PeupleB));
+	_generateur = GenerateurCarte_New(size, marshal_as<std::string>(peupleA), marshal_as<std::string>(peupleB));
 }
 
 WrapperCarte::~WrapperCarte()
@@ -31,4 +31,18 @@ int WrapperCarte::getPosJA()
 int WrapperCarte::getPosJB()
 {
 	return _generateur->getPosJB();
+}
+
+List<int> ^ WrapperSmallWorld::Destinations::destinations(String^ peuple, int rg, int ** carte, int taille)
+{
+	int * buffer = Cases_Destinations(marshal_as<std::string>(peuple), rg, carte, taille);
+	List<int> ^ res = gcnew List<int>();
+	int nb = sizeof(*buffer)/sizeof(int);
+
+	for(int i=0 ; i<nb ; i++)
+	{
+		res->Add(buffer[i]);
+	}
+
+	return res;
 }

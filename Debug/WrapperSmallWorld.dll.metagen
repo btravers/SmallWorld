@@ -18,3 +18,7 @@ Class WrapperSmallWorld.WrapperCarte: AutoLayout, AnsiClass, Class, Public, Befo
     getPosJA(): PrivateScope, Public, HideBySig
     getPosJB(): PrivateScope, Public, HideBySig
     Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class WrapperSmallWorld.Destinations: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    destinations(String, Int32, Int32**, Int32): PrivateScope, Public, Static, HideBySig
