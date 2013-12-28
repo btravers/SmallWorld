@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
+
+using WrapperSmallWorld;
 
 namespace SmallWorld
 {
@@ -123,6 +126,23 @@ namespace SmallWorld
             }
 
             return unitesCase;
+        }
+
+        public List<int> suggestion()
+        {
+            String peuple = _uniteSelectionnee.typeUnite();
+
+            int rg = _uniteSelectionnee._x * _carte._width + _uniteSelectionnee._y;
+            List<int> carte = new List<int>();
+            for (int i = 0; i < _carte._width; i++)
+            {
+                for (int j = 0; j < _carte._width; j++)
+                {
+                    carte.Add(_carte._cases[i,j].typeCase());
+                }
+            }
+
+            return Destinations.destinations(peuple, rg, carte, _carte._width, _uniteSelectionnee._pm);
         }
 
         public void selectCaseDestination(int x, int y)

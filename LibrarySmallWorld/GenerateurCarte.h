@@ -38,4 +38,4 @@ public:
 EXTERNC DLL GenerateurCarte* GenerateurCarte_New(int size, std::string PeupleA, std::string PeupleB);
 EXTERNC DLL void GenerateurCarte_Delete(GenerateurCarte* gc);
 
-EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int ** carte, int taille);
+EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm);

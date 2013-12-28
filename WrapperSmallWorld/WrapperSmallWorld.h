@@ -25,6 +25,6 @@ namespace WrapperSmallWorld {
 	public ref class Destinations
 	{
 	public:
-		static List<int> ^ destinations(String^ peuple, int rg, int ** carte, int taille);
+		static List<int> ^ destinations(String^ peuple, int rg, List<int>^ carte, int taille, int pm);
 	};
 }

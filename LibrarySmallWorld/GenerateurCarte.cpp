@@ -99,19 +99,19 @@ EXTERNC DLL void GenerateurCarte_Delete(GenerateurCarte* gc)
 	delete gc;
 }
 
-EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int ** carte, int taille)
+EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm)
 {
 	std::vector<int> positions = std::vector<int>();
 		int x = rg/taille;
 		int y = rg%taille;
 
-		for(int i=x-1 ; i<x+1 ; i++)
+		for(int i=0 ; i<taille*taille ; i++)
 		{
-			for(int j=y-1 ; j<y+1 ; j++)
+			if((pm - std::abs((i/taille)-x) - std::abs((i%taille)-y))>-1 && i!=rg)
 			{
-				if(!(peuple != "vikings" && carte[i][j] == 3 && i > -1 && j > -1 && i < taille && j < taille && ((std::abs(x-i)+std::abs(y-j)-1)>0)))
+				if( (carte[i] != 3) || ((carte[i] == 3) && (peuple == "vikings")))
 				{
-					positions.push_back(i*taille+j);
+					positions.push_back(i);
 				}
 			}
 		}

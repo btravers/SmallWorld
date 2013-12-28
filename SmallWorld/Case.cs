@@ -37,6 +37,8 @@ namespace SmallWorld
             get;
             set;
         }
+
+        public abstract int typeCase();
     }
 
     public class Montagne : Case, IMontagne
@@ -44,6 +46,11 @@ namespace SmallWorld
         public Montagne()
         {
             _sourceImage = "../Textures/montagne.png";
+        }
+
+        public override int typeCase()
+        {
+            return 0;
         }
     }
 
@@ -53,6 +60,11 @@ namespace SmallWorld
         {
             _sourceImage = "../Textures/plaine.png";
         }
+
+        public override int typeCase()
+        {
+            return 1;
+        }
     }
 
     public class Desert : Case, IDesert
@@ -60,6 +72,11 @@ namespace SmallWorld
         public Desert()
         {
             _sourceImage = "../Textures/desert.png";
+        }
+
+        public override int typeCase()
+        {
+            return 2;
         }
     }
 
@@ -69,6 +86,11 @@ namespace SmallWorld
         {
             _sourceImage = "../Textures/eau.png";
         }
+
+        public override int typeCase()
+        {
+            return 3;
+        }
     }
 
     public class Foret : Case, IForet
@@ -76,6 +98,11 @@ namespace SmallWorld
         public Foret()
         {
             _sourceImage = "../Textures/foret.png";
+        }
+
+        public override int typeCase()
+        {
+            return 4;
         }
     }
 

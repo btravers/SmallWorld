@@ -26,6 +26,7 @@ namespace WPFSmallWorld
         private Rectangle _selection;
         Dictionary<Point, Rectangle> _unitRectangles;
         Dictionary<Border, Unite> _selectedUnits;
+        List<Rectangle> _suggestions;
         Border _selectedUnit;
 
         public Game()
@@ -34,6 +35,7 @@ namespace WPFSmallWorld
 
             _unitRectangles = new Dictionary<Point, Rectangle>();
             _selectedUnits = new Dictionary<Border, Unite>();
+            _suggestions = new List<Rectangle>();
 
             _selection = new Rectangle();
             _selection.Stroke = Brushes.Red;
@@ -56,13 +58,19 @@ namespace WPFSmallWorld
             displayUnits(_engine._jA);
             displayUnits(_engine._jB);
 
+            String nomJoueur = "joueur B";
+            if (_engine.joueJoueurA())
+            {
+                nomJoueur = "joueur A";
+            }
+            Joueur.Text = nomJoueur;
             Tours.Text = "Tours restants : " + _engine._toursRestant.ToString();
 
             pointsJ1.Text = "Points : " + _engine._jA._points;
             pointsJ2.Text = "Points : " + _engine._jB._points;
 
-            unitesJ1.Text = "Points : " + _engine._jA._unites.Count;
-            unitesJ2.Text = "Points : " + _engine._jA._unites.Count;
+            unitesJ1.Text = "Unités restantes : " + _engine._jA._unites.Count;
+            unitesJ2.Text = "Unités restantes : " + _engine._jB._unites.Count;
         }
 
         public void buildMap()
@@ -118,6 +126,7 @@ namespace WPFSmallWorld
         private void displayUnits(Joueur j)
         {
             Dictionary<Point, List<Unite>> unites = new Dictionary<Point, List<Unite>>();
+            List<Unite> toRemove = new List<Unite>();
             foreach(Unite u in j._unites)
             {
                 if (u.enVie)
@@ -129,6 +138,15 @@ namespace WPFSmallWorld
                     }
                     unites[p].Add(u);
                 }
+                else
+                {
+                    toRemove.Add(u);
+                }
+            }
+
+            foreach (Unite u in toRemove)
+            {
+                j._unites.Remove(u);
             }
 
             foreach (Point p in unites.Keys)
@@ -231,13 +249,32 @@ namespace WPFSmallWorld
 
                 _selectedUnits.Add(border, unit);
             }
-
-            displayDestinations();
         }
 
         public void displayDestinations()
         {
-            
+            List<int> suggestions = _engine.suggestion();
+
+            foreach (int i in suggestions)
+            {
+                var rect = new Rectangle();
+                rect.StrokeThickness = 5;
+                rect.Stroke = Brushes.Green;
+
+                Grid.SetRow(rect, i / _engine._carte._width);
+                Grid.SetColumn(rect, i % _engine._carte._width);
+
+                mapGrid.Children.Add(rect);
+                _suggestions.Add(rect);
+            }
+        }
+
+        public void deleteDestinations()
+        {
+            foreach (Rectangle rect in _suggestions)
+            {
+                mapGrid.Children.Remove(rect);
+            }
         }
 
 
@@ -267,6 +304,8 @@ namespace WPFSmallWorld
 
         public void rectangleMouseLeftMapHandler(object sender, MouseEventArgs e)
         {
+            deleteDestinations();
+
             var rectangle = sender as Rectangle;
             int column = Grid.GetColumn(rectangle);
             int row = Grid.GetRow(rectangle);
@@ -287,6 +326,7 @@ namespace WPFSmallWorld
                 rectangle.Stroke = Brushes.Red;
 
                 _selection = rectangle;
+                displayDestinations();
             }
             e.Handled = true;
         }
@@ -295,6 +335,8 @@ namespace WPFSmallWorld
         {
             if (_engine._uniteSelectionnee != null)
             {
+                deleteDestinations();
+
                 var rectangle = sender as Rectangle;
                 int column = Grid.GetColumn(rectangle);
                 int row = Grid.GetRow(rectangle);
@@ -305,10 +347,10 @@ namespace WPFSmallWorld
                 _engine.selectCaseDestination(row, column);
                 _selection.Stroke = Brushes.Black;
 
-                update();
-
                 _selectedUnits.Clear();
                 unitSelecter.Children.Clear();
+
+                update();
             }
 
             e.Handled = true;

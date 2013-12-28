@@ -23,6 +23,7 @@ namespace SmallWorld
     
     public abstract class Unite : IUnite
     {
+
         public int _attaque
         {
             get;
@@ -72,6 +73,8 @@ namespace SmallWorld
         }
 
         public readonly int vitaMax = 5;
+
+        public abstract string typeUnite();
 
         public Unite()
         {
@@ -145,7 +148,7 @@ namespace SmallWorld
                 if (alea < chanceDef)
                 {
                     adversaire._pdv--;
-                    if (adversaire._pdv == 0)
+                    if (adversaire._pdv < 1)
                     {
                         adversaire.enVie = false;
                     }
@@ -153,7 +156,7 @@ namespace SmallWorld
                 else
                 {
                     this._pdv--;
-                    if (this._pdv == 0)
+                    if (this._pdv < 1)
                     {
                         this.enVie = false;
                     }
@@ -175,6 +178,10 @@ namespace SmallWorld
         {
             return true;
         }*/
+        public override string typeUnite()
+        {
+            return "vikings";
+        }
 
         public override bool peutDeplacer(int x, int y, Case c)
         {
@@ -193,6 +200,11 @@ namespace SmallWorld
             return true;
         }*/
 
+        public override string typeUnite()
+        {
+            return "gaulois";
+        }
+
         public override bool peutDeplacer(int x, int y, Case c)
         {
             return ! (c is Eau); // TODO
@@ -209,6 +221,11 @@ namespace SmallWorld
             }
             return true;
         }*/
+
+        public override string typeUnite()
+        {
+            return "nains";
+        }
 
         public override bool peutDeplacer(int x, int y, Case c)
         {
