@@ -102,32 +102,36 @@ EXTERNC DLL void GenerateurCarte_Delete(GenerateurCarte* gc)
 EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm)
 {
 	std::vector<int> positions = std::vector<int>();
-		int x = rg/taille;
-		int y = rg%taille;
+	int x = rg/taille;
+	int y = rg%taille;
 
-		for(int i=0 ; i<taille*taille ; i++)
+	for(int i=x-pm ; i<x+pm+1 ; i++)
+	{
+		for(int j=y-pm; j<y+pm+1 ; j++)
 		{
-			if((pm - std::abs((i/taille)-x) - std::abs((i%taille)-y))>-1 && i!=rg)
+			if(i>-1 && j>-1 && i<taille && j<taille && (pm - std::abs(i-x) - std::abs(j-y))>-1 && (i*taille+j)!=rg)
 			{
-				if( (carte[i] != 3) || ((carte[i] == 3) && (peuple == "vikings")))
+				if( (carte[i*taille+j] != 3) || ((carte[i*taille+j] == 3) && (peuple == "vikings")))
 				{
-					positions.push_back(i);
+					positions.push_back(i*taille+j);
 				}
 			}
 		}
+	}
 
-		if(peuple == "nains")
-		{
-			//TODO ajouter les cases montagnes vides
-		}
+	if(peuple == "nains")
+	{
+		//TODO ajouter les cases montagnes vides
+	}
 
-		int nb = positions.size();
-		int * res = new int[nb];
+	int nb = positions.size();
+	int * res = new int[nb+1];
+	res[0] = nb;
 
-		for(int i=0 ; i<nb ; i++)
-		{
-			res[i] = positions[i];
-		}
+	for(int i=0 ; i<nb ; i++)
+	{
+		res[i+1] = positions[i];
+	}
 
-		return res;
+	return res;
 }

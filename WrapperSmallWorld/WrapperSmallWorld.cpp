@@ -44,12 +44,14 @@ List<int> ^ WrapperSmallWorld::Destinations::destinations(String^ peuple, int rg
 	int * buffer = Cases_Destinations(marshal_as<std::string>(peuple), rg, c, taille, pm);
 	delete[] c;
 	List<int> ^ res = gcnew List<int>();
-	int nb = sizeof(*buffer)/sizeof(int);
+	int nb = buffer[0];
 
 	for(int i=0 ; i<nb ; i++)
 	{
-		res->Add(buffer[i]);
+		res->Add(buffer[i+1]);
 	}
+
+	delete[] buffer;
 
 	return res;
 }
