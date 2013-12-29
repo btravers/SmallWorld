@@ -392,6 +392,7 @@ namespace WPFSmallWorld
             }
             else
             {
+                update();
                 Tours.Text = "Tours restants : " + _engine._toursRestant.ToString();
             }
         }

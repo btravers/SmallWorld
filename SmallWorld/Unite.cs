@@ -129,7 +129,7 @@ namespace SmallWorld
                 int forceDefense = adversaire._defense * (adversaire._pdv / adversaire.vitaMax);
                 if (forceDefense == 0)
                 {
-                    this.enVie = false;
+                    adversaire.enVie = false;
                 }
                 double ratioAttaqueDefense = (double)forceAttaque / (double)forceDefense;
                 double chanceDef = 0.5;

@@ -56,7 +56,7 @@ namespace SmallWorld
 
             foreach (Unite unite in this._unites)
             {
-                if (unite.estSurCase(x, y))
+                if (unite.estSurCase(x, y) && unite.enVie)
                 {
                     unites.Add(unite);
                 }
