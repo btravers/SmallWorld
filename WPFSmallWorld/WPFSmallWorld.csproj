@@ -120,8 +120,8 @@
     <Resource Include="Textures\plaine.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LibrarySmallWorld.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\Debug\LibrarySmallWorld.dll">
+      <Link>LibrarySmallWorld.dll</Link>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
