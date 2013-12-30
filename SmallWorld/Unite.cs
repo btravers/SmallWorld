@@ -60,6 +60,12 @@ namespace SmallWorld
             set;
         }
 
+        public TypeCase _terrain
+        {
+            get;
+            set;
+        }
+
         public bool _passeTour
         {
             get;
@@ -87,10 +93,11 @@ namespace SmallWorld
 
         /*public abstract bool peutPositionner(int x, int y, Case c);*/
 
-        public void positionner(int x, int y)
+        public void positionner(int x, int y, Case c)
         {
             this._x = x;
             this._y = y;
+            _terrain = c.type();
         }
 
         public bool estSurCase(int x, int y)
@@ -111,18 +118,25 @@ namespace SmallWorld
 
         public abstract bool peutDeplacer(int x, int y, Case c);
 
-        public void deplacer(int x, int y)
+        public abstract int getPoints();
+
+        public void deplacer(int x, int y, Case c)
         {
             this._x = x;
             this._y = y;
+            this._terrain = c.type();
         }
 
         public void attaquer(Unite adversaire)
         {
             // TODO
             Random rnd = new Random();
-            int nb = 3 + rnd.Next(Math.Max(this._pdv, adversaire._pdv)+2);
 
+            //Nombre de combats prédéterminé
+            int nb = 3 + rnd.Next(Math.Max(this._pdv, adversaire._pdv)+2);
+            Console.WriteLine(nb + " combats auront lieu");
+
+            //Tant que des combats ont toujours lieu
             while ((nb > 0) && this.enVie && adversaire.enVie)
             {
                 int forceAttaque = this._attaque * (this._pdv / this.vitaMax);
@@ -135,12 +149,12 @@ namespace SmallWorld
                 double chanceDef = 0.5;
                 if(ratioAttaqueDefense > 1)
                 {
-                    chanceDef = 0.5 * (1 / ratioAttaqueDefense) + 0.5;
+                    chanceDef = 0.5 * (1 / ratioAttaqueDefense);
                     chanceDef = 1 - chanceDef;
                 }
                 else if (ratioAttaqueDefense < 1) 
                 {
-                    chanceDef = 0.5 * ratioAttaqueDefense + 0.5;
+                    chanceDef = 0.5 * ratioAttaqueDefense;
                 }
 
                 double alea = ((double)rnd.Next(100) / (double)100);
@@ -162,8 +176,28 @@ namespace SmallWorld
                     }
                 }
                 nb--;
+                Console.WriteLine("Points de vie du conquérant " + _pdv);
+                Console.WriteLine("Points de vie de l'opposant " + adversaire._pdv);
             }
 
+            if (adversaire.enVie && this.enVie)
+            {
+                this.battreEnRetraite();
+            }
+            if(!adversaire.enVie)
+            {
+                Console.WriteLine("L'opposant a été vaincu !");
+            }
+            if (!this.enVie)
+            {
+                Console.WriteLine("Le conquérant a été vaincu !");
+            }
+        }
+
+        public void battreEnRetraite()
+        {
+            Console.WriteLine("L'attaquant bat en retraite !");
+            this._pm--;
         }
 
         public void passerTour()
@@ -178,6 +212,7 @@ namespace SmallWorld
         {
             return true;
         }*/
+
         public override string typeUnite()
         {
             return "vikings";
@@ -186,6 +221,18 @@ namespace SmallWorld
         public override bool peutDeplacer(int x, int y, Case c)
         {
             return true; // TODO
+        }
+
+        public override int getPoints()
+        {
+            int score = 0;
+            //TODO
+            if(_terrain != TypeCase.eau && _terrain != TypeCase.desert)
+            {
+                score = 1;
+            }
+
+            return score;
         }
     }
 
@@ -209,6 +256,23 @@ namespace SmallWorld
         {
             return ! (c is Eau); // TODO
         }
+
+        public override int getPoints()
+        {
+            //TODO
+            if (_terrain == TypeCase.plaine)
+            {
+                return 2;
+            }
+            else if (_terrain == TypeCase.montagne)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        }
     }
 
     public class UniteNains : Unite, IUniteNains
@@ -230,6 +294,23 @@ namespace SmallWorld
         public override bool peutDeplacer(int x, int y, Case c)
         {
             return !(c is Eau); // TODO
+        }
+
+        public override int getPoints()
+        {
+            //TODO
+            if (_terrain == TypeCase.foret)
+            {
+                return 2;
+            }
+            else if (_terrain == TypeCase.plaine)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }

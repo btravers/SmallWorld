@@ -39,6 +39,7 @@ namespace SmallWorld
         }
 
         public abstract int typeCase();
+        public abstract TypeCase type();
     }
 
     public class Montagne : Case, IMontagne
@@ -51,6 +52,11 @@ namespace SmallWorld
         public override int typeCase()
         {
             return 0;
+        }
+
+        public override TypeCase type()
+        {
+            return TypeCase.montagne;
         }
     }
 
@@ -65,6 +71,11 @@ namespace SmallWorld
         {
             return 1;
         }
+
+        public override TypeCase type()
+        {
+            return TypeCase.plaine;
+        }
     }
 
     public class Desert : Case, IDesert
@@ -77,6 +88,11 @@ namespace SmallWorld
         public override int typeCase()
         {
             return 2;
+        }
+
+        public override TypeCase type()
+        {
+            return TypeCase.desert;
         }
     }
 
@@ -91,6 +107,11 @@ namespace SmallWorld
         {
             return 3;
         }
+
+        public override TypeCase type()
+        {
+            return TypeCase.eau;
+        }
     }
 
     public class Foret : Case, IForet
@@ -103,6 +124,11 @@ namespace SmallWorld
         public override int typeCase()
         {
             return 4;
+        }
+
+        public override TypeCase type()
+        {
+            return TypeCase.foret;
         }
     }
 

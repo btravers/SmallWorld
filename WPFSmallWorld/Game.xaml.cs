@@ -35,6 +35,8 @@ namespace WPFSmallWorld
 
             _unitRectangles = new Dictionary<Point, Rectangle>();
             _selectedUnits = new Dictionary<Border, Unite>();
+
+            //Collecteur des rectangles de suggestion de destination
             _suggestions = new List<Rectangle>();
 
             _selection = new Rectangle();
@@ -45,6 +47,13 @@ namespace WPFSmallWorld
         public void addReference(Partie engine)
         {
             _engine = engine;
+        }
+
+        //Met en place le nom des joueurs
+        public void setPlayerNames(String j1Name, String j2Name)
+        {
+            _engine._jA._name = j1Name;
+            _engine._jB._name = j2Name;
         }
 
         private void update()
@@ -58,13 +67,16 @@ namespace WPFSmallWorld
             displayUnits(_engine._jA);
             displayUnits(_engine._jB);
 
-            String nomJoueur = "joueur B";
+            String nomJoueur = "Joueur B";
             if (_engine.joueJoueurA())
             {
-                nomJoueur = "joueur A";
+                nomJoueur = "Joueur A";
             }
             Joueur.Text = nomJoueur;
             Tours.Text = "Tours restants : " + _engine._toursRestant.ToString();
+
+            Joueur1.Text = _engine._jA._name + " (" + _engine._jA._peuple + ")";
+            Joueur2.Text = _engine._jB._name + " (" + _engine._jB._peuple + ")";
 
             pointsJ1.Text = "Points : " + _engine._jA._points;
             pointsJ2.Text = "Points : " + _engine._jB._points;
@@ -224,13 +236,13 @@ namespace WPFSmallWorld
                 border.Background = brush;
 
                 TextBlock unitText = new TextBlock();
-                unitText.Text = unit._pm + " point(s) de mouvement \n" + unit._pdv + " point(s) de vie";
-                unitText.FontSize = 14;
+                unitText.Text = unit._pm + " points de \nmouvement \n" + unit._pdv + " points \nde vie ";
+                unitText.FontSize = 12;
                 unitText.Foreground = Brushes.Red;
                 unitText.FontWeight = FontWeights.Bold;
                 border.Child = unitText;
-                border.Width = 100;
-                border.Height = 100;
+                border.Width = 75;
+                border.Height = 75;
                 border.BorderThickness = new Thickness(3);
                 if (i == 0)
                 {
@@ -251,6 +263,7 @@ namespace WPFSmallWorld
             }
         }
 
+        //Méthode qui permet d'afficher les rectangles de suggestion de destination
         public void displayDestinations()
         {
             List<int> suggestions = _engine.suggestion();
@@ -269,6 +282,7 @@ namespace WPFSmallWorld
             }
         }
 
+        //Méthode permettant d'enlever les rectangles de suggestion de destination
         public void deleteDestinations()
         {
             foreach (Rectangle rect in _suggestions)
@@ -386,14 +400,20 @@ namespace WPFSmallWorld
 
             _engine.joueurSuivant();
 
+            update();
+            Tours.Text = "Tours restants : " + _engine._toursRestant.ToString();
+
             if (_engine._toursRestant < 1)
             {
-                MessageBox.Show("Choix du gagnant");
-            }
-            else
-            {
-                update();
-                Tours.Text = "Tours restants : " + _engine._toursRestant.ToString();
+                if (_engine.egalite())
+                {
+                    MessageBox.Show("Egalité !");
+                }
+                else
+                {
+                    MessageBox.Show("Le gagnant est " + _engine.gagnant() + " !");
+                }
+                //TODO : arrêter le jeu ou revenir au menu principal ?
             }
         }
     }

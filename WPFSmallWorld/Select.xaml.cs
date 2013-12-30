@@ -129,6 +129,7 @@ namespace WPFSmallWorld
 
                 Visibility = Visibility.Collapsed;
                 window.GameScreen.addReference(partie);
+                window.GameScreen.setPlayerNames(j1Name.Text, j2Name.Text);
                 window.GameScreen.buildMap();
                 window.GameScreen.Visibility = Visibility.Visible;
             }

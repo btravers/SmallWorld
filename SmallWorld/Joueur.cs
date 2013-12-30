@@ -23,6 +23,18 @@ namespace SmallWorld
             set;
         }
 
+        public String _name
+        {
+            get;
+            set;
+        }
+
+        public String _peuple
+        {
+            get;
+            set;
+        }
+
         public Joueur(String typePeuple, int nbUnites)
         {
             Peuple peuple = null;
@@ -31,12 +43,15 @@ namespace SmallWorld
             {
                 case "vikings":
                     peuple = new Vikings();
+                    _peuple = "Vikings";
                     break;
                 case "gaulois":
                     peuple = new Gaulois();
+                    _peuple = "Gaulois";
                     break;
                 case "nains":
                     peuple = new Nains();
+                    _peuple = "Nains";
                     break;
             }
             for (int i = 0; i < nbUnites; i++)

@@ -57,6 +57,19 @@ namespace SmallWorld
             this._uniteSelectionnee = null;
         }
 
+        public bool egalite()
+        {
+            return _jA._points == _jB._points;
+        }
+
+        public String gagnant()
+        {
+            if (_jA._points > _jB._points)
+                return _jA._name;
+            else
+                return _jB._name;
+        }
+
         public bool joueJoueurA()
         {
             return _joueur == 0;
@@ -66,7 +79,7 @@ namespace SmallWorld
         {
             foreach (Unite unite in j._unites)
             {
-                unite.positionner(x, y);
+                unite.positionner(x, y, this._carte._cases[x, y]);
             }
         }
 
@@ -89,6 +102,7 @@ namespace SmallWorld
             this._joueur = (this._joueur + 1) % 2;
             if (this._joueur == this._premierJoueur)
             {
+                this.calculerPoints();
                 this._toursRestant--;
             }
         }
@@ -168,11 +182,12 @@ namespace SmallWorld
                 {
                     if (_uniteSelectionnee.peutAttaquer(x,y))
                     {
+                        Console.WriteLine("Un combat a lieu !");
                         this._uniteSelectionnee.attaquer(uniteAdverse);
                         Unite testPresence = joueur.obtenirMeilleurUnite(x, y);
                         if ((testPresence == null) && _uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
                         {
-                            this._uniteSelectionnee.deplacer(x, y);
+                            this._uniteSelectionnee.deplacer(x, y, this._carte._cases[x, y]);
                             this._uniteSelectionnee._pm--;
                         }
                     }
@@ -181,13 +196,42 @@ namespace SmallWorld
                 {
                     if (_uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
                     {
-                        this._uniteSelectionnee.deplacer(x, y);
+                        this._uniteSelectionnee.deplacer(x, y, this._carte._cases[x, y]);
                         this._uniteSelectionnee._pm--; // TODO gérer le case des demi pm
                     }
                 }
             }
 
             this._uniteSelectionnee = null;
+        }
+
+        public void calculerPoints()
+        {
+            int scoreJA = 0;
+            int scoreJB = 0;
+
+            foreach(Unite u in _jA._unites)
+            {
+                scoreJA += u.getPoints();
+                if (u is UniteVikings && _carte.bordEau(u._x, u._y)  && _carte._cases[u._x, u._y].type() != TypeCase.eau)
+                {
+                    scoreJA++;
+                    Console.WriteLine("Un point supplémentaire car unite viking au bord de l'eau !");
+                }
+            }
+
+            foreach (Unite u in _jB._unites)
+            {
+                scoreJB += u.getPoints();
+                if (u is UniteVikings && _carte.bordEau(u._x, u._y) && _carte._cases[u._x, u._y].type() != TypeCase.eau)
+                {
+                    scoreJB++;
+                    Console.WriteLine("Un point supplémentaire car unite viking au bord de l'eau !");
+                }
+            }
+
+            _jA._points += scoreJA;
+            _jB._points += scoreJB;
         }
     }
 }

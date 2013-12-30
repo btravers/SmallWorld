@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="500" d:DesignWidth="525">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height ="*" />
-            <RowDefinition Height ="*" />
+            <RowDefinition Height ="40" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -23,7 +23,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackPanel HorizontalAlignment="Stretch" Grid.Column="0">
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="0" Margin="5">
                 <TextBlock FontWeight="Bold" FontSize="14">Joueur 1</TextBlock>
                 <RadioButton Name="j1Nains" Checked="j1NainsChecked">
                     Nains
@@ -34,9 +34,18 @@
                 <RadioButton Name="j1Gaulois" Checked="j1GauloisChecked">
                     Gaulois
                 </RadioButton>
+                <Label/>
+                <Label Content="Nickname"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="j1Name" Grid.Column="0"/>
+                </Grid>
             </StackPanel>
 
-            <StackPanel HorizontalAlignment="Stretch" Grid.Column="1">
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" Margin="5">
                 <TextBlock FontWeight="Bold" FontSize="14">Joueur 2</TextBlock>
                 <RadioButton Name="j2Nains" Checked="j2NainsChecked">
                     Nains
@@ -47,11 +56,20 @@
                 <RadioButton Name="j2Gaulois" Checked="j2GauloisChecked">
                     Gaulois
                 </RadioButton>
+                <Label/>
+                <Label Content="Nickname"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="j2Name" Grid.Column="0"/>
+                </Grid>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="2">
-            <StackPanel>
+            <StackPanel Margin="5">
                 <TextBlock FontWeight="Bold" FontSize="14">Choix de la carte</TextBlock>
                 <RadioButton Name="cDemo" Checked="cDemoChecked">
                     Demonstration
@@ -67,7 +85,7 @@
 
         <Grid Grid.Row="3">
             <StackPanel>
-                <Button Content="Valider" Click="valider"/>
+                <Button Content="Valider" Click="valider" HorizontalAlignment="Left" Margin="10"/>
             </StackPanel>
         </Grid>
     </Grid>

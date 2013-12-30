@@ -42,9 +42,11 @@
             </StackPanel>
         </Grid>
 
-        <StackPanel Orientation="Horizontal" Height="auto" Name="unitSelecter">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="Auto">
+            <StackPanel Orientation="Horizontal" Height="auto" Name="unitSelecter">
 
-        </StackPanel>
-
+            </StackPanel>
+        </ScrollViewer>
+        
     </StackPanel>
 </UserControl>
