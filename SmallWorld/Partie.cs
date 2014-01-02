@@ -146,10 +146,10 @@ namespace SmallWorld
         {
             String peuple = _uniteSelectionnee.typeUnite();
 
-            Joueur j = _jB;
+            Joueur j = _jA;
             if(joueJoueurA())
             {
-                j = _jA;
+                j = _jB;
             }
 
             int rg = _uniteSelectionnee._x * _carte._width + _uniteSelectionnee._y;

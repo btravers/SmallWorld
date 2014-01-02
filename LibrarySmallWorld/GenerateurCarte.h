@@ -38,4 +38,18 @@ public:
 EXTERNC DLL GenerateurCarte* GenerateurCarte_New(int size, std::string PeupleA, std::string PeupleB);
 EXTERNC DLL void GenerateurCarte_Delete(GenerateurCarte* gc);
 
-EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm, int * posAdversaire);
+EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm, int * posAdversaire, int nbAdversaires);
+
+class OperationSurCarte
+{
+public:
+	static bool adversairePresent(int rg, int * adversaires, int taille)
+	{
+		bool trouve = false;
+		for(int i=0 ; i<taille && !trouve ; i++)
+		{
+			trouve = adversaires[i] == rg;
+		}
+		return trouve;
+	}
+};

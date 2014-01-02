@@ -91,8 +91,6 @@ namespace SmallWorld
             this.enVie = true;
         }
 
-        /*public abstract bool peutPositionner(int x, int y, Case c);*/
-
         public void positionner(int x, int y, Case c)
         {
             this._x = x;
@@ -125,7 +123,6 @@ namespace SmallWorld
 
         public void attaquer(Unite adversaire)
         {
-            // TODO
             Random rnd = new Random();
 
             //Nombre de combats prédéterminé
@@ -185,11 +182,6 @@ namespace SmallWorld
 
     public class UniteVikings : Unite, IUniteVikings
     {
-        /*public override bool peutPositionner(int x, int y, Case c)
-        {
-            return true;
-        }*/
-
         public override string typeUnite()
         {
             return "vikings";
@@ -220,15 +212,6 @@ namespace SmallWorld
 
     public class UniteGaulois : Unite, IUniteGaulois
     {
-        /*public override bool peutPositionner(int x, int y, Case c)
-        {
-            if (c is Eau)
-            {
-                return false;
-            }
-            return true;
-        }*/
-
         public override string typeUnite()
         {
             return "gaulois";
@@ -241,12 +224,11 @@ namespace SmallWorld
 
         public override bool peutDeplacer(int x, int y, Case c)
         {
-            return ! (c is Eau); // TODO
+            return ! (c is Eau);
         }
 
         public override int getPoints()
         {
-            //TODO
             if (_terrain == TypeCase.plaine)
             {
                 return 2;
@@ -264,15 +246,6 @@ namespace SmallWorld
 
     public class UniteNains : Unite, IUniteNains
     {
-        /*public override bool peutPositionner(int x, int y, Case c)
-        {
-            if(c is Eau)
-            {
-                return false;
-            }
-            return true;
-        }*/
-
         public override string typeUnite()
         {
             return "nains";
@@ -289,12 +262,11 @@ namespace SmallWorld
 
         public override bool peutDeplacer(int x, int y, Case c)
         {
-            return !(c is Eau); // TODO
+            return !(c is Eau);
         }
 
         public override int getPoints()
         {
-            //TODO
             if (_terrain == TypeCase.foret)
             {
                 return 2;

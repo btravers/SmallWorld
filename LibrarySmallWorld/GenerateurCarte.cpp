@@ -99,7 +99,7 @@ EXTERNC DLL void GenerateurCarte_Delete(GenerateurCarte* gc)
 	delete gc;
 }
 
-EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm, int * posAdversaire)
+EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm, int * posAdversaire, int nbAdversaires)
 {
 	std::vector<int> positions = std::vector<int>();
 	int x = rg/taille;
@@ -118,7 +118,7 @@ EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int
 			}
 			else
 			{
-				if(peuple == "nains" && (i*taille+j)!=rg && carte[i*taille+j] == 0 && carte[rg] == 0) // TODO vérifier que i*taille+j n'est pas dans posAdversaire
+				if(peuple == "nains" && (i*taille+j)!=rg && carte[i*taille+j] == 0 && carte[rg] == 0 && ! OperationSurCarte::adversairePresent(i*taille+j, posAdversaire, nbAdversaires)) // TODO vérifier que i*taille+j n'est pas dans posAdversaire
 				{
 					positions.push_back(i*taille+j);
 				}
