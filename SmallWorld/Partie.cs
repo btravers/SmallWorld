@@ -85,6 +85,7 @@ namespace SmallWorld
 
         public void joueurSuivant()
         {
+            this.calculerPoints();
             if (this.joueJoueurA())
             {
                 foreach (Unite unite in this._jA._unites)
@@ -102,7 +103,6 @@ namespace SmallWorld
             this._joueur = (this._joueur + 1) % 2;
             if (this._joueur == this._premierJoueur)
             {
-                this.calculerPoints();
                 this._toursRestant--;
             }
         }
@@ -213,31 +213,24 @@ namespace SmallWorld
 
         public void calculerPoints()
         {
-            int scoreJA = 0;
-            int scoreJB = 0;
-
-            foreach(Unite u in _jA._unites)
+            int score = 0;
+            Joueur j = _jB;
+            if (joueJoueurA())
             {
-                scoreJA += u.getPoints();
+                j = _jA;
+            }
+
+            foreach(Unite u in j._unites)
+            {
+                score += u.getPoints();
                 if (u is UniteVikings && _carte.bordEau(u._x, u._y)  && _carte._cases[u._x, u._y].type() != TypeCase.eau)
                 {
-                    scoreJA++;
+                    score++;
                     Console.WriteLine("Un point supplémentaire car unite viking au bord de l'eau !");
                 }
             }
 
-            foreach (Unite u in _jB._unites)
-            {
-                scoreJB += u.getPoints();
-                if (u is UniteVikings && _carte.bordEau(u._x, u._y) && _carte._cases[u._x, u._y].type() != TypeCase.eau)
-                {
-                    scoreJB++;
-                    Console.WriteLine("Un point supplémentaire car unite viking au bord de l'eau !");
-                }
-            }
-
-            _jA._points += scoreJA;
-            _jB._points += scoreJB;
+            j._points += score;
         }
     }
 }

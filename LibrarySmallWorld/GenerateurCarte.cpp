@@ -118,7 +118,7 @@ EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int
 			}
 			else
 			{
-				if(peuple == "nains" && (i*taille+j)!=rg && carte[i*taille+j] == 0) // TODO vérifier que i*taille+j n'est pas dans posAdversaire
+				if(peuple == "nains" && (i*taille+j)!=rg && carte[i*taille+j] == 0 && carte[rg] == 0) // TODO vérifier que i*taille+j n'est pas dans posAdversaire
 				{
 					positions.push_back(i*taille+j);
 				}
