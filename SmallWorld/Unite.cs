@@ -105,11 +105,7 @@ namespace SmallWorld
             return (this._x == x && this._y == y);
         }
 
-        public bool estAPortee(int x, int y)
-        {
-            // TODO gérer la téléportation des nains
-            return this._pm - Math.Abs(this._x - x) - Math.Abs(this._y - y) > -1;
-        }
+        public abstract bool estAPortee(int x, int y, Case c);
 
         public bool peutAttaquer(int x, int y)
         {
@@ -218,6 +214,11 @@ namespace SmallWorld
             return "vikings";
         }
 
+        public override bool estAPortee(int x, int y, Case c)
+        {
+            return this._pm - Math.Abs(this._x - x) - Math.Abs(this._y - y) > -1;
+        }
+
         public override bool peutDeplacer(int x, int y, Case c)
         {
             return true; // TODO
@@ -250,6 +251,11 @@ namespace SmallWorld
         public override string typeUnite()
         {
             return "gaulois";
+        }
+
+        public override bool estAPortee(int x, int y, Case c)
+        {
+            return this._pm - Math.Abs(this._x - x) - Math.Abs(this._y - y) > -1;
         }
 
         public override bool peutDeplacer(int x, int y, Case c)
@@ -289,6 +295,15 @@ namespace SmallWorld
         public override string typeUnite()
         {
             return "nains";
+        }
+
+        public override bool estAPortee(int x, int y, Case c)
+        {
+            if (c is Montagne)
+            {
+                return true;
+            }
+            return this._pm - Math.Abs(this._x - x) - Math.Abs(this._y - y) > -1;
         }
 
         public override bool peutDeplacer(int x, int y, Case c)

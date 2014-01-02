@@ -146,17 +146,23 @@ namespace SmallWorld
         {
             String peuple = _uniteSelectionnee.typeUnite();
 
+            Joueur j = _jB;
+            if(joueJoueurA())
+            {
+                j = _jA;
+            }
+
             int rg = _uniteSelectionnee._x * _carte._width + _uniteSelectionnee._y;
             List<int> carte = new List<int>();
             for (int i = 0; i < _carte._width; i++)
             {
-                for (int j = 0; j < _carte._width; j++)
+                for (int k = 0; k < _carte._width; k++)
                 {
-                    carte.Add(_carte._cases[i,j].typeCase());
+                    carte.Add(_carte._cases[i,k].typeCase());
                 }
             }
 
-            return Destinations.destinations(peuple, rg, carte, _carte._width, _uniteSelectionnee._pm);
+            return Destinations.destinations(peuple, rg, carte, _carte._width, _uniteSelectionnee._pm, j.Poisitions);
         }
 
         public void selectCaseDestination(int x, int y)
@@ -164,7 +170,7 @@ namespace SmallWorld
             if (this._uniteSelectionnee == null)
                 return;
 
-            if (_uniteSelectionnee.estAPortee(x, y))
+            if (_uniteSelectionnee.estAPortee(x, y, _carte._cases[x,y]))
             {
                 Joueur joueur;
                 if (this.joueJoueurA())

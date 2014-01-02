@@ -17,6 +17,12 @@ namespace SmallWorld
             set;
         }
 
+        public List<int> Poisitions
+        {
+            get;
+            set;
+        }
+
         public int _points
         {
             get;

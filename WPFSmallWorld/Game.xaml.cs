@@ -138,6 +138,7 @@ namespace WPFSmallWorld
         private void displayUnits(Joueur j)
         {
             Dictionary<Point, List<Unite>> unites = new Dictionary<Point, List<Unite>>();
+            j.Poisitions = new List<int>();
             List<Unite> toRemove = new List<Unite>();
             foreach(Unite u in j._unites)
             {
@@ -147,6 +148,7 @@ namespace WPFSmallWorld
                     if (!unites.ContainsKey(p))
                     {
                         unites.Add(p, new List<Unite>());
+                        j.Poisitions.Add(u._x*_engine._carte._width+u._y);
                     }
                     unites[p].Add(u);
                 }

@@ -99,29 +99,31 @@ EXTERNC DLL void GenerateurCarte_Delete(GenerateurCarte* gc)
 	delete gc;
 }
 
-EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm)
+EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm, int * posAdversaire)
 {
 	std::vector<int> positions = std::vector<int>();
 	int x = rg/taille;
 	int y = rg%taille;
 
-	for(int i=x-pm ; i<x+pm+1 ; i++)
+	for(int i=0 ; i<taille ; i++)
 	{
-		for(int j=y-pm; j<y+pm+1 ; j++)
+		for(int j=0; j<taille ; j++)
 		{
-			if(i>-1 && j>-1 && i<taille && j<taille && (pm - std::abs(i-x) - std::abs(j-y))>-1 && (i*taille+j)!=rg)
+			if((pm - std::abs(i-x) - std::abs(j-y))>-1 && (i*taille+j)!=rg)
 			{
 				if( (carte[i*taille+j] != 3) || ((carte[i*taille+j] == 3) && (peuple == "vikings")))
 				{
 					positions.push_back(i*taille+j);
 				}
 			}
+			else
+			{
+				if(peuple == "nains" && (i*taille+j)!=rg && carte[i*taille+j] == 0) // TODO vérifier que i*taille+j n'est pas dans posAdversaire
+				{
+					positions.push_back(i*taille+j);
+				}
+			}
 		}
-	}
-
-	if(peuple == "nains")
-	{
-		//TODO ajouter les cases montagnes vides
 	}
 
 	int nb = positions.size();
