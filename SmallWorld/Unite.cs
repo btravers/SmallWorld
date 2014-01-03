@@ -42,7 +42,7 @@ namespace SmallWorld
             set;
         }
 
-        public int _pm
+        public double _pm
         {
             get;
             set;
@@ -103,7 +103,7 @@ namespace SmallWorld
             return (this._x == x && this._y == y);
         }
 
-        public abstract bool estAPortee(int x, int y, Case c);
+        public abstract bool estAPortee(int x, int y, Carte c);
 
         public bool peutAttaquer(int x, int y)
         {
@@ -114,12 +114,7 @@ namespace SmallWorld
 
         public abstract int getPoints();
 
-        public void deplacer(int x, int y, Case c)
-        {
-            this._x = x;
-            this._y = y;
-            this._terrain = c.type();
-        }
+        public abstract void deplacer(int x, int y, Case c);
 
         public void attaquer(Unite adversaire)
         {
@@ -187,7 +182,7 @@ namespace SmallWorld
             return "vikings";
         }
 
-        public override bool estAPortee(int x, int y, Case c)
+        public override bool estAPortee(int x, int y, Carte c)
         {
             return this._pm - Math.Abs(this._x - x) - Math.Abs(this._y - y) > -1;
         }
@@ -195,6 +190,17 @@ namespace SmallWorld
         public override bool peutDeplacer(int x, int y, Case c)
         {
             return true; // TODO
+        }
+
+        public override void deplacer(int x, int y, Case c)
+        {
+            if (x != this._x || y != this._y)
+            {
+                this._pm--;
+            }
+            this._x = x;
+            this._y = y;
+            this._terrain = c.type();
         }
 
         public override int getPoints()
@@ -217,14 +223,47 @@ namespace SmallWorld
             return "gaulois";
         }
 
-        public override bool estAPortee(int x, int y, Case c)
+        public override bool estAPortee(int x, int y, Carte c)
         {
-            return this._pm - Math.Abs(this._x - x) - Math.Abs(this._y - y) > -1;
+            if (c._cases[x, y] is Plaine && (Math.Abs(this._x - x) + Math.Abs(this._y - y)) == 2 && (c._cases[this._x, y] is Plaine || c._cases[x, this._y] is Plaine))
+            {
+                return this._pm == 1;
+            }
+            if (c._cases[x, y] is Plaine && (Math.Abs(this._x - x) + Math.Abs(this._y - y)) == 2)
+            {
+                return this._pm != 0;
+            }
+            return (this._pm == 1) && (Math.Abs(this._x - x) + Math.Abs(this._y - y) == 1);
         }
 
         public override bool peutDeplacer(int x, int y, Case c)
         {
             return ! (c is Eau);
+        }
+
+        public override void deplacer(int x, int y, Case c)
+        {
+            if (Math.Abs(this._x - x) + Math.Abs(this._y - y) == 2)
+            {
+                this._pm--;
+            }
+            else
+            {
+                if (c is Plaine && (x != this._x || y != this._y))
+                {
+                    this._pm = this._pm - 0.5;
+                }
+                else
+                {
+                    if (x != this._x || y != this._y)
+                    {
+                        this._pm--;
+                    }
+                }
+            }
+            this._x = x;
+            this._y = y;
+            this._terrain = c.type();
         }
 
         public override int getPoints()
@@ -251,9 +290,9 @@ namespace SmallWorld
             return "nains";
         }
 
-        public override bool estAPortee(int x, int y, Case c)
+        public override bool estAPortee(int x, int y, Carte c)
         {
-            if (c is Montagne && this._terrain == TypeCase.montagne)
+            if (c._cases[x,y] is Montagne && this._terrain == TypeCase.montagne)
             {
                 return true;
             }
@@ -263,6 +302,17 @@ namespace SmallWorld
         public override bool peutDeplacer(int x, int y, Case c)
         {
             return !(c is Eau);
+        }
+
+        public override void deplacer(int x, int y, Case c)
+        {
+            if (x != this._x || y != this._y)
+            {
+                this._pm--;
+            }
+            this._x = x;
+            this._y = y;
+            this._terrain = c.type();
         }
 
         public override int getPoints()

@@ -99,7 +99,7 @@ EXTERNC DLL void GenerateurCarte_Delete(GenerateurCarte* gc)
 	delete gc;
 }
 
-EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, int pm, int * posAdversaire, int nbAdversaires)
+EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int taille, double pm, int * posAdversaire, int nbAdversaires)
 {
 	std::vector<int> positions = std::vector<int>();
 	int x = rg/taille;
@@ -109,7 +109,7 @@ EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int
 	{
 		for(int j=0; j<taille ; j++)
 		{
-			if((pm - std::abs(i-x) - std::abs(j-y))>-1 && (i*taille+j)!=rg)
+			if(pm == 1 && (std::abs(i-x) + std::abs(j-y)) == 1 && (i*taille+j)!=rg)
 			{
 				if( (carte[i*taille+j] != 3) || ((carte[i*taille+j] == 3) && (peuple == "vikings")))
 				{
@@ -121,6 +121,18 @@ EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int
 				if(peuple == "nains" && (i*taille+j)!=rg && carte[i*taille+j] == 0 && carte[rg] == 0 && ! OperationSurCarte::adversairePresent(i*taille+j, posAdversaire, nbAdversaires)) // TODO vérifier que i*taille+j n'est pas dans posAdversaire
 				{
 					positions.push_back(i*taille+j);
+				}else{
+					if(peuple == "gaulois" && (i*taille+j)!=rg && (std::abs(i-x) + std::abs(j-y)) == 2 && carte[i*taille+j] == 1 && (carte[x*taille+j] == 1 || carte[i*taille+y] == 1))
+					{
+						positions.push_back(i*taille+j);
+					}
+					else
+					{
+						if(peuple == "gaulois" && (i*taille+j)!=rg && (std::abs(i-x) + std::abs(j-y)) == 1 && pm == 0.5)
+						{
+							positions.push_back(i*taille+j);
+						}
+					}
 				}
 			}
 		}

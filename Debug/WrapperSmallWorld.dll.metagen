@@ -21,4 +21,4 @@ Class WrapperSmallWorld.WrapperCarte: AutoLayout, AnsiClass, Class, Public, Befo
 Class WrapperSmallWorld.Destinations: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    destinations(String, Int32, List`1, Int32, Int32, List`1): PrivateScope, Public, Static, HideBySig
+    destinations(String, Int32, List`1, Int32, Double, List`1): PrivateScope, Public, Static, HideBySig

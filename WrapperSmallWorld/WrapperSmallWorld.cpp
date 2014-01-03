@@ -33,7 +33,7 @@ int WrapperCarte::getPosJB()
 	return _generateur->getPosJB();
 }
 
-List<int> ^ WrapperSmallWorld::Destinations::destinations(String^ peuple, int rg, List<int>^ carte, int taille, int pm, List<int>^ posAdversaire)
+List<int> ^ WrapperSmallWorld::Destinations::destinations(String^ peuple, int rg, List<int>^ carte, int taille, double pm, List<int>^ posAdversaire)
 {
 	int * c = new int[taille*taille];
 	for(int i=0 ; i<taille*taille ; i++)

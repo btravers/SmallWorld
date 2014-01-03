@@ -86,20 +86,16 @@ namespace SmallWorld
         public void joueurSuivant()
         {
             this.calculerPoints();
+            Joueur j = _jB;
             if (this.joueJoueurA())
             {
-                foreach (Unite unite in this._jA._unites)
-                {
-                    unite._passeTour = false;
-                }
+                j = _jA;
             }
-            else 
+            foreach (Unite unite in j._unites)
             {
-                foreach (Unite unite in this._jB._unites)
-                {
-                    unite._passeTour = false;
-                }
+                unite._passeTour = false;
             }
+
             this._joueur = (this._joueur + 1) % 2;
             if (this._joueur == this._premierJoueur)
             {
@@ -170,7 +166,7 @@ namespace SmallWorld
             if (this._uniteSelectionnee == null)
                 return;
 
-            if (_uniteSelectionnee.estAPortee(x, y, _carte._cases[x,y]))
+            if (_uniteSelectionnee.estAPortee(x, y, _carte))
             {
                 Joueur joueur;
                 if (this.joueJoueurA())
@@ -194,7 +190,6 @@ namespace SmallWorld
                         if ((testPresence == null) && _uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
                         {
                             this._uniteSelectionnee.deplacer(x, y, this._carte._cases[x, y]);
-                            this._uniteSelectionnee._pm--;
                         }
                     }
                 }
@@ -203,7 +198,6 @@ namespace SmallWorld
                     if (_uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
                     {
                         this._uniteSelectionnee.deplacer(x, y, this._carte._cases[x, y]);
-                        this._uniteSelectionnee._pm--; // TODO gérer le case des demi pm
                     }
                 }
             }

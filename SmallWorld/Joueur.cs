@@ -89,7 +89,7 @@ namespace SmallWorld
 
                 foreach (Unite unite in unites)
                 {
-                    if (unite._defense > meilleur._defense)
+                    if (unite._defense*unite._pdv/unite.vitaMax > meilleur._defense*meilleur._pdv/meilleur.vitaMax)
                     {
                         meilleur = unite;
                     }
