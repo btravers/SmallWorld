@@ -118,20 +118,25 @@ EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int
 			}
 			else
 			{
-				if(peuple == "nains" && (i*taille+j)!=rg && carte[i*taille+j] == 0 && carte[rg] == 0 && ! OperationSurCarte::adversairePresent(i*taille+j, posAdversaire, nbAdversaires)) // TODO vérifier que i*taille+j n'est pas dans posAdversaire
+				if(peuple == "nains" && (i*taille+j)!=rg && pm == 1)
 				{
-					positions.push_back(i*taille+j);
-				}else{
-					if(peuple == "gaulois" && (i*taille+j)!=rg && (std::abs(i-x) + std::abs(j-y)) == 2 && carte[i*taille+j] == 1 && (carte[x*taille+j] == 1 || carte[i*taille+y] == 1))
+					if(carte[i*taille+j] == 0 && carte[rg] == 0 && ! OperationSurCarte::adversairePresent(i*taille+j, posAdversaire, nbAdversaires))
 					{
 						positions.push_back(i*taille+j);
 					}
-					else
+				}
+				else if(peuple == "gaulois" && (i*taille+j)!=rg)
+				{
+					if((std::abs(i-x) + std::abs(j-y)) == 2 && carte[i*taille+j] == 1 && pm ==1)
 					{
-						if(peuple == "gaulois" && (i*taille+j)!=rg && (std::abs(i-x) + std::abs(j-y)) == 1 && pm == 0.5)
+						if((i!=x && j!=y && (carte[x*taille+j] == 1 || carte[i*taille+y] == 1)) || (i == x && carte[i*taille+((y+j)/2)] == 1) || (j == y && carte[((i+x)/2)*taille+j] == 1))
 						{
 							positions.push_back(i*taille+j);
 						}
+					}
+					else if ((std::abs(i-x) + std::abs(j-y)) == 1 && carte[i*taille+j] == 1 && pm == 0.5)
+					{
+						positions.push_back(i*taille+j);
 					}
 				}
 			}

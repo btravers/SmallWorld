@@ -225,7 +225,7 @@ namespace SmallWorld
                 }
                 else if (ratioAttaqueDefense < 1) 
                 {
-                    chanceDef = 0.5 * ratioAttaqueDefense +0.5;
+                    chanceDef = 0.5 * ratioAttaqueDefense + 0.5;
                 }
 
                 double alea = ((double)rnd.Next(100) / (double)100);
@@ -319,10 +319,19 @@ namespace SmallWorld
 
         public override bool estAPortee(int x, int y, Carte c)
         {
-            if (c._cases[x, y] is Plaine && (Math.Abs(this._x - x) + Math.Abs(this._y - y)) == 2 && (c._cases[this._x, y] is Plaine || c._cases[x, this._y] is Plaine))
+            if ((Math.Abs(this._x - x) + Math.Abs(this._y - y)) == 2 && _pm == 1 && c._cases[x, y] is Plaine)
             {
-                return this._pm == 1;
+                if ((this._x == x && c._cases[x, (this._y + y) / 2] is Plaine) || (this._y == y && c._cases[(this._x + x) / 2, y] is Plaine))
+                {
+                    return true;
+                }
+
+                if (this._x != x && this._y != y && (c._cases[this._x, y] is Plaine || c._cases[x, this._y] is Plaine))
+                {
+                    return true;
+                }
             }
+
             if (c._cases[x, y] is Plaine && (Math.Abs(this._x - x) + Math.Abs(this._y - y)) == 2)
             {
                 return this._pm != 0;
@@ -391,7 +400,7 @@ namespace SmallWorld
 
         public override bool estAPortee(int x, int y, Carte c)
         {
-            if (c._cases[x,y] is Montagne && this._terrain == TypeCase.montagne)
+            if (c._cases[x,y] is Montagne && this._terrain == TypeCase.montagne && this._pm == 1)
             {
                 return true;
             }
