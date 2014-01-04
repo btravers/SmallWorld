@@ -242,7 +242,7 @@ namespace SmallWorld
                         Console.WriteLine("Un combat a lieu !");
                         this._uniteSelectionnee.attaquer(uniteAdverse);
                         Unite testPresence = joueur.obtenirMeilleurUnite(x, y);
-                        if ((testPresence == null) && _uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]))
+                        if ((testPresence == null) && _uniteSelectionnee.peutDeplacer(x, y, this._carte._cases[x, y]) && this._uniteSelectionnee.enVie)
                         {
                             this._uniteSelectionnee.deplacer(x, y, this._carte._cases[x, y]);
                         }

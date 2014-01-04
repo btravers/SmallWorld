@@ -325,14 +325,13 @@ namespace SmallWorld
                 {
                     return true;
                 }
-
-                if (this._x != x && this._y != y && (c._cases[this._x, y] is Plaine || c._cases[x, this._y] is Plaine))
+                else if (this._x != x && this._y != y && (c._cases[this._x, y] is Plaine || c._cases[x, this._y] is Plaine))
                 {
                     return true;
                 }
             }
 
-            if (c._cases[x, y] is Plaine && (Math.Abs(this._x - x) + Math.Abs(this._y - y)) == 2)
+            if (c._cases[x, y] is Plaine && (Math.Abs(this._x - x) + Math.Abs(this._y - y)) == 1)
             {
                 return this._pm != 0;
             }
