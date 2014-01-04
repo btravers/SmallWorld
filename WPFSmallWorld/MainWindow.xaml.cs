@@ -17,10 +17,19 @@ using SmallWorld;
 
 namespace WPFSmallWorld
 {
+    /**
+    * La classe MainWindow représente la fenêtre de l'application
+    * @author Mickaël Olivier, Benoit Travers
+    */
     public partial class MainWindow : Window
     {
+        /**
+         * Constructeur de la classe
+         */
         public MainWindow()
         {
+            //On initialise la fenêtre à l'aide du XAML 
+            //et on ajoute une référence de cette fenêtre à l'écran de sélection
             InitializeComponent();
             SelectScreen.addReference(this);
         }

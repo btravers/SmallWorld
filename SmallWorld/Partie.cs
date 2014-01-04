@@ -8,60 +8,88 @@ using WrapperSmallWorld;
 
 namespace SmallWorld
 {
+    /**
+     * Interface définissant une partie
+     * @author Mickael Olivier, Benoit Travers
+     */
     public interface IPartie
     {
     }
 
+    /**
+     * Classe définissant une partie
+     * @author Mickael Olivier, Benoit Travers
+     */
     public class Partie : IPartie
     {
+        /** Le joueur A de cette partie */
         public Joueur _jA
         {
             get;
             set;
         }
 
+        /** Le joueur B de cette partie */
         public Joueur _jB
         {
             get;
             set;
         }
 
+        /** La carte de cette partie */
         public Carte _carte
         {
             get;
             set;
         }
 
+        /** Le nombre de tours restant à jouer pour cette partie */
         public int _toursRestant
         {
             get;
             set;
         }
 
+        /** Le premier joueur au début de la partie choisi au hasard */
         private int _premierJoueur;
 
+        /** Le joeuur qui joue actuellement */
         private int _joueur;
 
+
+        /** L'unité selectionnée par le joueur quand c'est son tour */
         public Unite _uniteSelectionnee
         {
             get;
             set;
         }
 
-
+        /**
+         * Créateur de la partie
+         */
         public Partie()
         {
+            //On choisi le premier joueur au hasard et aucune unité n'est selectionnée
             Random rnd = new Random();
             this._premierJoueur = rnd.Next(2);
             this._joueur = this._premierJoueur;
             this._uniteSelectionnee = null;
         }
 
+        /**
+         * Fonction permettant de savoir si deux joueurs sont à égalité ou non
+         * @return Vrai si les deux joeuurs sont à égalité de points, faux sinon
+         */
         public bool egalite()
         {
             return _jA._points == _jB._points;
         }
 
+        /**
+         * Fonction permettant de définir le gagnant
+         * On vérifie avant son appel qu'il n'y a apas d'égalité
+         * @return Le nom du gagnant
+         */
         public String gagnant()
         {
             if (_jA._points > _jB._points)
@@ -70,11 +98,21 @@ namespace SmallWorld
                 return _jB._name;
         }
 
+        /**
+         * Fonction permettant de savoir quel joueur joue
+         * @return Vrai si le joueur A joue, faux si c'est le joueur B qui joue
+         */
         public bool joueJoueurA()
         {
             return _joueur == 0;
         }
 
+        /**
+         * Fonction permettant de positionner les unités d'un joueur à une case de coordonnées x,y au début de la partie
+         * @param j le joueur pour lequel il faut positionner les unités
+         * @param x l'abscisse de la coordonée de positionnement
+         * @param y l'ordonnée de la coordonée de positionnement
+         */
         public void positionnerUnites(Joueur j, int x, int y)
         {
             foreach (Unite unite in j._unites)
@@ -83,6 +121,9 @@ namespace SmallWorld
             }
         }
 
+        /*
+         * Fonction permettant de définir le joueur suivant à la fin d'un tour de jeu
+         */
         public void joueurSuivant()
         {
             this.calculerPoints();
@@ -103,6 +144,11 @@ namespace SmallWorld
             }
         }
 
+        /**
+         * Fonction qui permet de sélectionner les unités sur une case de coordonnées x,y
+         * @param x l'abscisse de la coordonée
+         * @param y l'ordonnée de la coordonée
+         */
         public List<Unite> selectCaseInitiale(int x, int y)
         {
             this._uniteSelectionnee = null;
@@ -138,6 +184,10 @@ namespace SmallWorld
             return unitesCase;
         }
 
+        /**
+         * Fonction qui permet d'obtenir les suggestions de déplacements pour l'unité sélectionnée
+         * @return La liste des positions suggérées
+         */
         public List<int> suggestion()
         {
             String peuple = _uniteSelectionnee.typeUnite();
@@ -161,6 +211,11 @@ namespace SmallWorld
             return Destinations.destinations(peuple, rg, carte, _carte._width, _uniteSelectionnee._pm, j.Poisitions);
         }
 
+        /**
+         * Fonction chargée de sélectionner la case de destination de l'unité sélectionnée
+         * @param x l'abscisse de la cordonnée de destination
+         * @param y l'ordonnée de la coordonée de destination
+         */
         public void selectCaseDestination(int x, int y)
         {
             if (this._uniteSelectionnee == null)
@@ -205,25 +260,35 @@ namespace SmallWorld
             this._uniteSelectionnee = null;
         }
 
+        /**
+         * Fonction qui permet de calculer les points à la fin d'un tour d'un joueur
+         */
         public void calculerPoints()
         {
+            //De base le score est nul
             int score = 0;
+
+            //On récupère le bon joueur
             Joueur j = _jB;
             if (joueJoueurA())
             {
                 j = _jA;
             }
 
+            //Pour chaque unité dans les unités du joueur ayant fini son tour
             foreach(Unite u in j._unites)
             {
+                //On calcule les points
                 score += u.getPoints();
+
+                //Si jamais l'unité est viking et au bord de l'eau alors on rajoute un point pour cette unité
                 if (u is UniteVikings && _carte.bordEau(u._x, u._y)  && _carte._cases[u._x, u._y].type() != TypeCase.eau)
                 {
                     score++;
-                    Console.WriteLine("Un point supplémentaire car unite viking au bord de l'eau !");
                 }
             }
 
+            //On ajoute aux points du joueur finissant son tour le score ainsi calculé
             j._points += score;
         }
     }

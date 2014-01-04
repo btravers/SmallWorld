@@ -5,42 +5,56 @@ using System.Text;
 
 namespace SmallWorld
 {
+    /**
+     * Interface qui définit une fabrique de cases
+     */
     public interface IFabriqueCase
     {
     }
 
+    /**
+     * Classe qui définit une fabrique de cases
+     */
     public class FabriqueCase : IFabriqueCase
     {
+        /** Instance de montagne */
         public Montagne _m
         {
             get;
             set;
         }
 
+        /** Instance de plaine */
         public Plaine _p
         {
             get;
             set;
         }
 
+        /** Instance de desert */
         public Desert _d
         {
             get;
             set;
         }
 
+        /** Instance d'eau */
         public Eau _e
         {
             get;
             set;
         }
 
+        /** Instance de foret */
         public Foret _f
         {
             get;
             set;
         }
 
+        /**
+         * Contructeur de la classe
+         */
         public FabriqueCase()
         {
             this._m = new Montagne();
@@ -50,6 +64,11 @@ namespace SmallWorld
             this._f = new Foret();
         }
 
+        /**
+         * Fonction qui permet d'obtenir la case voulue
+         * @param c le type de la case voulue
+         * @return Case une référence sur la case recherchée
+         */
         public Case getCase(TypeCase c)
         {
             switch (c)

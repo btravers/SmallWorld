@@ -5,52 +5,80 @@ using System.Text;
 
 namespace SmallWorld
 {
+    /**
+     * Interface réalisant un créateur de partie
+     * @author Mickaël Olivier, Benoit Travers
+     */
     public interface ICreateurPartie
     {
     }
 
+    /**
+     * Classe concrète réalisant la création d'une partie
+     * @author Mickaël Olivier, Benoit Travers
+     */
     public class CreateurPartie : ICreateurPartie
     {
+        /** MonteurPartie correspondant au montage de la partie */
         public MonteurPartie Monteur
         {
             get;
             set;
         }
 
+        /** Type de la carte sous forme de String */
         public String TypeCarte
         {
             get;
             set;
         }
 
+        /** Peuple du joueur A */
         public String PeupleA
         {
             get;
             set;
         }
 
+        /** Peuple du joueur B */
         public String PeupleB
         {
             get;
             set;
         }
 
+        /** 
+         * Constructeur de la classe
+         */
         public CreateurPartie()
         {
         }
 
+        /**
+         * Fonction permettant d'ajouter le peuple du joueur A
+         * @param pA le peuple choisi par le joueur A
+         */
         public void addPeupleA(String pA)
         {
             this.PeupleA = pA;
         }
 
+        /**
+         * Fonction permettant d'ajouter le peuple du joueur B
+         * @param pB le peuple choisi par le joueur B
+         */
         public void addPeupleB(String pB)
         {
             this.PeupleA = pB;
         }
 
+        /**
+         * Fonction permettant de construire la partie
+         * @return la partie qui va se jouer à son stade initial
+         */
         public Partie construire()
         {
+            //En fonction du type de la carte, on adopte le monteur adopté et on contruit la partie avec la bonne carte
             switch (TypeCarte)
             {
                 case "demo":
