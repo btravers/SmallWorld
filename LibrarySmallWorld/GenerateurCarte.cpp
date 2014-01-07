@@ -111,7 +111,7 @@ EXTERNC DLL int* Cases_Destinations(std::string peuple, int rg, int * carte, int
 		{
 			if(pm == 1 && (std::abs(i-x) + std::abs(j-y)) == 1 && (i*taille+j)!=rg)
 			{
-				if( (carte[i*taille+j] != 3) || ((carte[i*taille+j] == 3) && (peuple == "vikings")))
+				if( (carte[i*taille+j] != 3) || ((carte[i*taille+j] == 3) && (peuple == "vikings")) || OperationSurCarte::adversairePresent(i*taille+j, posAdversaire, nbAdversaires))
 				{
 					positions.push_back(i*taille+j);
 				}
