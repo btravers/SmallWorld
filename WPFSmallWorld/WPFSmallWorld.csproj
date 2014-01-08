@@ -55,9 +55,26 @@
     <Compile Include="Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Load.xaml.cs">
+      <DependentUpon>Load.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="save.xaml.cs">
+      <DependentUpon>save.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Select.xaml.cs">
       <DependentUpon>Select.xaml</DependentUpon>
     </Compile>
+    <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Load.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +88,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="save.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

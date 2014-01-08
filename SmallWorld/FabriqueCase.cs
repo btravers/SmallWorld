@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.IO;
+using System.Xml.Serialization;
+
 namespace SmallWorld
 {
     /**
@@ -15,9 +18,11 @@ namespace SmallWorld
     /**
      * Classe qui définit une fabrique de cases
      */
+    [Serializable()]
     public class FabriqueCase : IFabriqueCase
     {
         /** Instance de montagne */
+        [XmlAttribute()]
         public Montagne _m
         {
             get;
@@ -25,6 +30,7 @@ namespace SmallWorld
         }
 
         /** Instance de plaine */
+        [XmlAttribute()]
         public Plaine _p
         {
             get;
@@ -32,6 +38,7 @@ namespace SmallWorld
         }
 
         /** Instance de desert */
+        [XmlAttribute()]
         public Desert _d
         {
             get;
@@ -39,6 +46,7 @@ namespace SmallWorld
         }
 
         /** Instance d'eau */
+        [XmlAttribute()]
         public Eau _e
         {
             get;
@@ -46,6 +54,7 @@ namespace SmallWorld
         }
 
         /** Instance de foret */
+        [XmlAttribute()]
         public Foret _f
         {
             get;

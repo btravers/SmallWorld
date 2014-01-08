@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Benoit Travers\Documents\GitHub\SmallWorld\WPFSmallWorld\App.xaml
-3205026994
+61720144967
 189534436
-11701552227
+141040610946
 131479175652
-MainWindow.xaml;Game.xaml;Select.xaml;
+Home.xaml;Load.xaml;MainWindow.xaml;Game.xaml;save.xaml;Select.xaml;
 
 False
 

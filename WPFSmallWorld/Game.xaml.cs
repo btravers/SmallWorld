@@ -29,6 +29,7 @@ namespace WPFSmallWorld
         Dictionary<Border, Unite> _selectedUnits; /**Un dictionnaire qui associe un objet border pour la sélection de chaus eunité*/
         List<Rectangle> _suggestions; /**Une liste de rectangles qui correspond à la suggestion des cases de déplacement possibles pour une unité*/
         Border _selectedUnit; /**Un border qui correspon à l'unité sélectionnée*/
+        private MainWindow window;
 
         /**
          * Constructeur
@@ -49,6 +50,15 @@ namespace WPFSmallWorld
             _selection = new Rectangle();
             _selection.Stroke = Brushes.Red;
             _selection.StrokeThickness = 1;
+        }
+
+        /**
+         * Ajoute une référence sur la fenêtre principale
+         * @param win la fenêtre en question
+         */
+        public void addReference(MainWindow win)
+        {
+            window = win;
         }
 
         /**
@@ -188,7 +198,7 @@ namespace WPFSmallWorld
         {
             //On crée un dictionnaire associant points et unités
             Dictionary<Point, List<Unite>> unites = new Dictionary<Point, List<Unite>>();
-            j.Poisitions = new List<int>();
+            j.Positions = new List<int>();
             List<Unite> toRemove = new List<Unite>();
 
             //Pour chaque unité
@@ -206,7 +216,7 @@ namespace WPFSmallWorld
                         //On ajoute une entrée qui associe le point et une liste d'unités
                         unites.Add(p, new List<Unite>());
                         //On ajoute 
-                        j.Poisitions.Add(u._x*_engine._carte._width+u._y);
+                        j.Positions.Add(u._x*_engine._carte._width+u._y);
                     }
                     //Dans tous les cas on ajoute l'unités dans la liste d'unités associée au point considéré 
                     unites[p].Add(u);
@@ -557,6 +567,15 @@ namespace WPFSmallWorld
                 }
                 //TODO : arrêter le jeu ou revenir au menu principal ?
             }
+        }
+
+        /**
+         * Evenement associé au clic sur le bouton "Sauvegarder"
+         */
+        public void save(object sender, RoutedEventArgs e)
+        {
+            Window sauvegarde = new save(_engine,window);
+            sauvegarde.ShowDialog();
         }
     }
 }

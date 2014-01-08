@@ -84,9 +84,10 @@
         </Grid>
 
         <Grid Grid.Row="3">
-            <StackPanel>
+            <DockPanel>
                 <Button Content="Valider" Click="valider" HorizontalAlignment="Left" Margin="10"/>
-            </StackPanel>
+                <Button Content="Annuler" Click="annuler" HorizontalAlignment="Left" Margin="10"/>
+            </DockPanel>
         </Grid>
     </Grid>
 </UserControl>

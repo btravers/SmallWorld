@@ -31,7 +31,7 @@ namespace WPFSmallWorld
             //On initialise la fenêtre à l'aide du XAML 
             //et on ajoute une référence de cette fenêtre à l'écran de sélection
             InitializeComponent();
-            SelectScreen.addReference(this);
+            HomeScreen.addReference(this);
         }
     }
 }

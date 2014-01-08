@@ -16,7 +16,9 @@
     </Window.Resources>
 
     <Grid>
-        <local:Select x:Name="SelectScreen"/>
+        <local:Home x:Name="HomeScreen"/>
+        <local:Load x:Name="LoadScreen" Visibility="Collapsed"/>
+        <local:Select x:Name="SelectScreen" Visibility="Collapsed"/>
         <local:Game x:Name="GameScreen" Visibility="Collapsed"/>
     </Grid>
 </Window>

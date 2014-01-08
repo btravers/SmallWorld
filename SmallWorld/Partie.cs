@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
+using System.IO;
+using System.Xml.Serialization;
+
 using WrapperSmallWorld;
 
 namespace SmallWorld
@@ -20,9 +23,11 @@ namespace SmallWorld
      * Classe définissant une partie
      * @author Mickael Olivier, Benoit Travers
      */
+    [Serializable()]
     public class Partie : IPartie
     {
         /** Le joueur A de cette partie */
+        [XmlAttribute()]
         public Joueur _jA
         {
             get;
@@ -30,6 +35,7 @@ namespace SmallWorld
         }
 
         /** Le joueur B de cette partie */
+        [XmlAttribute()]
         public Joueur _jB
         {
             get;
@@ -37,6 +43,7 @@ namespace SmallWorld
         }
 
         /** La carte de cette partie */
+        [XmlAttribute()]
         public Carte _carte
         {
             get;
@@ -44,6 +51,7 @@ namespace SmallWorld
         }
 
         /** Le nombre de tours restant à jouer pour cette partie */
+        [XmlAttribute()]
         public int _toursRestant
         {
             get;
@@ -51,13 +59,24 @@ namespace SmallWorld
         }
 
         /** Le premier joueur au début de la partie choisi au hasard */
-        private int _premierJoueur;
+        [XmlAttribute()]
+        public int _premierJoueur
+        {
+            get;
+            set;
+        }
 
         /** Le joeuur qui joue actuellement */
-        private int _joueur;
+        [XmlAttribute()]
+        public int _joueur
+        {
+            get;
+            set;
+        }
 
 
         /** L'unité selectionnée par le joueur quand c'est son tour */
+        [XmlAttribute()]
         public Unite _uniteSelectionnee
         {
             get;
@@ -208,7 +227,7 @@ namespace SmallWorld
                 }
             }
 
-            return Destinations.destinations(peuple, rg, carte, _carte._width, _uniteSelectionnee._pm, j.Poisitions);
+            return Destinations.destinations(peuple, rg, carte, _carte._width, _uniteSelectionnee._pm, j.Positions);
         }
 
         /**
@@ -290,6 +309,27 @@ namespace SmallWorld
 
             //On ajoute aux points du joueur finissant son tour le score ainsi calculé
             j._points += score;
+        }
+
+        public void Sauvegarder(string filename)
+        {
+            
+            XmlSerializer serializer = new XmlSerializer(typeof(Partie));
+            using (StreamWriter file = new StreamWriter(filename))
+            {
+                serializer.Serialize(file, this);
+            }
+        }
+
+        public static Partie Charger(string filename)
+        {
+            Partie partie;
+            XmlSerializer serializer = new XmlSerializer(typeof(Partie));
+            using (StreamReader file = new StreamReader(filename))
+            {
+                partie = serializer.Deserialize(file) as Partie;
+            }
+            return partie;
         }
     }
 }

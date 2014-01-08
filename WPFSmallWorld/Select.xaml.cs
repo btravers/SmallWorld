@@ -207,6 +207,8 @@ namespace WPFSmallWorld
                 //On rend l'UserControl de sélection invisible
                 Visibility = Visibility.Collapsed;
 
+                window.GameScreen.addReference(window);
+
                 //On ajoute à la fenêtre principale une référence sur la partie et le nom des joueurs
                 window.GameScreen.addReference(partie);
                 window.GameScreen.setPlayerNames(j1Name.Text, j2Name.Text);
@@ -217,6 +219,20 @@ namespace WPFSmallWorld
                 //On rend l'UserControl de jeu visible
                 window.GameScreen.Visibility = Visibility.Visible;
             }
+        }
+
+        /**
+         * Evenement associé au clic sur le bouton "Annuler"
+         */
+        public void annuler(object sender, RoutedEventArgs e)
+        {
+            window.HomeScreen.addReference(window);
+
+            //On rend l'UserControl d'accueil invisible
+            Visibility = Visibility.Collapsed;
+
+            //On rend l'UserControl de jeu visible
+            window.HomeScreen.Visibility = Visibility.Visible;
         }
     }
 }

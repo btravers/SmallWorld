@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.IO;
+using System.Xml.Serialization;
+
 namespace SmallWorld
 {
     /** 
@@ -57,12 +60,14 @@ namespace SmallWorld
      * Classe abstraite (on ne peut pas l'instancier directement) représentant une case
      * @author Mickaël Olivier, Benoit Travers
      */
+    [Serializable(), XmlInclude(typeof(Montagne)), XmlInclude(typeof(Plaine)), XmlInclude(typeof(Desert)), XmlInclude(typeof(Eau)), XmlInclude(typeof(Foret))]
     public abstract class Case : ICase
     {
         /** 
          * L'image source correspondant à la case
          * On l'instancie une fois pour chaque type de case et le poids-mouche se sert du reste
          */
+        [XmlAttribute()]
         public String _sourceImage
         {
             get;
@@ -86,6 +91,7 @@ namespace SmallWorld
      * Classe concrète représentant une montagne
      * @author Mickaël Olivier, Benoit Travers
      */
+    [Serializable()]
     public class Montagne : Case, IMontagne
     {
         /**
@@ -119,6 +125,7 @@ namespace SmallWorld
      * Classe concrète représentant une plaine
      * @author Mickaël Olivier, Benoit Travers
      */
+    [Serializable()]
     public class Plaine : Case, IPlaine
     {
         /**
@@ -152,6 +159,7 @@ namespace SmallWorld
      * Classe concrète représentant un désert
      * @author Mickaël Olivier, Benoit Travers
      */
+    [Serializable()]
     public class Desert : Case, IDesert
     {
         /**
@@ -185,6 +193,7 @@ namespace SmallWorld
      * Classe concrète représentant un point d'eau
      * @author Mickaël Olivier, Benoit Travers
      */
+    [Serializable()]
     public class Eau : Case, IEau
     {
         /**
@@ -218,6 +227,7 @@ namespace SmallWorld
      * Classe concrète représentant une foret
      * @author Mickaël Olivier, Benoit Travers
      */
+    [Serializable()]
     public class Foret : Case, IForet
     {
         /**
@@ -248,6 +258,7 @@ namespace SmallWorld
     }
 
     /** Enum représentant un type de case */
+    [Serializable()]
     public enum TypeCase
     {
         montagne,

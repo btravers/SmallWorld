@@ -1,0 +1,38 @@
+﻿<Window x:Class="WPFSmallWorld.save"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="save" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height ="40" />
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0">
+            <TextBlock FontWeight="Bold" FontSize="14" TextAlignment="Center">Sauvegarde</TextBlock>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Margin="5">
+                <RadioButton Name="e1" Checked="emp1">
+                    Emplacement 1
+                </RadioButton>
+                <RadioButton Name="e2" Checked="emp2">
+                    Emplacement 2
+                </RadioButton>
+                <RadioButton Name="e3" Checked="emp3">
+                    Emplacement 3
+                </RadioButton>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <DockPanel>
+                <Button Content="Valider" Click="valider" HorizontalAlignment="Left" Margin="10"/>
+                <Button Content="Annuler" Click="annuler" HorizontalAlignment="Left" Margin="10"/>
+            </DockPanel>
+        </Grid>
+
+    </Grid>
+</Window>
