@@ -47,7 +47,6 @@ namespace WPFSmallWorld
             else
             {
                 partie.Sauvegarder(saveName);
-                Save.Instance.exist[rg] = true;
                 this.Close();
             }
         }
@@ -62,19 +61,19 @@ namespace WPFSmallWorld
 
         public void emp1(object sender, RoutedEventArgs e)
         {
-            saveName = "save1.xls";
+            saveName = "save1.sav";
             rg = 0;
         }
 
         public void emp2(object sender, RoutedEventArgs e)
         {
-            saveName = "save2.xls";
+            saveName = "save2.sav";
             rg = 1;
         }
 
         public void emp3(object sender, RoutedEventArgs e)
         {
-            saveName = "save3.xls";
+            saveName = "save3.sav";
             rg = 2;
         }
     }

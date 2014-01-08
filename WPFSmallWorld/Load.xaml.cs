@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.IO;
 using SmallWorld;
 
 namespace WPFSmallWorld
@@ -43,7 +44,7 @@ namespace WPFSmallWorld
          */
         public void save1(object sender, RoutedEventArgs e)
         {
-            open(0, "save1.xls");
+            open("save1.sav");
         }
 
         /**
@@ -51,7 +52,7 @@ namespace WPFSmallWorld
          */
         public void save2(object sender, RoutedEventArgs e)
         {
-            open(1, "save2.xls");
+            open("save2.sav");
         }
 
         /**
@@ -59,12 +60,12 @@ namespace WPFSmallWorld
          */
         public void save3(object sender, RoutedEventArgs e)
         {
-            open(2, "save3.xls");
+            open("save3.sav");
         }
 
-        private void open(int nb, String name)
+        private void open(String name)
         {
-            if (!Save.Instance.exist[nb])
+            if (!File.Exists(name))
             {
                 MessageBox.Show("Aucune sauvegarde à cet emplacement.");
             }

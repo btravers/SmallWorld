@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.IO;
-using System.Xml.Serialization;
 
 namespace SmallWorld
 {
@@ -43,11 +41,10 @@ namespace SmallWorld
      * Classe abstraite (non instantiable ici) définissant une unité
      * @author Mickael Olivier, Benoit Travers
      */
-    [Serializable(), XmlInclude(typeof(Vikings)), XmlInclude(typeof(Nains)), XmlInclude(typeof(Gaulois))]
+    [Serializable]
     public abstract class Unite : IUnite
     {
         /** Les points d'attaque de l'unité */
-        [XmlAttribute()]
         public int _attaque
         {
             get;
@@ -55,7 +52,6 @@ namespace SmallWorld
         }
 
         /** Les poitns de défense de l'unité */
-        [XmlAttribute()]
         public int _defense
         {
             get;
@@ -63,7 +59,6 @@ namespace SmallWorld
         }
 
         /** Les points de vie de l'unité */
-        [XmlAttribute()]
         public int _pdv
         {
             get;
@@ -71,7 +66,6 @@ namespace SmallWorld
         }
 
         /** Les points de mouvement de l'unité (nombre de déplacements sur case adjascente) */
-        [XmlAttribute()]
         public double _pm
         {
             get;
@@ -79,7 +73,6 @@ namespace SmallWorld
         }
 
         /** La coordonée en abscisse de l'unité */
-        [XmlAttribute()]
         public int _x
         {
             get;
@@ -87,7 +80,6 @@ namespace SmallWorld
         }
 
         /** La coordonée en ordonnée de l'unité */
-        [XmlAttribute()]
         public int _y
         {
             get;
@@ -95,7 +87,6 @@ namespace SmallWorld
         }
 
         /** Le type de case sur laquelle est l'unité actuellement */
-        [XmlAttribute()]
         public TypeCase _terrain
         {
             get;
@@ -103,7 +94,6 @@ namespace SmallWorld
         }
 
         /** Un booléen permettant de savoir si l'unité passe son tour */
-        [XmlAttribute()]
         public bool _passeTour
         {
             get;
@@ -111,7 +101,6 @@ namespace SmallWorld
         }
 
         /** Un booléen permettant de savoir si l'unité est encore en vie ou pas */
-        [XmlAttribute()]
         public bool enVie
         {
             get;
@@ -277,7 +266,7 @@ namespace SmallWorld
      * Classe concrète représentant une unité viking
      * @author Mickael Olivier, Benoit Travers
      */
-    [Serializable()]
+    [Serializable]
     public class UniteVikings : Unite, IUniteVikings
     {
         public override string typeUnite()
@@ -323,7 +312,7 @@ namespace SmallWorld
      * Classe concrète représentant une unité gauloise
      * @author Mickael Olivier, Benoit Travers
      */
-    [Serializable()]
+    [Serializable]
     public class UniteGaulois : Unite, IUniteGaulois
     {
         public override string typeUnite()
@@ -404,7 +393,7 @@ namespace SmallWorld
      * Classe concrète représentant une unité naine
      * @author Mickael Olivier, Benoit Travers
      */
-    [Serializable()]
+    [Serializable]
     public class UniteNains : Unite, IUniteNains
     {
         public override string typeUnite()

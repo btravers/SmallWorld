@@ -5,7 +5,7 @@ using System.Text;
 using System.Drawing;
 
 using System.IO;
-using System.Xml.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 using WrapperSmallWorld;
 
@@ -23,11 +23,10 @@ namespace SmallWorld
      * Classe définissant une partie
      * @author Mickael Olivier, Benoit Travers
      */
-    [Serializable()]
+    [Serializable]
     public class Partie : IPartie
     {
         /** Le joueur A de cette partie */
-        [XmlAttribute()]
         public Joueur _jA
         {
             get;
@@ -35,7 +34,6 @@ namespace SmallWorld
         }
 
         /** Le joueur B de cette partie */
-        [XmlAttribute()]
         public Joueur _jB
         {
             get;
@@ -43,7 +41,6 @@ namespace SmallWorld
         }
 
         /** La carte de cette partie */
-        [XmlAttribute()]
         public Carte _carte
         {
             get;
@@ -51,7 +48,6 @@ namespace SmallWorld
         }
 
         /** Le nombre de tours restant à jouer pour cette partie */
-        [XmlAttribute()]
         public int _toursRestant
         {
             get;
@@ -59,7 +55,6 @@ namespace SmallWorld
         }
 
         /** Le premier joueur au début de la partie choisi au hasard */
-        [XmlAttribute()]
         public int _premierJoueur
         {
             get;
@@ -67,7 +62,6 @@ namespace SmallWorld
         }
 
         /** Le joeuur qui joue actuellement */
-        [XmlAttribute()]
         public int _joueur
         {
             get;
@@ -76,7 +70,6 @@ namespace SmallWorld
 
 
         /** L'unité selectionnée par le joueur quand c'est son tour */
-        [XmlAttribute()]
         public Unite _uniteSelectionnee
         {
             get;
@@ -311,25 +304,51 @@ namespace SmallWorld
             j._points += score;
         }
 
-        public void Sauvegarder(string filename)
+        public void Sauvegarder(string path)
         {
-            
-            XmlSerializer serializer = new XmlSerializer(typeof(Partie));
-            using (StreamWriter file = new StreamWriter(filename))
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            FileStream flux = null;
+            try
             {
-                serializer.Serialize(file, this);
+                //On ouvre le flux en mode création / écrasement de fichier et on
+                //donne au flux le droit en écriture seulement.
+                flux = new FileStream(path, FileMode.Create, FileAccess.Write);
+                //Et hop ! On sérialise !
+                formatter.Serialize(flux, this);
+                //On s'assure que le tout soit écrit dans le fichier.
+                flux.Flush();
+            }
+            catch { }
+            finally
+            {
+                //Et on ferme le flux.
+                if (flux != null)
+                    flux.Close();
             }
         }
 
-        public static Partie Charger(string filename)
+        public static Partie Charger(string path)
         {
-            Partie partie;
-            XmlSerializer serializer = new XmlSerializer(typeof(Partie));
-            using (StreamReader file = new StreamReader(filename))
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream flux = null;
+            try
             {
-                partie = serializer.Deserialize(file) as Partie;
+                //On ouvre le fichier en mode lecture seule. De plus, puisqu'on a sélectionné le mode Open,
+                //si le fichier n'existe pas, une exception sera levée.
+                flux = new FileStream(path, FileMode.Open, FileAccess.Read);
+                return (Partie)formatter.Deserialize(flux);
             }
-            return partie;
+            catch
+            {
+                //On retourne la valeur par défaut de Partie.
+                return default(Partie);
+            }
+            finally
+            {
+                if (flux != null)
+                    flux.Close();
+            }
         }
     }
 }

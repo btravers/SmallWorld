@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.IO;
-using System.Xml.Serialization;
 
 namespace SmallWorld
 {
@@ -17,11 +15,10 @@ namespace SmallWorld
     /**
      * Classe définissant un joueur
      */
-    [Serializable()]
+    [Serializable]
     public class Joueur : IJoueur
     {
         /** La liste d'unités de ce joueur */
-        [XmlAttribute()]
         public List<Unite> _unites
         {
             get;
@@ -29,7 +26,6 @@ namespace SmallWorld
         }
 
         /** Positions des cases occupées par les unités du joueur */
-        [XmlAttribute()]
         public List<int> Positions
         {
             get;
@@ -37,7 +33,6 @@ namespace SmallWorld
         }
 
         /** Le nombre de points actuel de ce joueur */
-        [XmlAttribute()]
         public int _points
         {
             get;
@@ -45,16 +40,14 @@ namespace SmallWorld
         }
 
         /** Le nom du joueur */
-        [XmlAttribute()]
-        public String _name
+        public string _name
         {
             get;
             set;
         }
 
         /** Le peuple du joueur sous forme de String */
-        [XmlAttribute()]
-        public String _peuple
+        public string _peuple
         {
             get;
             set;

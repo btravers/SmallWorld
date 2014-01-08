@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.IO;
-using System.Xml.Serialization;
 
 namespace SmallWorld
 {
@@ -19,11 +17,10 @@ namespace SmallWorld
     * La classe Carte sert à réaliser la carte de notre jeu
     * @author Mickaël Olivier, Benoit Travers
     */
-    [Serializable()]
+    [Serializable]
     public class Carte : ICarte
     {
         /** La FabriqueCase qui nous sert à créer les cases en passant par un poids-mouche */
-        [XmlAttribute()]
         public FabriqueCase _fabrique
         {
             get;
@@ -31,7 +28,6 @@ namespace SmallWorld
         }
 
         /** La largeur de notre carte (on considère qu'elle est carrée)*/
-        [XmlAttribute()]
         public int _width
         {
             get;
@@ -39,7 +35,6 @@ namespace SmallWorld
         }
 
         /** Le tableau de cases que contient notre carte */
-        [XmlAttribute()]
         public Case[,] _cases
         {
             get;
