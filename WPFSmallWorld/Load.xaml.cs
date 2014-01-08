@@ -23,8 +23,14 @@ namespace WPFSmallWorld
     /// </summary>
     public partial class Load : UserControl
     {
+        /**
+         * Reference vers la fenêtre principale
+         */ 
         private MainWindow window;
 
+        /**
+         * Constructeur
+         */ 
         public Load()
         {
             InitializeComponent();
@@ -63,6 +69,10 @@ namespace WPFSmallWorld
             open("save3.sav");
         }
 
+        /**
+         * Charge la partie sauvegardé dans un fichier donné
+         * @param name le fichier de sauvegarde
+         */ 
         private void open(String name)
         {
             if (!File.Exists(name))

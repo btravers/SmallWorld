@@ -574,7 +574,7 @@ namespace WPFSmallWorld
          */
         public void save(object sender, RoutedEventArgs e)
         {
-            Window sauvegarde = new save(_engine,window);
+            Window sauvegarde = new save(_engine);
             sauvegarde.ShowDialog();
         }
     }

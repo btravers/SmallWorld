@@ -304,6 +304,10 @@ namespace SmallWorld
             j._points += score;
         }
 
+        /**
+         * Fonction qui permet de sauvegarder la partie
+         * @param path le chemin du fichier de sauvegarde
+         */
         public void Sauvegarder(string path)
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -328,6 +332,11 @@ namespace SmallWorld
             }
         }
 
+        /**
+         * Fonction qui permet restauré la partie sauvegardée dans un fichier donné
+         * @param path le chemin du fichier de sauvegarde
+         * @return Partie la partie sauvegardé
+         */
         public static Partie Charger(string path)
         {
             BinaryFormatter formatter = new BinaryFormatter();

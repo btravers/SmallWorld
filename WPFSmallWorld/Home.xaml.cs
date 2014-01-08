@@ -22,8 +22,14 @@ namespace WPFSmallWorld
     /// </summary>
     public partial class Home : UserControl
     {
+        /**
+         * Reference vers la fenêtre principale
+         */ 
         private MainWindow window;
 
+        /**
+         * Constructeur
+         */ 
         public Home()
         {
             InitializeComponent();

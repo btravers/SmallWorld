@@ -21,18 +21,25 @@ namespace WPFSmallWorld
     /// </summary>
     public partial class save : Window
     {
+        /**
+         * La partie en cours
+         */
         private Partie partie;
-        private MainWindow main;
-        private String saveName;
-        private int rg;
 
-        public save(Partie p, MainWindow m)
+        /**
+         * Le nom du fichier de sauvegarde
+         */ 
+        private String saveName;
+
+        /**
+         * Constructeur de la fenêtre save
+         * @param p la partie en cours
+         */
+        public save(Partie p)
         {
             InitializeComponent();
             partie = p;
-            main = m;
             saveName = null;
-            rg = -1;
         }
 
         /**
@@ -40,7 +47,7 @@ namespace WPFSmallWorld
          */
         public void valider(object sender, RoutedEventArgs e)
         {
-            if (rg == -1)
+            if (saveName == null)
             {
                 MessageBox.Show("Selectionnez un emplacement");
             }
@@ -59,22 +66,28 @@ namespace WPFSmallWorld
             this.Close();
         }
 
+        /**
+         * Evenement associé à la selection de l'emplacement 1
+         */ 
         public void emp1(object sender, RoutedEventArgs e)
         {
             saveName = "save1.sav";
-            rg = 0;
         }
 
+        /**
+         * Evenement associé à la selection de l'emplacement 2
+         */ 
         public void emp2(object sender, RoutedEventArgs e)
         {
             saveName = "save2.sav";
-            rg = 1;
         }
 
+        /**
+         * Evenement associé à la selection de l'emplacement 3
+         */ 
         public void emp3(object sender, RoutedEventArgs e)
         {
             saveName = "save3.sav";
-            rg = 2;
         }
     }
 
