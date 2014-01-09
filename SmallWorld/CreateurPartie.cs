@@ -34,14 +34,14 @@ namespace SmallWorld
         }
 
         /** Peuple du joueur A */
-        public String PeupleA
+        public string PeupleA
         {
             get;
             set;
         }
 
         /** Peuple du joueur B */
-        public String PeupleB
+        public string PeupleB
         {
             get;
             set;
@@ -58,7 +58,7 @@ namespace SmallWorld
          * Fonction permettant d'ajouter le peuple du joueur A
          * @param pA le peuple choisi par le joueur A
          */
-        public void addPeupleA(String pA)
+        public void addPeupleA(string pA)
         {
             this.PeupleA = pA;
         }
@@ -67,9 +67,9 @@ namespace SmallWorld
          * Fonction permettant d'ajouter le peuple du joueur B
          * @param pB le peuple choisi par le joueur B
          */
-        public void addPeupleB(String pB)
+        public void addPeupleB(string pB)
         {
-            this.PeupleA = pB;
+            this.PeupleB = pB;
         }
 
         /**

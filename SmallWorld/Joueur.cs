@@ -54,20 +54,11 @@ namespace SmallWorld
         }
 
         /**
-         * Constructeur par defaut
-         */
-        public Joueur()
-        {
-            this._unites = new List<Unite>();
-            this.Positions = new List<int>();
-        }
-
-        /**
          * Constructeur
          * @param typePeuple le peuple chosi sous forme de String
          * @param nbUnites le nombre d'unités à fabriquer pour ce joueur
          */
-        public Joueur(String typePeuple, int nbUnites)
+        public Joueur(string typePeuple, int nbUnites)
         {
             //On construit les éléments de base
             Peuple peuple = null;

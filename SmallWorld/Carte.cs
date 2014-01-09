@@ -20,12 +20,7 @@ namespace SmallWorld
     [Serializable]
     public class Carte : ICarte
     {
-        /** La FabriqueCase qui nous sert à créer les cases en passant par un poids-mouche */
-        public FabriqueCase _fabrique
-        {
-            get;
-            set;
-        }
+        
 
         /** La largeur de notre carte (on considère qu'elle est carrée)*/
         public int _width
@@ -39,14 +34,6 @@ namespace SmallWorld
         {
             get;
             set;
-        }
-
-        /** Le constructeur par défaut de carte
-         */
-        public Carte()
-        {
-            this._cases = new Case[0, 0];
-            this._width = 0;
         }
 
         /** Le constructeur de carte
@@ -67,19 +54,19 @@ namespace SmallWorld
             bool test = false;
             if (x + 1 < this._width)
             {
-                test |= (this._cases[x + 1, y].type() == TypeCase.eau);
+                test = (this._cases[x + 1, y].type() == TypeCase.eau);
             }
             if (y + 1 < _width)
             {
-                test |= (this._cases[x, y + 1].type() == TypeCase.eau);
+                test = (this._cases[x, y + 1].type() == TypeCase.eau);
             }
             if (x - 1 >= 0)
             {
-                test |= (this._cases[x - 1, y].type() == TypeCase.eau);
+                test = (this._cases[x - 1, y].type() == TypeCase.eau);
             }
             if (y - 1 >= 0)
             {
-                test |= (this._cases[x, y - 1].type() == TypeCase.eau);
+                test = (this._cases[x, y - 1].type() == TypeCase.eau);
             }
 
             return test;

@@ -110,6 +110,8 @@ namespace SmallWorld
             PosJA = Wrapper.getPosJA();
             PosJB = Wrapper.getPosJB();
 
+            Wrapper.Dispose();
+
             return carte;
         }
     }
