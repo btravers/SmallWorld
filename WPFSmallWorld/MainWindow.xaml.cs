@@ -32,6 +32,9 @@ namespace WPFSmallWorld
             //et on ajoute une référence de cette fenêtre à l'écran de sélection
             InitializeComponent();
             HomeScreen.addReference(this);
+            LoadScreen.addReference(this);
+            SelectScreen.addReference(this);
+            GameScreen.addReference(this);
         }
     }
 }

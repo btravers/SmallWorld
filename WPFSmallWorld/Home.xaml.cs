@@ -49,8 +49,6 @@ namespace WPFSmallWorld
          */
         public void nouveau(object sender, RoutedEventArgs e)
         {
-            window.SelectScreen.addReference(window);
-
             //On rend l'UserControl d'accueil invisible
             Visibility = Visibility.Collapsed;
 
@@ -63,10 +61,10 @@ namespace WPFSmallWorld
          */
         public void charger(object sender, RoutedEventArgs e)
         {
-            window.LoadScreen.addReference(window);
-
             //On rend l'UserControl d'accueil invisible
             Visibility = Visibility.Collapsed;
+
+            window.LoadScreen.update();
 
             //On rend l'UserControl de jeu visible
             window.LoadScreen.Visibility = Visibility.Visible;

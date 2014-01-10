@@ -46,7 +46,7 @@ namespace WPFSmallWorld
             //On crée le collecteur des rectangles de suggestion de destination
             _suggestions = new List<Rectangle>();
 
-            //On crée le rectangle de sélection, auquel on associe un brush rouge de'péaisseur 1
+            //On crée le rectangle de sélection, auquel on associe un brush rouge d'épaisseur 1
             _selection = new Rectangle();
             _selection.Stroke = Brushes.Red;
             _selection.StrokeThickness = 1;
@@ -576,6 +576,19 @@ namespace WPFSmallWorld
         {
             Window sauvegarde = new save(_engine);
             sauvegarde.ShowDialog();
+        }
+
+
+        /**
+         * Evenement associé au clic sur le bouton "Quitter"
+         */
+        public void quit(object sender, RoutedEventArgs e)
+        {
+            //On rend l'UserControl d'accueil invisible
+            Visibility = Visibility.Collapsed;
+
+            //On rend l'UserControl de jeu visible
+            window.HomeScreen.Visibility = Visibility.Visible;
         }
     }
 }

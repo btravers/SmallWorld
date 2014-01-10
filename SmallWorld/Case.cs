@@ -71,12 +71,6 @@ namespace SmallWorld
         }
 
         /*
-         * Fonction retournant sous forme d'integer le type de case auquel correspond l'élément courant
-         * @return le type de la case courante sous forme d'int, eau si la case est une instance de Eau par ex.
-         */
-        public abstract int typeCase();
-
-        /*
          * Fonction retournant sous forme de TypeCase (voir enum plus bas) le type de case auquel correspond l'élément courant
          * @return le type de la case courante sous forme de TypeCase, eau si la case est une instance de Eau par ex.
          */
@@ -96,15 +90,6 @@ namespace SmallWorld
         public Montagne()
         {
             _sourceImage = "../Textures/montagne.png";
-        }
-
-        /*
-         * Fonction retournant sous forme d'integer le type de case auquel correspond l'élément courant
-         * @return le type de la case courante sous forme d'int, eau si la case est une instance de Eau par ex.
-         */
-        public override int typeCase()
-        {
-            return 0;
         }
 
         /*
@@ -133,15 +118,6 @@ namespace SmallWorld
         }
 
         /*
-         * Fonction retournant sous forme d'integer le type de case auquel correspond l'élément courant
-         * @return le type de la case courante sous forme d'int, eau si la case est une instance de Eau par ex.
-         */
-        public override int typeCase()
-        {
-            return 1;
-        }
-
-        /*
          * Fonction retournant sous forme de TypeCase (voir enum plus bas) le type de case auquel correspond l'élément courant
          * @return le type de la case courante sous forme de TypeCase, eau si la case est une instance de Eau par ex.
          */
@@ -164,15 +140,6 @@ namespace SmallWorld
         public Desert()
         {
             _sourceImage = "../Textures/desert.png";
-        }
-
-        /*
-         * Fonction retournant sous forme d'integer le type de case auquel correspond l'élément courant
-         * @return le type de la case courante sous forme d'int, eau si la case est une instance de Eau par ex.
-         */
-        public override int typeCase()
-        {
-            return 2;
         }
 
         /*
@@ -201,15 +168,6 @@ namespace SmallWorld
         }
 
         /*
-         * Fonction retournant sous forme d'integer le type de case auquel correspond l'élément courant
-         * @return le type de la case courante sous forme d'int, eau si la case est une instance de Eau par ex.
-         */
-        public override int typeCase()
-        {
-            return 3;
-        }
-
-        /*
          * Fonction retournant sous forme de TypeCase (voir enum plus bas) le type de case auquel correspond l'élément courant
          * @return le type de la case courante sous forme de TypeCase, eau si la case est une instance de Eau par ex.
          */
@@ -232,15 +190,6 @@ namespace SmallWorld
         public Foret()
         {
             _sourceImage = "../Textures/foret.png";
-        }
-
-        /*
-         * Fonction retournant sous forme d'integer le type de case auquel correspond l'élément courant
-         * @return le type de la case courante sous forme d'int, eau si la case est une instance de Eau par ex.
-         */
-        public override int typeCase()
-        {
-            return 4;
         }
 
         /*

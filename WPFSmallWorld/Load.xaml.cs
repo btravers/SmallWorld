@@ -36,6 +36,21 @@ namespace WPFSmallWorld
             InitializeComponent();
         }
 
+        public void update()
+        {
+            displayInfo("save1.sav", info1);
+            displayInfo("save2.sav", info2);
+            displayInfo("save3.sav", info3);
+        }
+
+        public void displayInfo(string name, TextBlock info)
+        {
+            if (!File.Exists(name))
+            {
+                info.Text = " (Sauvgarde vide)";
+            }
+        }
+
         /**
          * Ajoute une référence sur la fenêtre principale
          * @param win la fenêtre en question
@@ -86,7 +101,7 @@ namespace WPFSmallWorld
                 //On rend l'UserControl de sélection invisible
                 Visibility = Visibility.Collapsed;
 
-                window.GameScreen.addReference(window);
+                
 
                 //On ajoute à la fenêtre principale une référence sur la partie et le nom des joueurs
                 window.GameScreen.addReference(partie);
@@ -104,8 +119,6 @@ namespace WPFSmallWorld
          */
         public void annuler(object sender, RoutedEventArgs e)
         {
-            window.HomeScreen.addReference(window);
-
             //On rend l'UserControl d'accueil invisible
             Visibility = Visibility.Collapsed;
 

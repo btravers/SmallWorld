@@ -99,12 +99,6 @@ namespace UnitTest
             Assert.AreEqual(c3.type(), TypeCase.desert);
             Assert.AreEqual(c4.type(), TypeCase.eau);
             Assert.AreEqual(c5.type(), TypeCase.foret);
-
-            Assert.AreEqual(c1.typeCase(), 0);
-            Assert.AreEqual(c2.typeCase(), 1);
-            Assert.AreEqual(c3.typeCase(), 2);
-            Assert.AreEqual(c4.typeCase(), 3);
-            Assert.AreEqual(c5.typeCase(), 4);
         }
 
         [TestMethod]

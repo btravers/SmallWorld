@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="525">
+             d:DesignHeight="495" d:DesignWidth="660">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
@@ -17,9 +17,18 @@
 
         <Grid Grid.Row="1">
             <StackPanel>
-                <Button Content="Sauvegarde 1" Click="save1" Margin="20" Width="150"/>
-                <Button Content="Sauvegarde 2" Click="save2" Margin="20" Width="150"/>
-                <Button Content="Sauvegarde 3" Click="save3" Margin="20" Width="150"/>
+                <StackPanel>
+                    <Button Content="Sauvegarde 1" Click="save1" Margin="20" Width="150"/>
+                    <TextBlock Name="info1" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="Sauvegarde 2" Click="save2" Margin="20" Width="150"/>
+                    <TextBlock Name="info2" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="Sauvegarde 3" Click="save3" Margin="20" Width="150"/>
+                    <TextBlock Name="info3" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
                 <Button Content="Annuler" Click="annuler" Margin="20" Width="150"/>
             </StackPanel>
         </Grid>

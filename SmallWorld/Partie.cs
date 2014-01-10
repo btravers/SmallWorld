@@ -216,7 +216,7 @@ namespace SmallWorld
             {
                 for (int k = 0; k < _carte._width; k++)
                 {
-                    carte.Add(_carte._cases[i,k].typeCase());
+                    carte.Add((int)_carte._cases[i,k].type());
                 }
             }
 

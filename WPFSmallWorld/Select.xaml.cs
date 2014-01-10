@@ -201,13 +201,13 @@ namespace WPFSmallWorld
                 createur.PeupleB = peupleB;
                 createur.TypeCarte = carte;
 
+                
+
                 //On construit la partie à l'aide de ce créateur
                 Partie partie = createur.construire();
 
                 //On rend l'UserControl de sélection invisible
                 Visibility = Visibility.Collapsed;
-
-                window.GameScreen.addReference(window);
 
                 //On ajoute à la fenêtre principale une référence sur la partie et le nom des joueurs
                 window.GameScreen.addReference(partie);
@@ -226,8 +226,6 @@ namespace WPFSmallWorld
          */
         public void annuler(object sender, RoutedEventArgs e)
         {
-            window.HomeScreen.addReference(window);
-
             //On rend l'UserControl d'accueil invisible
             Visibility = Visibility.Collapsed;
 

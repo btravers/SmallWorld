@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 using SmallWorld;
 
@@ -40,6 +41,17 @@ namespace WPFSmallWorld
             InitializeComponent();
             partie = p;
             saveName = null;
+            displayInfo("save1.sav", info1);
+            displayInfo("save2.sav", info2);
+            displayInfo("save3.sav", info3);
+        }
+
+        public void displayInfo(string name, TextBlock info)
+        {
+            if (File.Exists(name))
+            {
+                info.Text = " (Sauvgarde utilisée)";
+            }
         }
 
         /**
