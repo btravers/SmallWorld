@@ -38,9 +38,9 @@ namespace WPFSmallWorld
 
         public void update()
         {
-            displayInfo("save1.sav", info1);
-            displayInfo("save2.sav", info2);
-            displayInfo("save3.sav", info3);
+            displayInfo("save1.sav", infoSav1);
+            displayInfo("save2.sav", infoSav2);
+            displayInfo("save3.sav", infoSav3);
         }
 
         public void displayInfo(string name, TextBlock info)

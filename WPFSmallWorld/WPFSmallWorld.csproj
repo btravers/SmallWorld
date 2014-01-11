@@ -144,6 +144,12 @@
     <Content Include="..\Debug\LibrarySmallWorld.dll">
       <Link>LibrarySmallWorld.dll</Link>
     </Content>
+    <Resource Include="homescreen.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="vieux-papier.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,6 +5,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Small World" Height="495" Width="660">
     
+    <Window.Background>
+        <ImageBrush ImageSource="vieux-papier.jpg" Opacity="0.9"></ImageBrush>
+    </Window.Background>
+    
     <Window.Resources>
         <Style TargetType="Rectangle" x:Key="selectionStyle">
             <Setter Property="Width" Value="20"/>

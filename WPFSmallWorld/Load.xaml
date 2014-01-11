@@ -19,15 +19,15 @@
             <StackPanel>
                 <StackPanel>
                     <Button Content="Sauvegarde 1" Click="save1" Margin="20" Width="150"/>
-                    <TextBlock Name="info1" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Name="infoSav1" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
                 <StackPanel>
                     <Button Content="Sauvegarde 2" Click="save2" Margin="20" Width="150"/>
-                    <TextBlock Name="info2" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Name="infoSav2" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
                 <StackPanel>
                     <Button Content="Sauvegarde 3" Click="save3" Margin="20" Width="150"/>
-                    <TextBlock Name="info3" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Name="infoSav3" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
                 <Button Content="Annuler" Click="annuler" Margin="20" Width="150"/>
             </StackPanel>

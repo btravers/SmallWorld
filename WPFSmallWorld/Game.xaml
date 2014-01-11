@@ -9,14 +9,16 @@
     <StackPanel>
 
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="300">
-            <Grid Background="Azure">
+            <Grid>
                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Name="mapGrid">
 
                 </Grid>
             </Grid>
         </ScrollViewer >
 
-        <Grid Background="White">
+        <StackPanel Orientation="Horizontal" Height="auto" Name="unitSelecter"></StackPanel>
+
+        <Grid Background="White" Opacity="0.7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -48,11 +50,8 @@
             <Button Content="Quitter" Click="quit" HorizontalAlignment="Right" Padding="2" Margin="2"/>
         </DockPanel>
 
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="Auto">
-            <StackPanel Orientation="Horizontal" Height="auto" Name="unitSelecter">
-
-            </StackPanel>
-        </ScrollViewer>
+        
+        
         
     </StackPanel>
 </UserControl>
