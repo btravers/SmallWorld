@@ -61,8 +61,8 @@
     <Compile Include="Load.xaml.cs">
       <DependentUpon>Load.xaml</DependentUpon>
     </Compile>
-    <Compile Include="save.xaml.cs">
-      <DependentUpon>save.xaml</DependentUpon>
+    <Compile Include="Save.xaml.cs">
+      <DependentUpon>Save.xaml</DependentUpon>
     </Compile>
     <Compile Include="Select.xaml.cs">
       <DependentUpon>Select.xaml</DependentUpon>
@@ -91,7 +91,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="save.xaml">
+    <Page Include="Save.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,6 +144,11 @@
     <Content Include="..\Debug\LibrarySmallWorld.dll">
       <Link>LibrarySmallWorld.dll</Link>
     </Content>
+    <Resource Include="Textures\dwarf.png" />
+    <Resource Include="Textures\gaulois.png" />
+    <Resource Include="Textures\viking.png" />
+    <Resource Include="Images\run.png" />
+    <Resource Include="Images\heart.png" />
     <Resource Include="homescreen.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

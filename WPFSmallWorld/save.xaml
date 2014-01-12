@@ -1,7 +1,11 @@
 ﻿<Window x:Class="WPFSmallWorld.save"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="save" Height="180" Width="250">
+        Title="Save" Height="180" Width="250">
+    <Window.Background>
+        <ImageBrush ImageSource="vieux-papier.jpg" Opacity="0.9"></ImageBrush>
+    </Window.Background>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />

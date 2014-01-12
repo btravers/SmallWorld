@@ -5,11 +5,3 @@ H:\POO\SmallWorld\SmallWorld\UnitTest\bin\Debug\WrapperSmallWorld.pdb
 H:\POO\SmallWorld\SmallWorld\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
 H:\POO\SmallWorld\SmallWorld\UnitTest\obj\Debug\UnitTest.dll
 H:\POO\SmallWorld\SmallWorld\UnitTest\obj\Debug\UnitTest.pdb
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\bin\Debug\UnitTest.dll
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\bin\Debug\UnitTest.pdb
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\bin\Debug\WrapperSmallWorld.dll
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\bin\Debug\WrapperSmallWorld.pdb
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\obj\Debug\UnitTest.dll
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\obj\Debug\UnitTest.pdb
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\UnitTest\bin\Debug\LibrarySmallWorld.dll

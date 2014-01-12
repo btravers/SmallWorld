@@ -69,6 +69,14 @@ namespace WPFSmallWorld
             //On rend l'UserControl de jeu visible
             window.LoadScreen.Visibility = Visibility.Visible;
         }
+
+        /**
+         * Evenement associé au clic sur le bouton "Quitter"
+         */
+        public void quitter(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 
 

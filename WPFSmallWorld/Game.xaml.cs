@@ -324,14 +324,12 @@ namespace WPFSmallWorld
             int i = 0;
             ImageBrush brush = new ImageBrush();
             var uri = new Uri(@"../../Textures/gaulois.png", UriKind.Relative);
-            if (units[0] is UniteNains)
-            {
-                uri = new Uri(@"../../Textures/dwarf.png", UriKind.Relative);
-            }
-            else if (units[0] is UniteVikings)
-            {
+            if(units[0] is UniteVikings)
                 uri = new Uri(@"../../Textures/viking.png", UriKind.Relative);
-            }
+            if(units[0] is UniteNains )
+                uri = new Uri(@"../../Textures/dwarf.png", UriKind.Relative);
+            brush.Opacity = 0.5;
+
             brush.ImageSource = new BitmapImage(uri);
 
             //Pour chaque unité dans units
@@ -341,14 +339,31 @@ namespace WPFSmallWorld
                 Border border = new Border();
                 border.Background = brush;
 
-                //On crée un TextBlock sur lequel on écrit les information sur l'unité considérées
+                //On crée deux TextBlock sur lequel on écrit les information sur l'unité considérées
                 //(ses points de mouvement, ses points de vie)
-                TextBlock unitText = new TextBlock();
-                unitText.Text = unit._pm + " points de \nmouvement \n" + unit._pdv + " points \nde vie ";
-                unitText.FontSize = 12;
-                unitText.Foreground = Brushes.Red;
-                unitText.FontWeight = FontWeights.Bold;
-                border.Child = unitText;
+                TextBlock unitTextVie = new TextBlock();
+                unitTextVie.Text = unit._pdv+" points\nde vie";
+                unitTextVie.FontFamily = new FontFamily("Agent Orange");
+                unitTextVie.FontSize = 8;
+                unitTextVie.Foreground = Brushes.Black;
+                unitTextVie.FontWeight = FontWeights.Bold;
+
+                TextBlock unitTextRun = new TextBlock();
+                unitTextRun.Text = unit._pm + " points\nde mvt";
+                unitTextRun.FontFamily = new FontFamily("Agent Orange");
+                unitTextRun.FontSize = 8;
+                unitTextRun.Foreground = Brushes.Black;
+                unitTextRun.FontWeight = FontWeights.Bold;
+
+
+                ImageSource imageHeart = new BitmapImage(new Uri(@"../../Images/heart.png", UriKind.Relative));
+                Image heart = new Image();
+                heart.Source = imageHeart;
+
+                ImageSource imageRun = new BitmapImage(new Uri(@"../../Images/run.png", UriKind.Relative));
+                Image run = new Image();
+                run.Source = imageRun;
+
                 border.Width = 75;
                 border.Height = 75;
                 border.BorderThickness = new Thickness(3);
@@ -368,6 +383,28 @@ namespace WPFSmallWorld
 
                 //On ajoute un handler au border en question
                 border.MouseLeftButtonDown += new MouseButtonEventHandler(rectangleMouseLefUnitSelectertHandler);
+
+                Canvas container = new Canvas();
+
+                StackPanel lifePan = new StackPanel();
+                lifePan.Orientation = Orientation.Horizontal;
+                lifePan.Children.Add(heart);
+                lifePan.Children.Add(unitTextVie);
+
+                StackPanel runPan = new StackPanel();
+                runPan.Orientation = Orientation.Horizontal;
+                runPan.Children.Add(run);
+                runPan.Children.Add(unitTextRun);
+
+                StackPanel resume = new StackPanel();
+                resume.Children.Add(lifePan);
+                resume.Children.Add(runPan);
+
+                border.Background = brush;
+                container.Children.Add(resume);
+                border.Child = container;
+                container.Width = 75;
+                container.Height = 75;
 
                 //On l'ajoute au composant unitSelecter de la classe
                 unitSelecter.Children.Add(border);
@@ -566,6 +603,7 @@ namespace WPFSmallWorld
                     MessageBox.Show("Le gagnant est " + _engine.gagnant() + " !");
                 }
                 //TODO : arrêter le jeu ou revenir au menu principal ?
+                quit(sender, e);
             }
         }
 
@@ -584,6 +622,10 @@ namespace WPFSmallWorld
          */
         public void quit(object sender, RoutedEventArgs e)
         {
+            mapGrid.Children.Clear();
+            mapGrid.RowDefinitions.Clear();
+            mapGrid.ColumnDefinitions.Clear();
+
             //On rend l'UserControl d'accueil invisible
             Visibility = Visibility.Collapsed;
 

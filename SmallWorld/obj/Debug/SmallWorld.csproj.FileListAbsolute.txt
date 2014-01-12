@@ -2,11 +2,3 @@ H:\POO\SmallWorld\SmallWorld\SmallWorld\bin\Debug\SmallWorld.dll
 H:\POO\SmallWorld\SmallWorld\SmallWorld\bin\Debug\SmallWorld.pdb
 H:\POO\SmallWorld\SmallWorld\SmallWorld\obj\Debug\SmallWorld.dll
 H:\POO\SmallWorld\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\SmallWorld\bin\Debug\SmallWorld.dll
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\SmallWorld\bin\Debug\SmallWorld.pdb
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csprojResolveAssemblyReference.cache
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\SmallWorld\obj\Debug\SmallWorld.dll
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\SmallWorld\bin\Debug\LibrarySmallWorld.dll
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\SmallWorld\bin\Debug\WrapperSmallWorld.dll
-C:\Users\Jonath Kane\Documents\GitHub\SmallWorld\SmallWorld\bin\Debug\WrapperSmallWorld.pdb
