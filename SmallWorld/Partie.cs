@@ -105,9 +105,9 @@ namespace SmallWorld
         public String gagnant()
         {
             if (_jA._points > _jB._points)
-                return _jA._name;
+                return _jA._name + " (Joueur A)";
             else
-                return _jB._name;
+                return _jB._name + " (Joueur B)";
         }
 
         /**
@@ -144,10 +144,6 @@ namespace SmallWorld
             {
                 j = _jA;
             }
-            foreach (Unite unite in j._unites)
-            {
-                unite._passeTour = false;
-            }
 
             this._joueur = (this._joueur + 1) % 2;
             if (this._joueur == this._premierJoueur)
@@ -181,10 +177,7 @@ namespace SmallWorld
             {
                 if (unite.estSurCase(x, y))
                 {
-                    if (!unite._passeTour)
-                    {
-                        unitesCase.Add(unite);
-                    }
+                    unitesCase.Add(unite);
                 }
             }
 

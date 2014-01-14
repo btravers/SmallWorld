@@ -294,7 +294,6 @@ namespace UnitTest
             Assert.AreEqual(p._pdv, 5);
             Assert.AreEqual(p._pm, 1);
             Assert.IsTrue(p.enVie);
-            Assert.IsFalse(p._passeTour);
             Assert.AreEqual(p.typeUnite(), "nains");
 
             p.positionner(0, 1, new Plaine());
@@ -307,9 +306,6 @@ namespace UnitTest
             Assert.IsFalse(p.peutDeplacer(1,1,new Eau()));
 
             Assert.AreEqual(p.getPoints(), 0);
-
-            p.passerTour();
-            Assert.IsTrue(p._passeTour);
         }
 
         [TestMethod]
@@ -321,7 +317,6 @@ namespace UnitTest
             Assert.AreEqual(p._pdv, 5);
             Assert.AreEqual(p._pm, 1);
             Assert.IsTrue(p.enVie);
-            Assert.IsFalse(p._passeTour);
             Assert.AreEqual(p.typeUnite(), "vikings");
 
             p.positionner(0, 1, new Plaine());
@@ -334,9 +329,6 @@ namespace UnitTest
             Assert.IsTrue(p.peutDeplacer(1, 1, new Eau()));
 
             Assert.AreEqual(p.getPoints(), 1);
-
-            p.passerTour();
-            Assert.IsTrue(p._passeTour);
         }
 
         [TestMethod]
@@ -348,7 +340,6 @@ namespace UnitTest
             Assert.AreEqual(p._pdv, 5);
             Assert.AreEqual(p._pm, 1);
             Assert.IsTrue(p.enVie);
-            Assert.IsFalse(p._passeTour);
             Assert.AreEqual(p.typeUnite(), "gaulois");
 
             p.positionner(0, 1, new Plaine());
@@ -361,9 +352,6 @@ namespace UnitTest
             Assert.IsFalse(p.peutDeplacer(1, 1, new Eau()));
 
             Assert.AreEqual(p.getPoints(), 2);
-
-            p.passerTour();
-            Assert.IsTrue(p._passeTour);
         }
 
         [TestMethod]

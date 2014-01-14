@@ -93,13 +93,6 @@ namespace SmallWorld
             set;
         }
 
-        /** Un booléen permettant de savoir si l'unité passe son tour */
-        public bool _passeTour
-        {
-            get;
-            set;
-        }
-
         /** Un booléen permettant de savoir si l'unité est encore en vie ou pas */
         public bool enVie
         {
@@ -251,14 +244,6 @@ namespace SmallWorld
                 Console.WriteLine("Points de vie du conquérant " + _pdv);
                 Console.WriteLine("Points de vie de l'opposant " + adversaire._pdv);
             }
-        }
-
-        /**
-         * Fonction permettant à l'unité courante de passer son tour
-         */
-        public void passerTour()
-        {
-            this._passeTour = true;
         }
     }
 
