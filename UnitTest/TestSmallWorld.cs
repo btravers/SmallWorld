@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using SmallWorld;
+using WrapperSmallWorld;
 
 namespace UnitTest
 {
@@ -19,46 +20,6 @@ namespace UnitTest
             // TODO: ajoutez ici la logique du constructeur
             //
         }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Obtient ou définit le contexte de test qui fournit
-        ///des informations sur la série de tests active ainsi que ses fonctionnalités.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Attributs de tests supplémentaires
-        //
-        // Vous pouvez utiliser les attributs supplémentaires suivants lorsque vous écrivez vos tests :
-        //
-        // Utilisez ClassInitialize pour exécuter du code avant d'exécuter le premier test de la classe
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Utilisez ClassCleanup pour exécuter du code une fois que tous les tests d'une classe ont été exécutés
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Utilisez TestInitialize pour exécuter du code avant d'exécuter chaque test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Utilisez TestCleanup pour exécuter du code après que chaque test a été exécuté
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
 
         [TestMethod]
         public void TestCarteGeneration()
@@ -355,9 +316,182 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestPartie()
+        public void TestPartieNainsGaulois()
         {
-            Partie p = new Partie();
+            MonteurPartie m = new MonteurPartieDemo();
+            Partie p = m.monterPartie("nains","gaulois");
+            p._jA._name = "j1";
+            p._jB._name = "j2";
+
+            Assert.AreEqual(p._joueur == 0, p.joueJoueurA());
+
+            Joueur j = p._jB;
+            Joueur ad = p._jA;
+            if (p.joueJoueurA())
+            {
+                j = p._jA;
+                ad = p._jB;
+            }
+            p.selectCaseInitiale(j._unites[0]._x,j._unites[0]._y);
+            Assert.IsNotNull(p._uniteSelectionnee);
+
+            ad.Positions = new List<int>();
+            foreach (Unite u in ad._unites)
+            {
+                ad.Positions.Add(u._x*5+u._y);
+            }
+
+            List<int> suggestions = p.suggestion();
+            foreach (int i in suggestions)
+            {
+                Assert.IsTrue(p._uniteSelectionnee.estAPortee(i/5,i%5,p._carte));
+                Assert.IsTrue(ad.obtenirMeilleurUnite(i/5,i%5) == null);
+                Assert.IsTrue(p._uniteSelectionnee.peutDeplacer(i/5,i%5,p._carte._cases[i/5,i%5]));
+            }
+
+            int x = suggestions[0] / 5;
+            int y = suggestions[0] % 5;
+            Unite select = p._uniteSelectionnee;
+            p.selectCaseDestination(x, y);
+            Assert.AreEqual(select._x, x);
+            Assert.AreEqual(select._y, y);
+            Assert.AreEqual(select._terrain, p._carte._cases[x, y].type());
+
+            p.joueurSuivant();
+            p.selectCaseInitiale(ad._unites[0]._x, ad._unites[0]._y);
+            Assert.IsNotNull(p._uniteSelectionnee);
+
+            j.Positions = new List<int>();
+            foreach (Unite u in ad._unites)
+            {
+                j.Positions.Add(u._x * 5 + u._y);
+            }
+
+            suggestions = p.suggestion();
+            foreach (int i in suggestions)
+            {
+                Assert.IsTrue(p._uniteSelectionnee.estAPortee(i / 5, i % 5, p._carte));
+            }
+
+            x = suggestions[0] / 5;
+            y = suggestions[0] % 5;
+            select = p._uniteSelectionnee;
+            p.selectCaseDestination(x, y);
+            Assert.AreEqual(select._x, x);
+            Assert.AreEqual(select._y, y);
+            Assert.AreEqual(select._terrain, p._carte._cases[x, y].type());
+
         }
+
+        [TestMethod]
+        public void TestPartieNainsVikings()
+        {
+            MonteurPartie m = new MonteurPartieDemo();
+            Partie p = m.monterPartie("nains", "vikings");
+            p._jA._name = "j1";
+            p._jB._name = "j2";
+
+            Assert.AreEqual(p._joueur == 0, p.joueJoueurA());
+
+            Joueur j = p._jB;
+            Joueur ad = p._jA;
+            if (p.joueJoueurA())
+            {
+                j = p._jA;
+                ad = p._jB;
+            }
+            p.selectCaseInitiale(j._unites[0]._x, j._unites[0]._y);
+            Assert.IsNotNull(p._uniteSelectionnee);
+
+            ad.Positions = new List<int>();
+            foreach (Unite u in ad._unites)
+            {
+                ad.Positions.Add(u._x * 5 + u._y);
+            }
+
+            List<int> suggestions = p.suggestion();
+            foreach (int i in suggestions)
+            {
+                Assert.IsTrue(p._uniteSelectionnee.estAPortee(i / 5, i % 5, p._carte));
+                Assert.IsTrue(ad.obtenirMeilleurUnite(i / 5, i % 5) == null);
+                Assert.IsTrue(p._uniteSelectionnee.peutDeplacer(i / 5, i % 5, p._carte._cases[i / 5, i % 5]));
+            }
+
+            int x = suggestions[0] / 5;
+            int y = suggestions[0] % 5;
+            Unite select = p._uniteSelectionnee;
+            p.selectCaseDestination(x, y);
+            Assert.AreEqual(select._x, x);
+            Assert.AreEqual(select._y, y);
+            Assert.AreEqual(select._terrain, p._carte._cases[x, y].type());
+
+            p.joueurSuivant();
+            p.selectCaseInitiale(ad._unites[0]._x, ad._unites[0]._y);
+            Assert.IsNotNull(p._uniteSelectionnee);
+
+            j.Positions = new List<int>();
+            foreach (Unite u in ad._unites)
+            {
+                j.Positions.Add(u._x * 5 + u._y);
+            }
+
+            suggestions = p.suggestion();
+            foreach (int i in suggestions)
+            {
+                Assert.IsTrue(p._uniteSelectionnee.estAPortee(i / 5, i % 5, p._carte));
+            }
+
+            x = suggestions[0] / 5;
+            y = suggestions[0] % 5;
+            select = p._uniteSelectionnee;
+            p.selectCaseDestination(x, y);
+            Assert.AreEqual(select._x, x);
+            Assert.AreEqual(select._y, y);
+            Assert.AreEqual(select._terrain, p._carte._cases[x, y].type());
+
+        }
+
+
+        [TestMethod]
+        public void TestCombat()
+        {
+            MonteurPartie m = new MonteurPartieDemo();
+            Partie p = m.monterPartie("vikings", "nains");
+
+            // On force le joueur A à jouer en premier
+            p._joueur = 0;
+            p._premierJoueur = 0;
+
+            //On positionne une unité à coté des unités du joueur B
+            int x = p._jB._unites[0]._x - 1;
+            int y = p._jB._unites[0]._y;
+            p._jA._unites[0].positionner(x, y, p._carte._cases[x, y]);
+
+            p.selectCaseInitiale(x, y);
+            Assert.IsNotNull(p._uniteSelectionnee);
+
+            p._jB.Positions = new List<int>();
+            foreach (Unite u in p._jB._unites)
+            {
+                p._jB.Positions.Add(u._x * 5 + u._y);
+            }
+
+            List<int> suggestions = p.suggestion();
+            foreach (int i in suggestions)
+            {
+                Assert.IsTrue(p._uniteSelectionnee.estAPortee(i / 5, i % 5, p._carte));
+            }
+
+            Unite select = p._uniteSelectionnee;
+            Unite adversaire = p._jB.obtenirMeilleurUnite(x+1,y);
+            // Destination choisie de facon à attaquer
+            p.selectCaseDestination(x+1, y);
+
+            Assert.IsFalse(select.enVie==false && adversaire.enVie==false);
+            Assert.IsFalse(select._pdv == select.vitaMax && adversaire._pdv == adversaire.vitaMax);
+
+        }
+
+       
     }
 }

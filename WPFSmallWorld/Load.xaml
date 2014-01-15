@@ -5,6 +5,54 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="495" d:DesignWidth="660">
+
+    <UserControl.Resources>
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MetroButton" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="#EEEEEEEE"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10 5"/>
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" />
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="OpacityMask" Value="#AA888888"/>
+                                <Setter Property="Margin" Value="2 1" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <!--<Setter Property="Background" Value="DimGray"/>-->
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
     <UserControl.Background>
         <ImageBrush ImageSource="vieux-papier.jpg" Opacity="0.9"></ImageBrush>
     </UserControl.Background>
@@ -21,18 +69,18 @@
         <Grid Grid.Row="1">
             <StackPanel>
                 <StackPanel>
-                    <Button Content="Sauvegarde 1" Click="save1" Margin="20" Width="150"/>
+                    <Button Content="Sauvegarde 1" Click="save1" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
                     <TextBlock Name="infoSav1" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <Button Content="Sauvegarde 2" Click="save2" Margin="20" Width="150"/>
+                    <Button Content="Sauvegarde 2" Click="save2" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
                     <TextBlock Name="infoSav2" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <Button Content="Sauvegarde 3" Click="save3" Margin="20" Width="150"/>
+                    <Button Content="Sauvegarde 3" Click="save3" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
                     <TextBlock Name="infoSav3" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
-                <Button Content="Annuler" Click="annuler" Margin="20" Width="150"/>
+                <Button Content="Annuler" Click="annuler" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
             </StackPanel>
         </Grid>
 

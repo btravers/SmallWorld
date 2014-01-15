@@ -6,6 +6,56 @@
              mc:Ignorable="d" 
              d:DesignHeight="495" d:DesignWidth="660">
 
+    <UserControl.Resources>
+        <Style x:Key="Gotham-XLight">
+            <Setter Property="TextElement.FontFamily" Value="CustomFonts/#Gotham-XLight" />
+        </Style>
+        <Style x:Key="ButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MetroButton" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+            <Setter Property="Background" Value="#EEEEEEEE"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10 5"/>
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" />
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="OpacityMask" Value="#AA888888"/>
+                                <Setter Property="Margin" Value="2 1" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <!--<Setter Property="Background" Value="DimGray"/>-->
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#ADADAD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <UserControl.Background>
         <ImageBrush ImageSource="homescreen.jpg" Opacity="0.8"></ImageBrush>
     </UserControl.Background>
@@ -19,14 +69,13 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <TextBlock FontWeight="Bold" FontSize="14" TextAlignment="Center">SmallWorld</TextBlock>
         </Grid>
 
         <Grid Grid.Row="1">
             <StackPanel>
-                <Button Content="Nouveau" Click="nouveau" Margin="20" Width="150"/>
-                <Button Content="Charger" Click="charger" Margin="20" Width="150"/>
-                <Button Content="Quitter" Click="quitter" Margin="20" Width="150"/>
+                <Button Content="Nouveau" Click="nouveau" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
+                <Button Content="Charger" Click="charger" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
+                <Button Content="Quitter" Click="quitter" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
             </StackPanel>
         </Grid>
 
