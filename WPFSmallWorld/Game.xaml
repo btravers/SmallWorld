@@ -56,10 +56,10 @@
     <StackPanel>
 
         <StackPanel HorizontalAlignment="Center">
-            <TextBlock Padding="10">SmallWorld</TextBlock>
+            <TextBlock Padding="10" FontSize="28" FontFamily="Pirata One">SmallWorld</TextBlock>
         </StackPanel>
-        
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="300">
             <Grid>
                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Name="mapGrid" Margin="50">
 
@@ -67,7 +67,9 @@
             </Grid>
         </ScrollViewer >
 
-        <StackPanel Orientation="Horizontal" Height="auto" Name="unitSelecter"></StackPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Margin="5">
+            <StackPanel Orientation="Horizontal" Height="auto" Name="unitSelecter"></StackPanel>
+        </ScrollViewer>
 
         <Grid Background="White" Opacity="0.7">
             <Grid.ColumnDefinitions>
@@ -76,29 +78,30 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackPanel HorizontalAlignment="Stretch" Grid.Column="0" Margin="2">
-                <TextBlock FontWeight="Bold" FontSize="14" Name="Joueur1">Peuple 1</TextBlock>
-                <TextBlock Name="pointsJ1">Points :</TextBlock>
-                <TextBlock Name="unitesJ1">Unités :</TextBlock>
+            <StackPanel HorizontalAlignment="Stretch"
+                        Grid.Column="0" Margin="2">
+                <TextBlock FontWeight="Bold" FontSize="16" Name="Joueur1" FontFamily="Pirata One">Peuple 1</TextBlock>
+                <TextBlock Name="pointsJ1" FontSize="14" FontFamily="Pirata One">Points :</TextBlock>
+                <TextBlock Name="unitesJ1" FontSize="14" FontFamily="Pirata One">Unités :</TextBlock>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" Margin="2">
-                <TextBlock FontWeight="Bold" FontSize="14" Name="Joueur2">Peuple 2</TextBlock>
-                <TextBlock Name="pointsJ2">Points :</TextBlock>
-                <TextBlock Name="unitesJ2">Unités :</TextBlock>
+                <TextBlock FontWeight="Bold" FontSize="16" Name="Joueur2" FontFamily="Pirata One">Peuple 2</TextBlock>
+                <TextBlock Name="pointsJ2" FontSize="14" FontFamily="Pirata One">Points :</TextBlock>
+                <TextBlock Name="unitesJ2" FontSize="14" FontFamily="Pirata One">Unités :</TextBlock>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Stretch" Grid.Column="2" Margin="2">
-                <Button x:Name="finDeTour" Content="Fin de Tour" Click="Button_Click" HorizontalAlignment="Center"  Style="{StaticResource MetroButton}"/>
-                <TextBlock Name="Joueur"/>
-                <TextBlock Name="Tours"/>
+                <Button x:Name="finDeTour" Content="Fin de Tour" FontFamily="Pirata One" Click="Button_Click" HorizontalAlignment="Center"  Style="{StaticResource MetroButton}"/>
+                <TextBlock Name="Joueur" FontSize="14" FontFamily="Pirata One"/>
+                <TextBlock Name="Tours" FontSize="14" FontFamily="Pirata One"/>
             </StackPanel>
             
         </Grid>
-
+        
         <DockPanel HorizontalAlignment="Right">
-            <Button Content="Sauvegarder" Click="save" HorizontalAlignment="Right" Margin="2" Style="{StaticResource MetroButton}"/>
-            <Button Content="Quitter" Click="quit" HorizontalAlignment="Right" Margin="2" Style="{StaticResource MetroButton}"/>
+            <Button Content="Sauvegarder" FontFamily="Pirata One" Click="save" HorizontalAlignment="Right" Margin="2" Style="{StaticResource MetroButton}"/>
+            <Button Content="Quitter" FontFamily="Pirata One" Click="quit" HorizontalAlignment="Right" Margin="2" Style="{StaticResource MetroButton}"/>
         </DockPanel>
 
         

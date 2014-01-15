@@ -209,6 +209,7 @@ namespace SmallWorld
                 if (forceDefense == 0)
                 {
                     adversaire.enVie = false;
+                    break;
                 }
                 double ratioAttaqueDefense = (double)forceAttaque / (double)forceDefense;
                 double chanceDef = 0.5;
@@ -230,6 +231,7 @@ namespace SmallWorld
                     if (adversaire._pdv < 1)
                     {
                         adversaire.enVie = false;
+                        break;
                     }
                 }
                 else
@@ -238,6 +240,7 @@ namespace SmallWorld
                     if (this._pdv < 1)
                     {
                         this.enVie = false;
+                        break;
                     }
                 }
                 nb--;

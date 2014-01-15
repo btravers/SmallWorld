@@ -314,8 +314,9 @@ namespace WPFSmallWorld
         /*
          * Fonction chargée de dessiner les unités considérées
          * @param units la liste d'unités considérée
+         * @param adv vrai si on souhaite afficher les unités de l'adversaire
          */
-        public void displaySelectedUnits(List<Unite> units)
+        public void displaySelectedUnits(List<Unite> units, bool adv)
         {
             //On crée la liste d'unités sélectionnées
             _selectedUnits = new Dictionary<Border, Unite>();
@@ -343,14 +344,14 @@ namespace WPFSmallWorld
                 //(ses points de mouvement, ses points de vie)
                 TextBlock unitTextVie = new TextBlock();
                 unitTextVie.Text = unit._pdv+" points\nde vie";
-                unitTextVie.FontFamily = new FontFamily("Agent Orange");
+                unitTextVie.FontFamily = new FontFamily("GAMECUBEN Dualset");
                 unitTextVie.FontSize = 8;
                 unitTextVie.Foreground = Brushes.Black;
                 unitTextVie.FontWeight = FontWeights.Bold;
 
                 TextBlock unitTextRun = new TextBlock();
                 unitTextRun.Text = unit._pm + " points\nde mvt";
-                unitTextRun.FontFamily = new FontFamily("Agent Orange");
+                unitTextRun.FontFamily = new FontFamily("GAMECUBEN Dualset");
                 unitTextRun.FontSize = 8;
                 unitTextRun.Foreground = Brushes.Black;
                 unitTextRun.FontWeight = FontWeights.Bold;
@@ -368,21 +369,29 @@ namespace WPFSmallWorld
                 border.Height = 75;
                 border.BorderThickness = new Thickness(3);
 
-                //Si l'unité est la première de la liste, on la sélectionne et son bord est rouge
-                if (i == 0)
+                if (!adv)
                 {
-                    border.BorderBrush = Brushes.Red;
-                    i++;
-                    _selectedUnit = border;
+                    //Si l'unité est la première de la liste, on la sélectionne et son bord est rouge
+                    if (i == 0)
+                    {
+                        border.BorderBrush = Brushes.Red;
+                        i++;
+                        _selectedUnit = border;
+                    }
+                    //Sinon le bord sera noir
+                    else
+                    {
+                        border.BorderBrush = Brushes.Black;
+                    }
+
+                    //On ajoute un handler au border en question
+
+                    border.MouseLeftButtonDown += new MouseButtonEventHandler(rectangleMouseLefUnitSelectertHandler);
                 }
-                //Sinon le bord sera noir
                 else
                 {
                     border.BorderBrush = Brushes.Black;
                 }
-
-                //On ajoute un handler au border en question
-                border.MouseLeftButtonDown += new MouseButtonEventHandler(rectangleMouseLefUnitSelectertHandler);
 
                 Canvas container = new Canvas();
 
@@ -501,16 +510,39 @@ namespace WPFSmallWorld
                 _selection.Stroke = Brushes.Black;
             }
 
+            // Si on selectionne une case avec nos unités
             List<Unite> units = _engine.selectCaseInitiale(row,column);
 
             if (units.Any())
             {
-                displaySelectedUnits(units);
+                displaySelectedUnits(units,false);
                 rectangle.StrokeThickness = 1;
                 rectangle.Stroke = Brushes.Red;
 
                 _selection = rectangle;
                 displayDestinations();
+            }
+            else // Si on selectionne une case avec les unités de l'adversaire, on souhaite les afficher
+            {
+                Joueur j = _engine._jA;
+                if (_engine.joueJoueurA())
+                {
+                    j = _engine._jB;
+                }
+                foreach (Unite u in j._unites)
+                {
+                    if (u._x == row && u._y == column)
+                    {
+                        units.Add(u);
+                    }
+                }
+                if (units.Any())
+                {
+                    displaySelectedUnits(units,true);
+                    rectangle.StrokeThickness = 1;
+                    rectangle.Stroke = Brushes.Red;
+                    _selection = rectangle;
+                }
             }
             e.Handled = true;
         }

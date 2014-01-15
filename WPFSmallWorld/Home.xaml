@@ -73,9 +73,9 @@
 
         <Grid Grid.Row="1">
             <StackPanel>
-                <Button Content="Nouveau" Click="nouveau" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
-                <Button Content="Charger" Click="charger" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
-                <Button Content="Quitter" Click="quitter" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
+                <Button Content="Nouveau" Click="nouveau" FontFamily="Pirata One" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
+                <Button Content="Charger" Click="charger" FontFamily="Pirata One" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
+                <Button Content="Quitter" Click="quitter" FontFamily="Pirata One" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
             </StackPanel>
         </Grid>
 

@@ -63,24 +63,24 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <TextBlock FontWeight="Bold" FontSize="14" TextAlignment="Center">SmallWorld</TextBlock>
+            <TextBlock FontWeight="Bold" FontSize="28" FontFamily="Pirata One" TextAlignment="Center">SmallWorld</TextBlock>
         </Grid>
 
         <Grid Grid.Row="1">
             <StackPanel>
                 <StackPanel>
-                    <Button Content="Sauvegarde 1" Click="save1" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
+                    <Button Content="Sauvegarde 1" Click="save1" Margin="20" Width="150" FontFamily="Pirata One" Style="{StaticResource MetroButton}"/>
                     <TextBlock Name="infoSav1" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <Button Content="Sauvegarde 2" Click="save2" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
+                    <Button Content="Sauvegarde 2" Click="save2" Margin="20" Width="150" FontFamily="Pirata One" Style="{StaticResource MetroButton}"/>
                     <TextBlock Name="infoSav2" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <Button Content="Sauvegarde 3" Click="save3" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
+                    <Button Content="Sauvegarde 3" Click="save3" Margin="20" Width="150" FontFamily="Pirata One" Style="{StaticResource MetroButton}"/>
                     <TextBlock Name="infoSav3" HorizontalAlignment="Center"></TextBlock>
                 </StackPanel>
-                <Button Content="Annuler" Click="annuler" Margin="20" Width="150" Style="{StaticResource MetroButton}"/>
+                <Button Content="Annuler" Click="annuler" Margin="20" Width="150" FontFamily="Pirata One" Style="{StaticResource MetroButton}"/>
             </StackPanel>
         </Grid>
 
