@@ -50,7 +50,7 @@ namespace WPFSmallWorld
         {
             if (File.Exists(name))
             {
-                info.Text = " (Sauvgarde utilisée)";
+                info.Text = " (Sauvegarde utilisée)";
             }
         }
 

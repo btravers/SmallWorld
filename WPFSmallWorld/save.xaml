@@ -78,7 +78,7 @@
                 </DockPanel>
                 <DockPanel>
                     <RadioButton Name="e3" Checked="emp3">
-                        Emplacement 1
+                        Emplacement 3
                     </RadioButton>
                     <TextBlock Name="info3"></TextBlock>
                 </DockPanel>
